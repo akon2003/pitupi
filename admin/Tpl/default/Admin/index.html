@@ -1,0 +1,28 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+<div class="main_title">{$main_title}</div>
+<div class="blank5"></div>
+<div class="button_row">
+	<input type="button" class="button" value="{%ADD}管理员" onclick="add();" />
+	<input type="button" class="button" value="{%EDIT}管理员" onclick="_edit();" />
+</div>
+<div class="blank5"></div>
+<html:list 
+	id="dataTable" 
+	style="dataTable dataTableSelect" 
+	name="admin" 
+	datasource="list" 
+	show="id|checkbox:选择|50px
+		,adm_name:{%ADM_NAME}
+		,role_id|get_role_name:{%ROLE}
+		,is_effect|get_is_effect:{%IS_EFFECT}
+		,login_time|to_date:{%LOGIN_TIME}
+		,login_ip:{%LOGIN_IP}"
+	/> 
+
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

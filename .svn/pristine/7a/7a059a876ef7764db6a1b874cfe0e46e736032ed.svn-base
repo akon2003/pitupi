@@ -1,0 +1,78 @@
+<style>
+html{color:#666;background:none;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+body,button,input,select,textarea{font:14px/1.5 '微软雅黑',YaHei,tahoma,arial,"Hiragino Sans GB",\5b8b\4f53}
+a{color:#666;text-decoration:none;cursor:pointer;}
+a:hover{color:#f08023; text-decoration:none;}
+guide-question{border:1px solid #d8d8d8; box-shadow:2px 2px 4px #dfdfdf;}
+.guide-question-dl{border-bottom:1px dashed #d8d8d8; padding-bottom:15px; margin-top:20px;}
+.guide-question-dl dt em, .guide-question-dl dd em{display:block; position:absolute; left:0; top:0;} .guide-question-dl dd em{left:4px;}
+.guide-question-dl dt, .guide-question-dl dd{padding-left:35px; position:relative;}
+.guide-question-dl dt{line-height:40px; color:#429fcb;font-size:18px;}
+.guide-question-dl dd{line-height:25px; color:#666666; font-size:16px; margin-top:5px; display:none;}
+.guide-question .more{color:#45b8ef; display:block;width:100%; text-align:center;}
+.guide-question .more:hover{color:#45b8ef;}
+.mt20{margin-top:20px !important;}
+.p20{padding:20px}
+.accoutTitWrap{width:100%; border-bottom:1px solid #dcd6d1;}
+.accoutTit{height:44px; line-height:44px; padding:0 30px; float:left; display:inline; font-size:18px; margin:0 0 -2px; background:none; color:#666;}
+.accoutTitWrap a.focus{color:#2e2e2e; border-bottom:3px solid #73c5ec; } 
+.accoutTitWrap a:hover{color:#2e2e2e !important;}
+.pos-r{position:relative;}
+.pos-a{position:absolute;}
+.c:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+.c{zoom:1}
+.accoutTitWrap{width:100%; border-bottom:1px solid #dcd6d1;}
+.accoutTit{height:44px; line-height:44px; padding:0 30px; float:left; display:inline; font-size:18px; margin:0 0 -2px; background:none; color:#666;}
+.accoutTitWrap a.focus{color:#2e2e2e; border-bottom:3px solid #73c5ec; } 
+.accoutTitWrap a:hover{color:#2e2e2e !important;}
+.tab4{background:#cac8c8; width:86%; margin:40px auto; font-size:16px;}
+.tab4 th, .tab4 td{padding:10px; text-align:center;}
+.tab4 th{background:#f2f0f0;} .tab4 td{background:#fff;}
+.tac{text-align:center !important}
+.tar{text-align:right !important}
+.tal{text-align:left !important;}
+.dn{display:none}
+</style>
+
+<div class="wdAuto guide-question mt20 p20 white">
+	<div class="accoutTitWrap pos-r c">
+		<a class="accoutTit focus" href="javascript:;">费用说明</a>
+	</div>
+	<div class="intr">
+		<div class="intr1">
+			<table cellspacing="1" cellpadding="0" border="0" class="tab4">
+				<tbody>
+					<tr>
+					<th width="10%">对象</th>
+					<th width="10%">收费项目</th>
+					<th width="50%">收费标准</th>
+					<th width="10%">收费方</th>
+					<th width="20%">说明</th>
+				</tr>
+				<tr>
+					<td rowspan="2">投资人</td>
+					<td>充值</td>
+					<td>免费</td>
+					<td>第三方</td>
+					<td>平台垫付</td>
+				</tr>
+				<tr>
+					<td>提现</td>
+					<td class="tac">
+						<p>个人会员3元/笔；企业会员12元/笔</p>
+					</td>
+					<td>第三方</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td rowspan="2">借款人</td>
+					<td>管理费</td>
+					<td>0.5%-1%/月</td>
+					<td>平台</td>
+					<td>具体根据不同的融资项目拟定</td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>
+</div>
+</div>

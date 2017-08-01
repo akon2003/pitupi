@@ -1,0 +1,420 @@
+<?php echo $this->fetch('inc/header.html'); ?>
+<div class="blank0"></div>
+</div>
+
+<!-- 平台项目优势 -->
+<div class="advance_block">
+	<div class="wrap">
+		<table class="gridUl">
+			<tr>
+				<td>
+					<a href="javascript:void(0);">
+						<div class="t1"><img src="/app/Tpl/new/images/index/grid_image0.png" /></div>
+						<div class="t2">
+						<h4>律所法务监控</h4>
+						<div class="t3" style="color:rgb(158,158,158)">律师事务所全程法务监控</div>
+						</div>
+					</a>
+				</td>
+				<td>
+					<a href="javascript:void(0);">
+						<span class="t1"><img src="/app/Tpl/new/images/index/grid_image1.png" /></span>
+						<div class="t2">
+						<h4>全额本息担保</h4>
+						<div class="t3 tac" style="color:rgb(158,158,158)">第三方担保机构本息担保</div>
+						</div>
+					</a>
+				</td>
+				<td>
+					<a href="javascript:void(0);">
+						<span class="t1"><img src="/app/Tpl/new/images/index/grid_image2.png" /></span>
+						<div class="t2">
+						<h4>大数据战略合作</h4>
+						<div class="t3 tac" style="color:rgb(158,158,158)">云南长方体大数据网络科技公司战略合作</div>
+						</div>
+					</a>
+				</td>
+				<td>
+					<a href="javascript:void(0);">
+						<span class="t1"><img src="/app/Tpl/new/images/index/grid_image3.png" /></span>
+						<div class="t2">
+						<h4>银行资金监管</h4>
+						<div class="t3" style="color:rgb(158,158,158)">中国光大银行资金全程监管</div>
+						</div>
+					</a>
+				</td>
+				<td>
+					<a href="javascript:void(0);">
+						<span class="t1"><img src="/app/Tpl/new/images/index/grid_image4.png" /></span>
+						<div class="t2">
+						<h4>保险保驾护航</h4>
+						<div class="t3 tar" style="color:rgb(158,158,158)">太平洋保险公司全程保驾护航</div>
+						</div>
+					</a>
+				</td>
+			</tr>			
+		</table>
+	</div>
+</div>
+
+<!-- 他们正在投资 -->
+<div class="licai_block">
+	<div class="wrap">
+		<div class="f_l notice"></div>
+		<div class="f_l">
+			<div class="article_block pr list_block" id="txtScroll-top">
+				<div class="bg_0 pr list_this ovhide bd3">
+					<ul class="licai_now">
+						<?php $_from = $this->_var['near_deal_loads']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'load');if (count($_from)):
+    foreach ($_from AS $this->_var['load']):
+?>
+						<li class="show_li clearfix ">
+							<a href="<?php
+echo parse_url_tag("u:index|deal#index|"."id=".$this->_var['load']['deal_id']."".""); 
+?>">
+								<p>
+									用户：<i class="f_red"><?php 
+$k = array (
+  'name' => 'utf_substr',
+  'v' => $this->_var['load']['user_name'],
+);
+echo $k['name']($k['v']);
+?></i> &nbsp; 
+									投资：<i class="f_red"><?php echo $this->_var['load']['money']; ?>元</i>
+									年化收益：<i class="f_red"><?php echo $this->_var['load']['rate']; ?>%</i>
+								</p>
+							</a>
+						</li>
+						<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+					</ul>
+				</div> 
+			</div>
+		</div>
+		<div class="f_r notice_m"></div>
+		<div class="f_r">
+			<div class="clearfix h_block b_f9f9f9" style="color:#2A75B7">
+				<div class="f_l">他们正在投资</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				jQuery("#txtScroll-top").slide({titCell:".hd ul",mainCell:".bd3 ul",autoPage:true,effect:"top",autoPlay:true,vis:4});
+			});
+		</script>
+	</div>
+</div>
+
+<!-- 统计数据展示 -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		setTimeout(function() {
+			var options = {useEasing:true,easingFn:null,useGrouping:true,separator:',',decimal:'.'};
+			var user_count = new CountUp("data_user_count", 0, <?php echo $this->_var['stats']['user_count']; ?>,0,2,options);
+			user_count.start();
+			var total_load = new CountUp("data_total_load", 0, <?php echo $this->_var['stats']['total_load']; ?>,0,2,options);
+			total_load.start();
+			var total_repay_money = new CountUp("data_total_repay_money", 0, <?php echo $this->_var['stats']['total_repay_money']; ?>,0,2,options);
+			total_repay_money.start();
+			var total_interest_money = new CountUp("data_total_interest_money", 0, <?php echo $this->_var['stats']['total_interest_money']; ?>,0,2,options);
+			total_interest_money.start();
+		}, 1000);
+	});
+</script>
+<div class="data_block">
+	<div class="wrap">
+		<table class="dataUI">
+			<tr class="value">
+				<td id="data_user_count">--</td>
+				<td id="data_total_load">--</td>
+				<td id="data_total_repay_money">--</td>
+				<td id="data_total_interest_money">--</td>
+			</tr>
+			<tr class="title">
+				<td>累计注册用户（人）</td>
+				<td>累计成交金额（元）</td>
+				<td>已还本息总额（元）</td>
+				<td>用户赚取利益（元）</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<div class="blank12" style="background:#C1C1C1;width:100%;height:12px;"></div>
+
+<!-- 理财产品展示区 -->
+<script type='text/javascript' language='javascript' src='/app/Tpl/new/js/utils/jqDnR.js'></script>
+<script type="text/javascript">
+	var cal = new licaiCalWindow();
+
+	$(document).ready(function() {
+		$('.indicatorContainer').each(function() {
+			var args = {radius:33,barWidth:3,initValue:0,roundCorner:true,percentage:true};
+			var progress = $(this).find(".progress").text();
+			args.barColor = {0:'#EEEEEE',1:'#37AFF1',100:'#009365'};
+			
+			if (progress == 0) {
+				args.fontColor = '#CCCCCC';
+			} else if (progress == 100) {
+				args.fontColor = '#009365';
+			} else {
+				args.fontColor = '#37AFF1';
+			}
+
+			$(this).radialIndicator(args);
+			var obj = $(this).data('radialIndicator');
+			obj.animate(progress);
+		});
+
+		//理财收益计算
+		$(".compu").each(function() {
+			$(this).bind("click",function(e) {
+				var ev = window.event || e;
+				var rate = $(this).parents("tr").find(".rate").eq(0).text();
+				var time = $(this).parents("tr").find(".time").eq(0).text();
+				var remain = $(this).parents("tr").find(".remain").eq(0).val();
+				cal.show(rate,time,remain,ev);
+			});
+		});
+
+		//简单收益计算
+		$(".cal_input").bind("blur", function() {
+			var input = $(this).val();
+			if (input == isNaN || input == 0) {
+				$(this).val(10000);
+			}
+			$(this).trigger("update");
+		}).bind("keypress", function(e) {
+			var ev = window.event || e;
+			if (ev.keyCode > 47 && ev.keyCode < 58) {
+				return true;
+			} else {
+				return false;
+			}
+		}).bind("keyup", function(e) {
+			$(this).trigger("update");
+		}).bind("keydown", function(e) {
+			var ev = window.event || e;
+			if (ev.keyCode == 13) {
+				$(this).trigger("update");
+			}
+		}).bind("update", function() {
+			var rate = $(this).parents("tr").find(".rate").eq(0).text();
+			var time = $(this).parents("tr").find(".time").eq(0).text();
+			var remain = $(this).parents("tr").find(".remain").eq(0).val();
+			var val = remain<10000? remain : 10000;
+			var input = $(this).val();
+			input = parseInt(input);
+			if (input == isNaN || input == 0) {
+				input = 0;
+			}
+			var result = input * (rate / 100) / 12 * time;
+			result = result.toFixed(2);
+			$(this).parents("td").find(".cal_result").html(result);
+		}).trigger("update");
+	});
+</script>
+<div class="main_block">
+	<div class="wrap" style="height:64px;background:url('/app/Tpl/new/images/index/trzlczq.png') no-repeat;"></div>
+	<!-- 新手标/U计划 -->
+	<div class="wrap deal_list">
+		<div class="uplan">
+			<table>
+				<tr class="t_header">
+					<th class="t_name">项目名称</th><th class="t_rate">年化利率</th><th>&nbsp;</th><th class="t_interest">投资收益</th>
+					<th class="t_repay_time">投资期限</th><th class="t_borrow_amount">项目总额</th><th class="t_progress">投资进度</th><th></th>
+				</tr>
+				<tr class="t_splid"><td colspan="8"></td></tr>
+				<?php $_from = $this->_var['uplan_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'deal');if (count($_from)):
+    foreach ($_from AS $this->_var['key'] => $this->_var['deal']):
+?>
+				<?php if ($this->_var['key'] != 'uplan_xx'): ?>
+				<tr class="t_deal">
+					<td><a href="<?php if ($this->_var['deal']['url'] && $this->_var['deal']['url'] != ''): ?><?php echo $this->_var['deal']['url']; ?><?php else: ?>javascript:void(0)<?php endif; ?>" title="<?php echo $this->_var['deal']['name']; ?>"><?php echo $this->_var['deal']['name']; ?></a></td>
+					<td><span class="rate"><?php echo $this->_var['deal']['rate']; ?></span>%</td>
+					<td><div class="compu"><i class="iconfont" style="width:24px;height:24px;font-size:24px;color:#EC5310;cursor:pointer;">&#xe622;</i></div></td>
+					<td>
+						<div style="width:96px;height:20px;overflow:hidden;"><input type="text" value="10000" class="cal_input" size=3 style="border:1px solid #ddd;color:#ccc;text-align:center;"/></div>
+						<div style="width:96px;height:18px;overflow:hidden;font-size:10px;">￥<span class="cal_result">1000</span></div>
+						<input type="hidden" class="remain" value="<?php echo $this->_var['deal']['remain']; ?>"/>
+					</td>
+					<td><span class="time"><?php echo $this->_var['deal']['repay_time']; ?></span>个月</td>
+					<td><?php echo $this->_var['deal']['borrow_amount']; ?></td>
+					<td>
+						<div class="prg-cont rad-prg indicatorContainer">
+							<span style="display:none" class="progress"><?php echo $this->_var['deal']['progress_point']; ?></span>
+						</div>
+					</td>
+					<td style="padding-left:20px;">
+						<?php if ($this->_var['deal']['id'] == 0): ?>
+							<a href="javascript:void(0);" class="deal_status deal_wait_7"><span></span></a>
+						<?php elseif ($this->_var['deal']['is_wait'] == 1): ?>
+							<a href="javascript:void(0);" class="deal_status deal_unstart"><span></span></a>
+						<?php elseif ($this->_var['deal']['deal_status'] == 5): ?>
+							<a href="javascript:void(0);" class="deal_status deal_over"><span></span></a>
+						<?php elseif ($this->_var['deal']['deal_status'] == 4): ?>
+							<a href="javascript:void(0);" class="deal_status deal_inrepay"><span></span></a>
+						<?php elseif ($this->_var['deal']['deal_status'] == 0): ?>
+							<a href="javascript:void(0);" class="deal_status deal_wait_1"><span></span></a>
+						<?php elseif ($this->_var['deal']['deal_status'] == 1 && $this->_var['deal']['remain_time'] > 0): ?>
+							<a href="<?php echo $this->_var['deal']['url']; ?>" class="deal_status deal_addin"><span></span></a>
+						<?php elseif ($this->_var['deal']['deal_status'] == 2): ?>
+							<a href="javascript:void(0);" class="deal_status deal_wait_full"><span></span></a>
+						<?php elseif ($this->_var['deal']['deal_status'] == 3): ?>
+							<a href="javascript:void(0);" class="deal_status deal_fail"><span></span></a>
+						<?php elseif ($this->_var['deal']['deal_status'] == 1 && $this->_var['deal']['remain_time'] <= 0): ?>
+							<a href="javascript:void(0);" class="deal_status deal_expire"><span></span></a>
+						<?php endif; ?>
+					</td>
+				</tr>
+				<?php endif; ?>
+				<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+			</table>			
+		</div>
+	</div>
+	<div class="blank18"></div>
+
+	<!-- 常规标的 -->
+	<?php if ($this->_var['deal_list']): ?>
+	<div class="wrap deal_list">
+		<div class="deal">
+			<table>
+				<tr class="t_header">
+					<th class="t_name">项目名称</th><th class="t_rate">年化利率</th><th>&nbsp;</th><th class="t_interest">投资收益</th>
+					<th class="t_repay_time">投资期限</th><th class="t_borrow_amount">项目总额</th><th class="t_progress">投资进度</th><th></th>
+				</tr>
+				<tr class="t_splid"><td colspan="8"></td></tr>
+				<?php $_from = $this->_var['deal_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'deal');if (count($_from)):
+    foreach ($_from AS $this->_var['key'] => $this->_var['deal']):
+?>
+				<?php if ($this->_var['key'] < 4): ?>
+				<tr class="t_deal">
+					<td><a href="<?php echo $this->_var['deal']['url']; ?>" title="<?php echo $this->_var['deal']['name']; ?>"><?php echo $this->_var['deal']['name']; ?></a></td>
+					<td><span class="rate"><?php echo $this->_var['deal']['rate']; ?></span>%</td>
+					<td><div class="compu"><i class="iconfont" style="width:24px;height:24px;font-size:24px;color:#EC5310;cursor:pointer;">&#xe622;</i></div></td>
+					<td>
+						<div style="width:96px;height:20px;overflow:hidden;"><input type="text" value="10000" class="cal_input" size=3 style="border:1px solid #ddd;color:#ccc;text-align:center;"/></div>
+						<div style="width:96px;height:18px;overflow:hidden;font-size:10px;">￥<span class="cal_result">1000</span></div>
+						<input type="hidden" class="remain" value="<?php echo $this->_var['deal']['remain']; ?>"/>
+					</td>
+					<td><span class="time"><?php echo $this->_var['deal']['repay_time']; ?></span>个月</td>
+					<td><?php echo $this->_var['deal']['borrow_amount']; ?></td>
+					<td>
+						<div class="prg-cont rad-prg indicatorContainer">
+							<span style="display:none" class="progress"><?php echo $this->_var['deal']['progress_point']; ?></span>
+						</div>
+					</td>
+					<td style="padding-left:20px;">
+						<?php if ($this->_var['deal']['is_delete'] == 2): ?>
+							<a href="javascript:void(0);" class="deal_status deal_wait_7"><span></span></a>
+						<?php elseif ($this->_var['deal']['is_wait'] == 1): ?>
+							<a href="javascript:void(0);" class="deal_status deal_unstart"><span></span></a>
+						<?php elseif ($this->_var['deal']['deal_status'] == 5): ?>
+							<a href="javascript:void(0);" class="deal_status deal_over"><span></span></a>
+						<?php elseif ($this->_var['deal']['deal_status'] == 4): ?>
+							<a href="javascript:void(0);" class="deal_status deal_inrepay"><span></span></a>
+						<?php elseif ($this->_var['deal']['deal_status'] == 0): ?>
+							<a href="javascript:void(0);" class="deal_status deal_wait_1"><span></span></a>
+						<?php elseif ($this->_var['deal']['deal_status'] == 1 && $this->_var['deal']['remain_time'] > 0): ?>
+							<a href="<?php echo $this->_var['deal']['url']; ?>" class="deal_status deal_addin"><span></span></a>
+						<?php elseif ($this->_var['deal']['deal_status'] == 2): ?>
+							<a href="javascript:void(0);" class="deal_status deal_wait_full"><span></span></a>
+						<?php elseif ($this->_var['deal']['deal_status'] == 3): ?>
+							<a href="javascript:void(0);" class="deal_status deal_fail"><span></span></a>
+						<?php elseif ($this->_var['deal']['deal_status'] == 1 && $this->_var['deal']['remain_time'] <= 0): ?>
+							<a href="javascript:void(0);" class="deal_status deal_expire"><span></span></a>
+						<?php endif; ?>
+					</td>
+				</tr>
+				<?php endif; ?>
+				<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+			</table>
+		</div>
+	</div>
+	<?php endif; ?>
+	<div class="blank5"></div>
+	<div class="wrap">
+		<div style="text-align:right">		
+			<a href="index.php?ctl=deals" style="border:0;margin-top:-12px;">更多投资项目 &gt;&gt;</a>
+		</div>
+	</div>
+	<div class="blank5"></div>
+<div>
+
+<!-- 关于我们 -->
+<div>
+	<a href="/about/index.html" target="_blank">
+		<div id="aboutus_link" style="height:260px;overflow:hidden;background:url('/app/Tpl/new/images/index/index_about_bg.png') no-repeat;"></div>
+		<div style="height:260px;overflow:hidden;margin-top:-260px;"></div>
+	</a>
+</div>
+<div class="blank0"></div>
+
+<!-- 新闻中心 -->
+<div>
+	<div class="wrap" style="height:64px;background:url('/app/Tpl/new/images/index/hyxwzx.png') no-repeat;"></div>
+	<div class="wrap news_block" style="height:270px;background:white;">		
+		<div class="f_l w320">
+			<!-- 新闻轮播图 -->
+			<div class="section_news_pic" style="margin-left:20px;margin-top:20px;">
+				<div class="comiis_wrapad" id="slideContainer" style="width:300px;">
+					<div id="frameHlicAe" class="frame cl">
+						<div class="temp"></div>
+						<div class="block">
+							<div class="cl">
+								<ul class="slideshow" id="slidesImgs"><?php $_from = $this->_var['slide']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'adv');if (count($_from)):
+    foreach ($_from AS $this->_var['adv']):
+?><li>
+									<a href="<?php echo $this->_var['adv']['url']; ?>" target="_blank"><img src="<?php echo $this->_var['adv']['icon']; ?>" width="300px" height="230px"/></a>
+									<span class="title" title="<?php echo $this->_var['adv']['title']; ?>">
+										<a href="<?php echo $this->_var['adv']['url']; ?>" style="color:white;text-decoration:none;" target="_blank"><h3><?php echo $this->_var['adv']['title']; ?></h3></a>
+										<div class="desc"><?php echo $this->_var['adv']['brief']; ?></div>
+									</span>
+								</li><?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?></ul>
+							</div>
+							<div class="slidebar" id="slideBar">
+								<ul><?php $_from = $this->_var['slide']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'adv');if (count($_from)):
+    foreach ($_from AS $this->_var['adv']):
+?>
+									<li <?php if ($this->_var['adv']['index'] == 1): ?>class="on"<?php endif; ?>><?php echo $this->_var['adv']['index']; ?></li>
+								<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+					SlideShow(1800,'slideContainer','slidesImgs','slideBar');
+				</script>
+			</div>
+		</div>
+		<div class="f_r" style="width:880px;">
+			<div class="article_block b_white pr list_block">
+				<ul class="hyxw_news"><!-- 行业新闻 -->
+				<?php $_from = $this->_var['advs']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'item');if (count($_from)):
+    foreach ($_from AS $this->_var['key'] => $this->_var['item']):
+?>
+					<li>[<?php echo $this->_var['item']['update_date']; ?>]&nbsp;&nbsp;<a href="javascript:void(0);" onclick="window.open('<?php echo $this->_var['item']['url']; ?>','_blank');return false;"><?php echo $this->_var['item']['title']; ?></a></li>
+				<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="blank5"></div>
+
+	<!-- 合作伙伴 -->
+	<div class="wrap" style="height:64px;background:url('/app/Tpl/new/images/index/hzhb.png') no-repeat;"></div>
+	<div class="wrap">
+		<div class="link">
+			<ul>
+				<?php $_from = $this->_var['ico_yqlj_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'item');if (count($_from)):
+    foreach ($_from AS $this->_var['item']):
+?>
+					<li><a href="javascript:void(0);" onclick="window.open('<?php echo $this->_var['item']['url']; ?>','_blank');return false;"><img src="<?php echo $this->_var['item']['img']; ?>" /></a></li>
+				<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+			</ul>
+		</div>
+	</div>
+	<div class="blank30"></div>
+</div>
+
+<div>
+<?php echo $this->fetch('inc/footer.html'); ?>

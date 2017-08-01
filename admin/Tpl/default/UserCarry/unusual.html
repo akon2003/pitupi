@@ -1,0 +1,77 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/carry.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title">{$main_title}</div>
+<div class="blank5"></div>
+<div class="search_row">
+	<form method='post' id="form" name="form" action="__APP__">
+		订单号：<input type="text" class="textbox" name="notice_sn" id="notice_sn" value="{:trim($_REQUEST['notice_sn'])}" style="width:160px;" />
+		<input type="hidden" value="UserCarry" name="m" />
+		<input type="hidden" value="{$act}" name="a" />
+		<input type="submit" class="button" value="{%SEARCH}" />
+	</form>
+</div>
+<div class="blank5"></div>
+<if condition="$notice_sn neq ''">
+<table cellpadding="4" cellspacing="0" border="0" class="form">
+    <tr>
+        <td class="topTd"></td>
+    </tr>
+    <tr>
+        <td id="confirm_result">{$result}</td>
+    </tr>
+	<if condition="$valid eq 1">
+    <tr id="confirm_update_show">
+        <td>
+			<input type="button" class="button" id="confirm_update_button" value="余额不足--返回到待审核状态" />
+		</td>
+    </tr>
+	</if>
+    <tr>
+        <td class="bottomTd"></td>
+    </tr>
+</table>
+</if>
+</div>
+
+<script type="text/javascript">
+	$("#confirm_update_button").click(function() {
+		if (confirm("是否确定返回到待审核状态")) {
+			var pass = prompt("请输入约定的密码","");
+			if (pass == "") { return false; }
+
+			var ajaxurl = APP_ROOT+"/m.php?m=UserCarry&a={$act}";
+
+			var query = new Object();
+			query.ajax = 1;
+			query.confirm = 1;
+			query.notice_sn = $("#notice_sn").val();
+			query.pass = pass;		
+			$.ajax({ 
+				url: ajaxurl,
+				data: query,
+				type: "POST",
+				dataType: "json",
+				success: function(result){
+					if (result.status == 1) {
+						alert(result.msg);
+						$("confirm_result").html(result.msg);
+						$("#confirm_update_show").hide();
+					} else {
+						alert(result.msg);
+					}
+				},error:function(e){
+					alert("系统异常,请稍后处理");
+				}
+			});	
+		}
+	});
+</script>

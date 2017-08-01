@@ -1,0 +1,183 @@
+<div class="tabbox clearfix">
+	<div class="tab <?php if ($this->_var['mtype'] != 'private'): ?>cur<?php endif; ?>"><a href="<?php
+echo parse_url_tag("u:index|uc_msg#index|"."".""); 
+?>"><?php echo $this->_var['LANG']['UC_NOTICE']; ?></a></div>
+	<div class="tab <?php if ($this->_var['mtype'] == 'private'): ?>cur<?php endif; ?>"><a href="<?php
+echo parse_url_tag("u:index|uc_msg#index|"."mtype=private".""); 
+?>"><?php echo $this->_var['LANG']['UC_PRIVATE_MSG']; ?></a></div>
+	<?php if ($this->_var['mtype'] != 'private'): ?>
+	<div class="f_r ">
+		<a href="<?php
+echo parse_url_tag("u:index|uc_msg#setting|"."".""); 
+?>"><?php echo $this->_var['LANG']['UC_MSG_SETTING_TIPS']; ?></a>
+		|
+		<a href="<?php
+echo parse_url_tag("u:index|uc_msg#deal|"."".""); 
+?>"><?php echo $this->_var['LANG']['WRITE_PM']; ?></a>
+	</div>
+	<?php endif; ?>
+</div>
+<div class="uc_box bdd bt0">
+	<form name="pm_list">
+		<table style="width:100%" cellspacing="0" cellpadding="0" border="0" class="uc-table" >
+			<?php $_from = $this->_var['msg_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('key', 'pm');if (count($_from)):
+    foreach ($_from AS $this->_var['key'] => $this->_var['pm']):
+?>
+			<tr style="cursor:pointer;" class="pm_row <?php if ($this->_var['key'] % 2 == 0): ?>pm_row_1<?php endif; ?>" onclick="window.location.href='<?php
+echo parse_url_tag("u:index|uc_msg#deal|"."id=".$this->_var['pm']['group_key']."".""); 
+?>';">
+				<td width=50 class="pl10">
+					<?php if ($this->_var['pm']['system_msg_id'] != 0 || $this->_var['pm']['is_notice']): ?><span class="pm_pic pm_pic_<?php echo $this->_var['pm']['is_notice']; ?>"></span><?php endif; ?>
+					<?php if ($this->_var['pm']['system_msg_id'] == 0 && $this->_var['pm']['is_notice'] == 0): ?>
+						<?php if ($this->_var['pm']['to_user_id'] == $this->_var['user_info']['id']): ?>
+						<?php 
+$k = array (
+  'name' => 'show_avatar',
+  'v' => $this->_var['pm']['from_user_id'],
+  't' => 'small',
+);
+echo $k['name']($k['v'],$k['t']);
+?>
+						<?php endif; ?>
+						<?php if ($this->_var['pm']['from_user_id'] == $this->_var['user_info']['id']): ?>
+						<?php 
+$k = array (
+  'name' => 'show_avatar',
+  'v' => $this->_var['pm']['to_user_id'],
+  't' => 'small',
+);
+echo $k['name']($k['v'],$k['t']);
+?>
+						<?php endif; ?>
+					<?php endif; ?>
+				</td>
+				
+				<td class="tl w140 pl10 lh20 pt10 pb10">
+					<div>
+					<?php if ($this->_var['pm']['type'] == 0 && $this->_var['pm']['is_read'] == 0): ?><i class="iconfont pm new_pm">&#xe630;</i><?php endif; ?>
+					<?php if ($this->_var['pm']['system_msg_id'] != 0 || $this->_var['pm']['is_notice']): ?>
+					<?php if ($this->_var['pm']['is_notice'] == 1): ?>
+					系统通知
+					<?php elseif ($this->_var['pm']['is_notice'] == 2): ?>
+					材料通过
+					<?php elseif ($this->_var['pm']['is_notice'] == 3): ?>
+					材料驳回
+					<?php elseif ($this->_var['pm']['is_notice'] == 4): ?>
+					信用额度更新
+					<?php elseif ($this->_var['pm']['is_notice'] == 5): ?>
+					提现申请
+					<?php elseif ($this->_var['pm']['is_notice'] == 6): ?>
+					提现成功
+					<?php elseif ($this->_var['pm']['is_notice'] == 7): ?>
+					提现失败
+					<?php elseif ($this->_var['pm']['is_notice'] == 8): ?>
+					还款成功
+					<?php elseif ($this->_var['pm']['is_notice'] == 9): ?>
+					回款成功
+					<?php elseif ($this->_var['pm']['is_notice'] == 10): ?>
+					借款流标
+					<?php elseif ($this->_var['pm']['is_notice'] == 11): ?>
+					投标流标
+					<?php elseif ($this->_var['pm']['is_notice'] == 12): ?>
+					三日内还款
+					<?php elseif ($this->_var['pm']['is_notice'] == 13): ?>
+					标被留言
+					<?php elseif ($this->_var['pm']['is_notice'] == 14): ?>
+					标留言被回复
+					<?php elseif ($this->_var['pm']['is_notice'] == 15): ?>
+					借款投标过半
+					<?php elseif ($this->_var['pm']['is_notice'] == 16): ?>
+					投标满标
+					<?php elseif ($this->_var['pm']['is_notice'] == 17): ?>
+					债权转让
+					<?php elseif ($this->_var['pm']['is_notice'] == 19): ?>
+					续约成功
+					<?php elseif ($this->_var['pm']['is_notice'] == 20): ?>
+					续约失败
+					<?php else: ?>
+					<?php echo $this->_var['LANG']['SYSTEM_PM']; ?>
+					<?php endif; ?>
+					<?php endif; ?>
+					<?php if ($this->_var['pm']['system_msg_id'] == 0 && $this->_var['pm']['is_notice'] == 0): ?>
+		
+						<?php if ($this->_var['pm']['from_user_id'] == $this->_var['user_info']['id']): ?><?php echo $this->_var['LANG']['I']; ?><?php else: ?><?php 
+$k = array (
+  'name' => 'get_user_name',
+  'v' => $this->_var['pm']['from_user_id'],
+  's' => '0',
+);
+echo $k['name']($k['v'],$k['s']);
+?><?php endif; ?>
+						<?php echo $this->_var['LANG']['SAYTO']; ?>
+						<?php if ($this->_var['pm']['to_user_id'] == $this->_var['user_info']['id']): ?><?php echo $this->_var['LANG']['I']; ?><?php else: ?><?php 
+$k = array (
+  'name' => 'get_user_name',
+  'v' => $this->_var['pm']['to_user_id'],
+  's' => '0',
+);
+echo $k['name']($k['v'],$k['s']);
+?><?php endif; ?>
+						<?php echo $this->_var['LANG']['SAY']; ?>
+				
+					<?php endif; ?>
+					</div>
+					<div class="total">
+					<?php 
+$k = array (
+  'name' => 'sprintf',
+  'f' => $this->_var['LANG']['TOTAL_PM'],
+  'v' => $this->_var['pm']['total'],
+);
+echo $k['name']($k['f'],$k['v']);
+?>
+					</div>
+					<div class="time">
+					<?php 
+$k = array (
+  'name' => 'pass_date',
+  'v' => $this->_var['pm']['create_time'],
+);
+echo $k['name']($k['v']);
+?>
+					</div>				
+				</td>
+				<td class="tl lh24 pr10">
+					<div class="clearfix tr">
+					<?php if ($this->_var['mtype'] == 'private'): ?>
+					<input type="checkbox" value="<?php echo $this->_var['pm']['group_key']; ?>" name="pm_key[]" />删除
+					<?php endif; ?>
+					</div>
+					<?php if ($this->_var['pm']['title']): ?><div class="b"><?php echo $this->_var['pm']['title']; ?></div><?php endif; ?>
+					<div class="f_dgray">
+					<?php if ($this->_var['pm']['is_notice'] > 1): ?>尊敬的用户<?php 
+$k = array (
+  'name' => 'get_user_name',
+  'v' => $this->_var['pm']['to_user_id'],
+  's' => '0',
+);
+echo $k['name']($k['v'],$k['s']);
+?>：<?php endif; ?><?php echo msubstr(strip_tags($this->_var['pm']['content']),0,200); ?>
+					</div>
+					<?php if ($this->_var['pm']['system_msg_id'] == 0 && $this->_var['pm']['type'] == 0 && $this->_var['pm']['is_notice'] == 0): ?>
+					[<?php echo $this->_var['LANG']['VIEW_AND_REPLY']; ?>]
+					<?php else: ?>
+					<div class="f_r">[展开]</div>	
+					<?php endif; ?>
+				</td>
+			</tr>				
+			<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+		
+		</table>
+	</form>
+	<?php if ($this->_var['mtype'] == 'private'): ?>
+		<div class="pt10 f_r" style="float:right">
+		<?php echo $this->_var['LANG']['SELECT_ALL']; ?><input type="checkbox" name="checkall" /> 
+		</div>
+		<div class="f_r tr" style=" width: 100%;">
+		<input type="button" value="<?php echo $this->_var['LANG']['DELETE']; ?>" name="del_pm" class="remove_msg_btn" />
+		</div>	
+	<?php endif; ?>			
+	<div class="pages"><?php echo $this->_var['pages']; ?></div>
+	<div class="blank20"></div>	
+</div>
+

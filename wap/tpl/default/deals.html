@@ -1,0 +1,57 @@
+{include file="./inc/header.html"}
+{include file="./inc/header_xiejun.html"}
+<?php
+	$this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/deals.css";		
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$pagecss"}" />
+<!--投资借款列表-->
+<div class="h10"></div>
+<div class="invest">
+    {foreach from=$data.item item="deal"}
+    <div class="row">
+        <div class="container" style="border-bottom: 1px solid #ccc;">
+            <div class="row">
+                <a href="{wap_url a="index" r="deal" p="id=$deal.id"}">
+                <div class="col-xs-3 text-center" style="border-right: 1px solid #cccccc; color: #e76e15;">
+                	<div class="row">
+                		<div><span style="font-size: 20px;">{$deal.rate}</span>%</div>
+                    	<div style="font-size: 12px;">预期年收益</div>
+                	</div>
+                </div>
+                </a>
+                <div class="col-xs-9">
+                    <div class="row">
+                        <a href="{wap_url a="index" r="uplan" p="id=$deal.id"}">
+                        <div class="col-xs-8">
+                        	<div class="row" style="padding-left: 5px;">
+                        		<div class="h-5"></div>
+	                            <div>{$deal.sub_name}</div>
+	                            <div>期限{$deal.repay_time}个月</div>
+                        	</div>
+                        </div>
+                        </a>
+                        <div class="col-xs-4">
+                        	<div class="row">
+                        		<div class="h10"></div>
+	                            <a href="{wap_url a="index" r="uplan" p="id=$deal.id"}">
+	                            	{if $deal.deal_status eq 1 && $deal.remain_time gt 0}<button type="button" class="btn" style="background: #e76e15;color: #fff;">立即加入</button>{/if}
+									{if $deal.deal_status eq 2}<button type="button" class="btn" style="background: #a9a9a9;color: #fff;">满标</button>{/if}
+									{if $deal.deal_status eq 3}<button type="button" class="btn" style="background: #a9a9a9;color: #fff;">流标</button>{/if}
+									{if $deal.deal_status eq 4}<button type="button" class="btn" style="background: #a9a9a9;color: #fff;">还款中</button>{/if}
+									{if $deal.deal_status eq 5}<button type="button" class="btn" style="background: #a9a9a9;color: #fff;">已还款</button>{/if}
+									{if $deal.deal_status eq 0}<button type="button" class="btn" style="background: #a9a9a9;color: #fff;">等待材料</button>{/if}
+	                            </a>
+                        	</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="h10"></div>
+                </div>
+            </div>
+        </div>
+        <div class="h10"></div>
+    </div>
+    {/foreach}
+</div>
+{include file="./inc/footer.html"}

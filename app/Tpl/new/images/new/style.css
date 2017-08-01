@@ -1,0 +1,127 @@
+body{ background: #fff; font: 12px/1.5 宋体, Arial, Helvetica, sans-serif; color:#666}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+	list-style: none;
+	
+}
+a{ color: #FFF; text-decoration:none}
+a:hover{
+	color: #666666;
+	text-decoration: underline;
+}
+.wlbody{ width:100%; background:url(hbg.jpg)  no-repeat center 0; padding-left:0px; padding-right:0px; padding-top:491px; min-height:593px; overflow:hidden}
+.w1000{ width:999px; margin:0 auto; background-color:#FFF}
+h1,h2,h3,h4,h5,h6{ margin:0}
+#header{ height:100%}
+.logotop{ height:122px; margin:auto}
+.logo{ width:300px; height:122px; padding-left:0px; overflow:hidden; border:0}
+.flt{ float:left}
+.top-right{ width:500px; text-align:right; padding:18px 23px 0 0}
+.clearfix{display: block; font-size:12px;}
+.guanyuwomenfontstyle{ color: #00F}
+.top-right ul{ height:18px; line-height:18px; margin-bottom:10px}
+.top-img{ padding:10px 10px 0 0}
+.frt{ float:right}
+.header_top{ padding-top:0px;width:1000px; height:87px}
+.search{ width:980px; margin:0 auto; height:53px; background:url(searchbackgrand.jpg) repeat-x 0;}
+.leftkeywords{ margin:13px auto auto 11px}
+.searchBar{height: 17px;
+line-height: 17px;
+border: 1px solid #c6c6c6;
+padding: 4px 2px 2px 25px;
+width: 214px;
+background: #FFF url('arrow.gif') no-repeat 5px -18px;
+color: #bababa;}
+.search_btn{
+width: 52px;
+height: 24px;
+background-color: #F30;
+background-position: 0 0;
+border: none;
+padding: 2px 0 2px -5px;
+color: #FFF;
+cursor: pointer;
+padding: 09;
+line-height: 23px;
+margin: 0 -3px;
+}
+.rightkeywords{ padding:18px 16px 0 0; font-size:12px; color: #333}
+.zhucebody{ width:980px; margin:0 auto auto 10px; height:auto; background-color:#FFF;}
+.leftzhucebd{ width:555px; height:236px; margin-left:30px; margin-top:4px;}
+.touziliebiaostyle{ margin:5px auto 5px 13px;font: 18px/1.5 微软雅黑, Arial, Helvetica, sans-serif; color:#333;}
+.toubiaofont{ font: 16px/1.5 微软雅黑, Arial, Helvetica, sans-serif; color:#333; padding-top:5px;}
+.toubiaoxiaofont{font: 12px/1.5 宋体, Arial, Helvetica, sans-serif; color:#999;}
+.rongbiaofont{ font: 14px/1.5 微软雅黑, Arial, Helvetica, sans-serif; color:#666; padding-left:250px;}
+.renmbfont{font: 18px/1.5 微软雅黑, Arial, Helvetica, sans-serif; color:#eb6900; padding-left:230px;}
+.ketouzifont{font: 20px/1.5 微软雅黑, Arial, Helvetica, sans-serif; color:#ff0000; padding-left:20px;}
+.nililvfont{  font: 16px/1.5 微软雅黑, Arial, Helvetica, sans-serif; color:#666; padding-left:330px;}
+.baifenbi{font: 18px/1.5 微软雅黑, Arial, Helvetica, sans-serif; color:#c300da; padding-left:330px;}
+.toubiaocolor{ background-color:#fbf7ec;}
+.huangbj{ background-color:#fbf7ec }
+.baitbbj{ background:url(sbj.png)}
+.jindutioabj{ background:url(jindutiao.png)}
+.bfbstyle{font: 14px/1.5 微软雅黑, Arial, Helvetica, sans-serif; color:#eb6900; padding-left:31px; padding-top:18px;}
+.toubiaostyle{ font: 20px/1.5 微软雅黑, Arial, Helvetica, sans-serif; color:#ffffff; padding-left:13px;}
+.shizhong{ padding-left:45px; padding-top:5px;}
+.zhaomuqi{font: 26px/1.5 微软雅黑, Arial, Helvetica, sans-serif; color:#555555;}
+.jine{ font: 18px/1.5 微软雅黑, Arial, Helvetica, sans-serif; color:#555555;padding-top:0px;}
+.xinhuzhucestyle{ margin:20px 20px 15px 55px}
+.zhucewenbenk{ height:23px; width:220px;}
+.mingczhucewenbenk{ height:23px; width:72; border:hidden}
+.gongqiuxinxenb{ width:420px; height:100px; margin-left:20px}
+.yanzhen{ width:460px; height:100%; margin-left:12px}
+.yanzhenghaomak{ width:135px; height:23px}
+.huoquyanzhenghaomak{ width:114px; height:28px; font-style:normal; color:#FFF; background-color:#0C3}
+.rightdlbd{ width:380px; height:100%;}
+.fct{ float:inherit}
+.ljzcstyle{ margin:10px 0 0 100px}
+.fuwutiaok{ font-size:12px; color:#666; margin:20px 0 0 12px}
+.zhmmdl{ margin:23px auto auto 60px}
+.dengluwenbenkstyle{ width:282px; height:30px}
+.dengluwenbenkbd{ margin:17px 0 0 70px}
+.dengluzhuangtaibd{ margin:1px 0 0 67px}
+.dhengluzhuangtaik{ width:20px; height:20px;}
+.denglubd{ width:320px; border:1px;}
+.denglufontstyle{ font-size:12px;}
+.dianjidenglu{ margin:10px 0 0 70px}
+.denglustyle{ margin-left:20px}
+.fengexian{ width:1px; height:950px; background-color:#999; margin:25px 0}
+.foot{ width:100%; height:148px; background:#3c3d3d; margin-top:10px}
+.footfontstyle{ font-size:12px; color:#FFF; padding-top:22px}
+.duanluo{ margin-top:12px}
+.yonghumingstyle{ width:360px; height:30px; margin-left:30px}
+.yonghumingbg{ width:90px; margin-top:3px}
+.yonghumk{ margin-left:101px}
+
+.xingxingcolor {
+	color: #F00;
+}
+.defaultbody{ width:100%; background:url(defaultbg.jpg)  no-repeat center 0; padding-left:0px; padding-right:0px; padding-top:622px; min-height:593px; overflow:hidden}
+.searchgaoji{height: 17px;
+line-height: 17px;
+border: 1px solid #c6c6c6;
+padding: 4px 2px 2px 0px;
+width: 155px;
+margin-left:25px;
+color: #bababa;}
+.gaojisearchstyle{ font-size:12px; color: #000;}
+.tuichu{ color:#F00}
+.lcebianlan{ width:165px; margin-top:10px;height:auto}
+.touxiang{ margin:0}
+.qiuzhenxiang{ width:100%; height:52px; margin-left:10px; text-align:center}
+.zhenxiang{ padding-top:5px}
+.jindutiao{ padding-top:11px}
+.gerenxinxi{ margin:0; color:#000}
+.gerenxinxibg{ width:80px; height:22px; margin:11px auto auto 72px; background-color:#F30; text-align:center; color:#FFF}
+.shuiwuhangye{ color:#00F; font-size:12px}
+.moumoumoumou{ font-size:12px}
+.shuiwu{ margin:10px 0;}
+.shubaner{ padding:5px 0 0 24px; font-size:14px; color:#333}
+.cbg{ width:805px; height:100%; margin:10px 0 0 10px}

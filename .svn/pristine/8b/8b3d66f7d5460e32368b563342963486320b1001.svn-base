@@ -1,0 +1,208 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<load href='/app/Tpl/new/js/script.js' />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/user.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<script type="text/javascript">
+function user_reset_password() {
+    var user_id = check_user_id();
+    if (user_id == "") { return; }
+	location.href = ROOT + '?m=MyCustomer&a=user_reset_password&id='+user_id;
+}
+function user_unlock_password() {
+    var user_id = check_user_id();
+    if (user_id == "") { return; }
+	location.href = ROOT + '?m=MyCustomer&a=user_unlock_password&id='+user_id;
+}
+function user_black() {
+    var user_id = check_user_id();
+    if (user_id == "") { return; }
+	location.href = ROOT + '?m=MyCustomer&a=user_black&id='+user_id;
+}
+function user_ineffect() {
+    var user_id = check_user_id();
+    if (user_id == "") { return; }
+	location.href = ROOT + '?m=MyCustomer&a=user_ineffect&id='+user_id;
+}
+function user_edit() {
+    var user_id = check_user_id();
+    if (user_id == "") { return; }
+	location.href = ROOT + '?m=MyCustomer&a=user_edit&id='+user_id;
+}
+function user_referer() {
+    var user_id = check_user_id();
+    if (user_id == "") { return; }
+	location.href = ROOT + '?m=MyCustomer&a=user_referer&id='+user_id;
+}
+function user_admin() {
+    var user_id = check_multi_user_id();
+    if (user_id == "") { return; }
+	location.href = ROOT + '?m=MyCustomer&a=user_admin&id='+user_id;
+}
+function user_authority() {
+    var user_id = check_user_id();
+    if (user_id == "") { return; }
+	location.href = ROOT + '?m=MyCustomer&a=user_authority&id='+user_id;
+}
+
+function check_user_id() {
+    if ($("#dataTable input:checkbox:checked").length == 1) {
+        return $("#dataTable input:checkbox:checked").val();
+    } else {
+        alert("请选择需要修改的唯一项");
+        return "";
+    }	
+}
+function check_multi_user_id() {
+    if ($("#dataTable input:checkbox:checked").length == 0) {
+        alert("请选择需要修改的操作项");
+		return "";
+    } else {
+		var id = '';
+		var ids = $("#dataTable input:checkbox:checked");
+		for (var i=0; i<ids.length; i++) {
+			id += $(ids[i]).val();
+			if (i < ids.length-1) {
+				id += ',';
+			}
+		}
+        return id;
+    }	
+}
+</script>
+<php>
+	function get_user_group($group_id)
+	{
+		$group_name = M("UserGroup")->where("id=".$group_id)->getField("name");
+		if($group_name)
+		{
+			return $group_name;
+		}
+		else
+		{
+			return l("NO_GROUP");
+		}
+	}
+	function get_user_level($id)
+	{
+		$level_name = M("UserLevel")->where("id=".$id)->getField("name");
+		if($level_name)
+		{
+			return $level_name;
+		}
+		else
+		{
+			return "<span style='color:red'>无</span>";
+		}
+	}
+	function get_referrals_name($user_id)
+	{
+		$user_name = M("User")->where("id=".$user_id)->getField("user_name");
+		if($user_name)
+		return $user_name;
+		else
+			return '无';
+	}
+	function ips_status($ips_acct_no){
+		if($ips_acct_no==""){
+			return "未同步";
+		}
+		else{
+			return "已同步";
+		}
+	}
+	function user_type_status($type){
+		if($type==1){
+			return "企业客户";
+		}
+		else{
+			return "个人客户";
+		}
+	}
+	function get_idcardpassed($idcardpassed){
+		if($idcardpassed==1){
+			return "是";
+		}
+		else{
+			return "";
+		}
+	}
+	function user_company($id,$user){
+		if($user['user_type']==1){
+			return "<a href='javascript:user_company(".$id.");'>公司</a>&nbsp;";
+		}
+	}
+	function get_is_black($tag,$id){
+		if($tag)
+		{
+			return "<span class='is_black' data='".$tag."' onclick='set_black(".$id.",this);'>是</span>";
+		}
+		else
+		{
+			return "<span class='is_black' data='".$tag."' onclick='set_black(".$id.",this);'>否</span>";
+		}
+	}
+</php>
+<div class="main main-size20">
+<div class="main_title">{$main_title}</div>
+<div class="blank5"></div>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get">	
+		<div class="blank5"></div>
+		会员名称：<input type="text" class="textbox" name="name" value="{:trim($_REQUEST['name'])}" />
+		专属客服：
+		<select name="adm_names">
+			<option value="-3" <if condition="intval($_REQUEST['adm_names']) eq -3">selected="selected"</if>>全部</option>
+			<option value="-2" <if condition="intval($_REQUEST['adm_names']) eq -2">selected="selected"</if>>未分配</option>
+			<option value="-1" <if condition="intval($_REQUEST['adm_names']) eq -1">selected="selected"</if>>已分配</option>
+			<foreach name="admin_cate" item="item">
+				<option value="{$item.id}" <if condition="intval($_REQUEST['adm_names']) eq $item['id']">selected="selected"</if>>{$item.show_name}</option>
+			</foreach>
+		</select>	
+		<input type="hidden" value="MyCustomer" name="m" />
+		<input type="hidden" value="{$normal}" name="a" />
+		<input type="submit" class="button" value="{%SEARCH}" />
+		<!-- <input type="button" class="button" value="设置黑名单" onclick="user_black();" /> -->
+		<!-- <input type="button" class="button" value="设置无效" onclick="user_ineffect();" /> -->
+		<input type="button" class="button" value="编辑用户" onclick="user_edit();" />
+		<input type="button" class="button" value="维护推荐人" onclick="user_referer();" />
+		<input type="button" class="button" value="分配客服" onclick="user_admin();" />
+		<input type="button" class="button" value="分配授权中心" onclick="user_authority();" />
+	</form>
+</div>
+<div class="blank5"></div>
+<html:list 
+	id="dataTable" 
+	style="dataTable dataTableSelect" 
+	name="user" 
+	datasource="list" 
+	show="id|checkbox:选择|50px
+		,id|get_user_name_iframe:用户ID
+		,user_type|user_type_status:用户类型
+		,real_name:姓名
+		,sex|get_sex:性别
+		,idno:身份证号码
+		,mobile:手机
+		,idcardpassed|get_idcardpassed:实名认证
+		,pid|get_user_real_name:推荐人
+		,admin_id|get_admin_real_name:专属客服
+		,total_money|format_price:账户总余额
+		,money|format_price:账户余额
+		,lock_money|format_price:冻结余额
+		,loan_money|format_price:累计投资金额
+		,qq_id:QQ号码
+		,score:积分余额
+		,create_time|to_date:注册时间
+		,authority_id|get_authority:授权中心" 
+	 /> 
+
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

@@ -1,0 +1,41 @@
+<!--{if $MODULE_NAME <> 'user' && $MODULE_NAME <> 'manageagency' && $MODULE_NAME <> 'authorized' && $MODULE_NAME <> 'agency_money'}-->
+<div class="constr">
+	<div class="wrap" style>
+		{if app_conf("APPLE_DOWLOAD_URL") || app_conf("ANDROID_DOWLOAD_URL")}
+		<div class="app_down f_l">
+			<a style="color:white"><?php echo $_GET['nickname'];?>您好欢迎来到金融理财服务有限公司！</a>
+		</div>
+		{/if}
+		<div class="f_r lh30">
+			
+		</div>	
+		<div class="f_r">
+			<ul class="right mt9">
+				<li class="hover_a top_li jcur">
+					<a href="wap/" style="padding:0;border:0;color:white">切换手机版</a>
+					<span style="color:white">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				</li>				
+				<li class="hover_a top_li jcur" id="J_APP_DOWN">
+					<a href="{function name="gen_qrcode" v=$MOBILE_DOWN_PATH s=8}" style="padding:0;border:0;color:white"><i class="iconfont">&#xe613;</i>手机理财</a>
+					<span style="color:white">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				</li>				
+				<li class="hover_a top_li jcur">
+					<a href="{function name='gen_qrcode' v='$WAP_SITE_PATH s=8}'" id="weixim" style="color:white"><i class="iconfont">&#xe614;</i>微信</a>
+					<span style="color:white">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				</li>				
+				<li class="top_li hover_a">
+					<a href="index.php?ctl=help&id=5" style="color:white">理财咨询</a>
+					<span style="color:white">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				</li>
+				<li class="top_li">
+					<a href="index.php?ctl=help" style="color:white">帮助中心</a>
+					<span style="color:white">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				</li>				
+				<li class="top_li">
+					{insert name="load_user_tip"}
+				</li>
+			</ul>
+		</div>	
+	</div>
+</div>
+<!--{/if}-->

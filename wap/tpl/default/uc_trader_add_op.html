@@ -1,0 +1,73 @@
+{include file="./inc/header.html"}
+ <div class="fixed top100 w-70 left-15 b_white bor_6 radiu5 Append Object_0">
+	<div class="p10">
+		<div class="lh60 f16 c_3b95d3 pb10">{$data.program_title}</div>
+	    <div class="clearfix pb10">
+	    	<span class="f_l w-30 l_h40">{$data.title}</span>
+			<div class="f_l  w-70">
+				<input type="hidden" id="id" name="id" value="{$data.id}" />
+				<input type="hidden" name="type" id="type" value="{$data.type}"  />
+				
+				{if $data.type eq 0 || $data.type eq 1 || $data.type eq 4 || $data.type eq 5}
+					<input type="text" name="op_val" id="op_val" class="bor_6 l_h40 h40 w_p"/>
+				{else}
+					<select name="op_val" style="width:100%" class="bor_6 l_h40 h40 w_p">
+						{foreach from=$data.title_val_fam item="item"}
+							<option>{$item}</option>	
+						{/foreach}
+					</select>
+				{/if}
+			</div>
+		 </div>
+		
+		<div class="clearfix pb10">
+	    	<span class="f_l w-30 l_h40">申请描述</span>
+			<div class="f_l  w-70">
+				<textarea name="memo" id="memo" style=" width:96%;padding:5px 2%; height:100px; border:1px solid #e6e6e6; "></textarea>
+			</div>
+		 </div>
+		 <div class="clearfix ">
+		 	<div class="f_l w-50">
+		 		<div class="p10">
+		 			<button id="submitt" class=" b_blue l_h40 tc f_white  w-100 radiu3">确认</button>
+		 		</div>
+		 	</div>
+			<div class="f_l w-50">
+				<div class="p10">
+					<div class=" b_grey l_h40 tc f_white w-100 radiu3 Cancel" onclick="history.go(-1)">取消</div>
+				</div>
+		 	</div>
+	    	
+		 </div>
+	</div>
+
+</div>
+<script>
+
+$("#submitt").click(function(){
+		var ajaxurl = '{wap_url a="index" r="uc_trader_save_op"}';
+		var id =  $.trim($("#id").val());
+		var type =  $.trim($("#type").val());
+		var query = new Object();
+		query.type = $.trim($("#type").val());
+		query.id = $.trim($("#id").val());
+		query.op_val = $.trim($("#op_val").val());
+		query.memo = $.trim($("#memo").val());
+		query.post_type = "json";
+		$.ajax({
+			url:ajaxurl,
+			data:query,
+			type:"Post",
+			dataType:"json",
+			success:function(data){
+				alert(data.msg);
+					window.location.href = '{wap_url a="index" r="uc_trader_verify_detail"}&id='+id;
+			}
+		
+		});
+		  
+		$(this).parents(".float_block").hide();
+	});		
+			
+</script>
+{include file="./inc/footer.html"}

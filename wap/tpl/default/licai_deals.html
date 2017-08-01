@@ -1,0 +1,73 @@
+{include file="./inc/header.html"}
+<?php
+	$this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/deals.css";		
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$pagecss"}" />
+<style type="text/css">
+.listbr{
+    border-right: 1px dashed #d7d7d7;
+    width: 1px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: 16px;
+}
+.content_list{
+    position: relative;
+}
+.content_list span{
+    line-height: 20px;
+    padding: 0;
+}
+.content_list span:nth-child(2) {
+    padding: 0;
+    line-height: 30px;
+}
+</style>
+<!--理财列表-->
+<div class="invest">
+	 
+    <!--mainborder开始-->  
+    {foreach from="$data.list" item="list_item" name="list_items"}  
+	<div class="blok_10 mainborder">
+		<a href="{wap_url a="index" r="licai_deal" p="id=$list_item.id"}">
+		<div class="invest_tit {if $data.today gt $list_item.begin_buy_date && $list_item.end_buy_date gt $data.today }Headerbackground{else}gray{/if}">
+            <span class="State">
+                    {if $data.today gt $list_item.begin_buy_date && $list_item.end_buy_date gt $data.today }进行中{/if}
+                    {if $data.today gt $list_item.end_buy_date}已结束{/if}
+                    {if $list_item.begin_buy_date gt $data.today}未开始{/if}
+			</span>
+			<span class="verticalline"></span>
+            <span class="sub_name">{$list_item.name}</span>
+        </div>
+		<div class="index_content">
+            <div class="content_list">
+                <span>{function name="number_format" v=$list_item.average_income_rate f="2"}%</span>
+                <span>历史收益率</span>
+                <div class="listbr"></div>
+            </div>
+            <div class="content_list">
+                <span class="specialfont">{$list_item.min_money}元</span>
+                <span>起购金额</span>
+                <div class="listbr"></div>
+            </div>
+            <div class="content_list">
+                <span>{if $list_item.time_limit}{$list_item.time_limit}个月{else}无期限{/if}</span>
+                <span>理财期限</span>
+                <div class="listbr"></div>
+            </div>
+            <div class="content_list">
+            <span><em class="specialfont">{$list_item.subscribing_amount}</em>元</span>
+                <span>成交总金额</span>
+            </div>
+            </div>
+        <div class="blank"></div>    
+        </a>
+        </div>
+	    {/foreach} 
+<!--mainborder结束-->	
+	</div>
+
+
+
+{include file="./inc/footer.html"}

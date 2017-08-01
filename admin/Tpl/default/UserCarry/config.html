@@ -1,0 +1,44 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<script type="text/javascript">
+	$(document).ready(funciton() {
+		$("#dataTable tr.row").unbind();
+	});
+</script>
+<php>
+	function get_fee_type($fee_type) {
+		if ($fee_type == 0) {
+			return '￥';
+		} else {
+			return '%';
+		}
+	}
+	function get_user_type($user_type) {
+		if ($user_type == 0) {
+			return '个人客户';
+		} else if ($user_type == 1) {
+			return '企业客户';
+		}
+	}
+</php>
+<div class="main main-size12">
+<div class="main_title">{$main_title}</div>
+<div class="blank5"></div>
+<html:list 
+	id="dataTable" 
+	style="dataTable"
+	name="conf" 
+	datasource="list" 
+	show="name:简称
+		,min_price|format_price:最低金额
+		,max_price|format_price:最高金额
+		,fee|format_price:手续费
+		,fee_type|get_fee_type:单位
+		,user_type|get_user_type:用户类型"
+	/> 
+
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

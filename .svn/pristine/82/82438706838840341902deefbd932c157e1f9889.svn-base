@@ -1,0 +1,27 @@
+<?php
+return array (
+  0 => 'id',
+  1 => 'notice_sn',
+  2 => 'create_time',
+  3 => 'pay_time',
+  4 => 'order_id',
+  5 => 'is_paid',
+  6 => 'user_id',
+  7 => 'user_short_name',
+  8 => 'payment_id',
+  9 => 'memo',
+  10 => 'sign',
+  11 => 'input_user_id',
+  12 => 'input_user_short_name',
+  13 => 'money',
+  14 => 'outer_notice_sn',
+  15 => 'pay_date',
+  16 => 'create_date',
+  17 => 'bank_id',
+  18 => 'fee_amount',
+  19 => 'pay_fee_amount',
+  20 => 'debit_type',
+  '_autoinc' => true,
+  '_pk' => 'id',
+);
+?>

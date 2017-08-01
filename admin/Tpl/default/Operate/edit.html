@@ -1,0 +1,81 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<load href='__TMPL__Common/js/article.js' />
+<div class="main">
+<div class="main_title">{$main_title} <a href="{:u("Operate/index")}" class="back_list">{%BACK_LIST}</a></div>
+<div class="blank5"></div>
+<form name="edit" action="__APP__" method="post" enctype="multipart/form-data">
+<table class="form" cellpadding=0 cellspacing=0>
+	<tr>
+		<td colspan=2 class="topTd"></td>
+	</tr>
+	<tr>
+		<td class="item_title">选择用户:</td>
+		<td class="item_input">
+			<input type="adm_id" class="textbox" name="password" value="{$vo.adm_name}" disabled/>
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">初始密码:</td>
+		<td class="item_input"><input type="password" class="textbox" name="password" value="" placeholder="为空表示不设置密码"/></td>
+	</tr>
+	<tr>
+		<td class="item_title">{%IS_EFFECT}:</td>
+		<td class="item_input">
+			<lable>{%IS_EFFECT_1}<input type="radio" name="is_effect" value="1" <if condition="$vo['is_effect'] eq 1">checked="checked"</if>></lable>
+			<lable>{%IS_EFFECT_0}<input type="radio" name="is_effect" value="0" <if condition="$vo['is_effect'] eq 0">checked="checked"</if> /></lable>
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">操作功能:</td>
+		<td class="item_input">
+			<table><foreach name="module_list" item="module_item">
+				<tr>
+					<td style="width:120px;text-align:right;">
+						<span><b>{$module_item.name}</b></span>&nbsp;&nbsp;&nbsp;
+					</td>
+					<td>
+						<foreach name="module_item.groups" item="node_item">
+							<label><input type="checkbox" value="{$node_item.module}" name="role_access[]" class="node_item" <if condition="$node_item['checked'] eq 'checked'">checked="checked"</if>/>
+							<span title="{$node_item.module}">{$node_item.name}</span></label>&nbsp;
+						</foreach>
+					</td>
+				</tr>
+			</foreach></table>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2 class="bottomTd"></td>
+	</tr>
+</table>
+	<div class="blank5"></div>
+	<table class="form" cellpadding=0 cellspacing=0>
+		<tr>
+			<td colspan=2 class="topTd"></td>
+		</tr>
+		<tr>
+			<td class="item_title">操作密码:</td>
+			<td class="item_input">
+				<input type="password" class="textbox" name="operatepwd" value=""/>
+			</td>
+		</tr>
+		<tr>
+			<td class="item_title"></td>
+			<td class="item_input">
+				<!--隐藏元素-->
+				<input type="hidden" name="{:conf("VAR_MODULE")}" value="Operate" />
+				<input type="hidden" name="{:conf("VAR_ACTION")}" value="update" />
+				<input type="hidden" name="id" value="{$vo.id}" />
+				<!--隐藏元素-->
+				<input type="submit" class="button" value="{%EDIT}" />
+				<input type="reset" class="button" value="{%RESET}" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 class="bottomTd"></td>
+		</tr>
+	</table>	 
+</form>
+</div>
+<include file="Public:footer" />

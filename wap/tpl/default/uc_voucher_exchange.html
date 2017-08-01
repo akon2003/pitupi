@@ -1,0 +1,136 @@
+{include file="./inc/header.html"}
+<?php
+	$this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/uc_voucher.css";	
+	$this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/public.css";	
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$pagecss"}" />
+<!--收货地址-->
+<div class="blank15"></div>
+
+{foreach from=$data.item item=ecv key=key}
+<div class="voucher_ex_block ">
+	<ul>
+		<li >
+			<span class="name">红包名称:</span>
+         	{$ecv.name} 	
+		</li>
+		<li >
+			<span class="name">红包金额:</span>
+            {$ecv.money}
+		</li>
+		<li >
+			<span class="name">兑换积分:</span>
+			{function name="format_score" value=$ecv.exchange_score}
+		</li>
+		
+		<li class="ex">
+			<a class="exchange" href="javascript:void(0);" url="{wap_url a="index" r="uc_voucher_do_exchange"}" data-id="{$ecv.id}">兑换</a>
+		</li>
+	</ul>
+	<div class="blank0"></div>
+</div>
+
+<div class="blank15"></div>
+{/foreach}
+{if $pages}
+<div class="fy">
+	{$pages}
+</div>
+{/if}
+<div class="exbox">	
+	<div class="t">序列号兑换红包</div>
+	<div class="bx tc">	
+		<form name="sn_exchange" id="sn_exchange"  method="post" action="{wap_url x="index" r="uc_voucher_do_snexchange"}">
+			<div class="field ">
+				<input class="f-input mainborder " name="sn" type="text" placeholder="请输入红包兑换的序列号" />
+			</div>			
+			<div class="blank10"></div>
+			<div class="field ">
+				<input type="hidden" name="post_type" value="json" />
+				<button class="snexchange" type="submit">立即兑换</button>
+			</div>
+			
+		</form>
+	</div><!--end content-->
+</div>
+<!--end exchange-->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".exchange").bind("click",function(){
+			if(confirm("确定要兑换吗？"))
+			{			
+				exchange($(this));
+			}		
+		});		
+		
+		$("#sn_exchange").bind("submit",function(){
+			if($.trim($(this).find("input[name='sn']").val())=="")
+			{
+				alert("请输入序列号");
+				return false;
+			}
+			var ajaxurl = $(this).attr("action");
+			var query = $(this).serialize();
+			$.ajax({ 
+				url: ajaxurl,
+				data:query,
+				dataType: "json",
+				type: "POST",
+				success: function(data){
+					if(data.user_login_status==2){
+						alert(data.show_err);
+						location.href = '{wap_url x="index" r="login"}';
+					}else if(data.response_code==1){
+						alert(data.show_err);
+						location.href = '{wap_url x="index" r="uc_voucher"}';	
+					}else{
+						alert(data.show_err);
+					}
+				},
+				error:function(ajaxobj)
+				{
+					
+				}
+			});		
+			return false;
+		});
+			
+	});
+	
+	function exchange(obj){	
+		var ajaxurl = obj.attr("url");
+		var query = new Object();
+		query.id=obj.attr("data-id");
+		query.post_type = "json";
+		$.ajax({ 
+			url: ajaxurl,
+			data:query,
+			type:"Post",
+			dataType:"json",
+			success: function(data){
+				if(data.user_login_status==0){
+					alert(obj.show_err);
+					location.href = '{wap_url x="index" r="login"}';
+				}else if(data.response_code==1){
+					alert(data.show_err);
+					location.href = '{wap_url x="index" r="uc_voucher"}';
+				}else{
+					alert(data.show_err);
+				}
+			},
+			error:function(ajaxobj)
+			{
+				
+			}
+		});		
+
+	}
+</script>
+{include file="./inc/footer_float.html"}
+{include file="./inc/footer.html"}
+
+
+
+
+
+

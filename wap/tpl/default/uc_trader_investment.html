@@ -1,0 +1,199 @@
+<!---我的配资-->
+{include file="./inc/header.html"}
+<div class="mt20 mb20 ml10 mr10  ">
+	<ul class="pz_i_nav  clearfix">
+			<li><a href="{wap_url a="index" r="uc_trader_investment" p="status=1"}" {if $data.status eq 1} class="current" {/if}>待投资单</a></li>
+			<li ><a href="{wap_url a="index" r="uc_trader_investment" p="status=2"}" {if $data.status eq 2} class="current" {/if}>我的投资单</a></li>
+			<li><a href="{wap_url a="index" r="uc_trader_investment" p="status=3"}" {if $data.status eq 3} class="current" {/if}>变更审核</a></li>
+	</ul>
+</div>
+{if $data.status eq 1}
+{foreach from=$data.trader_list item="item"}
+<div class="clearfix b_white ">
+    <div class="bor_0 p10 l_h40 clearfix	">
+    	<div class="f_l"><span class="f_979797">实盘单号</span>&nbsp;<span class="f_blue">{$item.order_sn}</span></div>
+		<div class="f_r"><span class="f_979797">状态</span>&nbsp;<span class="f_orange">{$item.status_format2}</span></div>
+    </div>
+	<div class="blank10"></div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">利息(日/月)</span></div>
+		<div class="f_l w-50"><span>{$item.rate_money_format}</span> 元</div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">借款金额</span></div>
+		<div class="f_l w-50"><span>{$item.borrow_money_format}</span> 元</div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">预期收益</span></div>
+		<div class="f_l w-50"><span class="f_blue">{$item.all_rate_money_format}</span> 元</div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">期限</span></div>
+		<div class="f_l w-50"><span class="f_orange">{$item.time_limit_num_format}</span>{if $item.type eq 2} 个月{else} 日{/if}</div>
+	</div>
+	<div class="blank10"></div>
+	<div class="clearfix bor_4 l_h40 f16">
+		<div class="f_l w-50 tc"><a href="#" class="d_block bor_5 p10">&nbsp;</a></div>
+		<div class="f_r w-50 tc">
+			<a class="d_block p10" href="{wap_url a="index" r="peizi_wait_invest_detail" p="id=$item.id"}">
+				查看
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="blank20"></div>
+{/foreach}
+{/if}
+{if $data.status eq 2}
+{foreach from=$data.trader_list item="item"}
+<div class="clearfix b_white ">
+    <div class="bor_0 p10 l_h40 clearfix	">
+    	<div class="f_l"><span class="f_979797">实盘单号</span>&nbsp;<span class="f_blue">{$item.order_sn}</span></div>
+		<div class="f_r"><span class="f_979797">状态</span>&nbsp;<span class="f_orange">{$item.status_format1}</span></div>
+    </div>
+	<div class="blank10"></div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">订单类型</span></div>
+		<div class="f_l w-50"><span>{$item.type_format}</span></div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">投资金额</span></div>
+		<div class="f_l w-50"><span>{$item.borrow_money_format}</span> 元</div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">利息(日/月)</span></div>
+		<div class="f_l w-50"><span>{$item.rate_money_format}</span> 元</div>
+	</div>
+	
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">已收收益</span></div>
+		<div class="f_l w-50"><span class="f_blue">{$item.total_rate_money_format}</span> 元</div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">下次利息</span></div>
+		<div class="f_l w-50"><span class="f_blue">{$item.rate_money_format}</span> 元 </div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">归还本金时间</span></div>
+		<div class="f_l w-50"><span class="f_orange">{$item.end_date}</span></div>
+	</div>
+	<div class="blank10"></div>
+	<div class="clearfix bor_4 l_h40 f16">
+		<div class="f_l w-50 tc"><a href="#" class="d_block bor_5 p10">&nbsp;</a></div>
+		<div class="f_r w-50 tc">
+			<a class="d_block p10" href="{wap_url a="index" r="peizi_invest_detail" p="id=$item.id"}">
+				查看
+			</a>	
+		</div>
+	</div>
+</div>
+
+<div class="blank20"></div>
+{/foreach}
+{/if}
+{if $data.status eq 3}
+{foreach from=$data.trader_list item="item"}
+<div class="clearfix b_white ">
+    <div class="bor_0 p10 l_h40 clearfix ">
+    	<div class="f_l"><span class="f_979797">实盘单号</span>&nbsp;<span class="f_blue">{$item.order_sn}</span></div>
+		<div class="f_r"><span class="f_979797">状态</span>&nbsp;</div>
+    </div>
+	<div class="blank10"></div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">申请时间</span></div>
+		<div class="f_l w-50"><span>{$item.create_date}</span></div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">申请类型</span></div>
+		<div class="f_l w-50"><span>{$item.op_type_format}</span></div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">申请描述</span></div>
+		<div class="f_l w-50"><span>{$item.memo}</span></div>
+	</div>
+	
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">申请审核</span></div>
+		<div class="f_l w-50"><span class="f_blue">{$item.op_status_format}</span></div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">变动描述</span></div>
+		<div class="f_l w-50"><span class="f_blue">{$item.change_memo}</span> 元</div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">操作</span></div>
+		<div class="f_l w-50">
+			<span class="f_orange">
+				<input type="hidden" name="op_id" id="op_id" value="{$item.id}" >
+				<a href="#" id="submita_{$item.id}">
+					同意
+				</a>
+				&nbsp;&nbsp;
+				<a href="#" id="submitb_{$item.id}">
+					不同意
+				</a>
+			</span>
+		</div>
+	</div>
+	<div class="blank10"></div>
+	
+</div>
+<script type="text/javascript">
+	$("#submita_{$item.id}").click(function(){
+		if(confirm("确定同意吗？"))
+		{
+			var ajaxurl = '{wap_url a="index" r="uc_trader_update_invest_op"}';
+			var id =  $.trim($("#op_id").val());
+			var type = 1;
+			var query = new Object();
+			query.id = $.trim($("#op_id").val());
+			query.type = 1;
+			query.post_type = "json";
+			$.ajax({
+				url:ajaxurl,
+				data:query,
+				type:"Post",
+				dataType:"json",
+				success:function(data){
+					alert(data.info);
+						window.location.href = '{wap_url a="index" r="uc_trader_investment"}&status=3';
+				}
+			
+			});
+		}  
+		$(this).parents(".float_block").hide();
+	});
+	
+	$("#submitb_{$item.id}").click(function(){
+		if(confirm("确定不同意吗？"))
+		{
+			var ajaxurl = '{wap_url a="index" r="uc_trader_update_invest_op"}';
+			var id =  $.trim($("#op_id").val());
+			var type = 2;
+			var query = new Object();
+			query.id = $.trim($("#op_id").val());
+			query.type = 2;
+			query.post_type = "json";
+			$.ajax({
+				url:ajaxurl,
+				data:query,
+				type:"Post",
+				dataType:"json",
+				success:function(data){
+					alert(data.info);
+						window.location.href = '{wap_url a="index" r="uc_trader_investment"}&status=3';
+				}
+			
+			});
+		}  
+		$(this).parents(".float_block").hide();
+	});
+	
+	</script>
+<div class="blank20"></div>
+{/foreach}
+{/if}
+
+
+{include file="./inc/footer.html"}

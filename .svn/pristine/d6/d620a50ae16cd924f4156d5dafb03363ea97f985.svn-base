@@ -1,0 +1,66 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+<div class="main_title">{%EDIT} <a href="{:u("AdminBonus/index")}" class="back_list">{%BACK_LIST}</a></div>
+<div class="blank5"></div>
+<form name="edit" action="__APP__" method="post" enctype="multipart/form-data">
+<table class="form" cellpadding=0 cellspacing=0>
+	<tr>
+		<td colspan=2 class="topTd"></td>
+	</tr>
+	<tr>
+		<td class="item_title">名称:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="name" value="{$vo.name}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">{%SORT}:</td>
+		<td class="item_input"><input type="text" class="textbox" name="sort" value="{$vo.sort}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">{%IS_EFFECT}:</td>
+		<td class="item_input">
+			<lable>{%IS_EFFECT_1}<input type="radio" name="is_effect" value="1" <if condition="$vo['is_effect'] eq 1">checked="checked"</if> /></lable>
+			<lable>{%IS_EFFECT_0}<input type="radio" name="is_effect" value="0" <if condition="$vo['is_effect'] eq 0">checked="checked"</if> /></lable>
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">投资期限:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="repay_time" value="{$vo.repay_time}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">期限类型:</td>
+		<td class="item_input">
+			<lable>月<input type="radio" name="repay_time_type" value="1" <if condition="$vo['repay_time_type'] eq 1">checked="checked"</if> /></lable>
+			<lable>日<input type="radio" name="repay_time_type" value="0" <if condition="$vo['repay_time_type'] eq 0">checked="checked"</if> /></lable>
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">提成比例:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="bonus_rate" value="{$vo.bonus_rate}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">说明:</td>
+		<td class="item_input"><input type="text" class="textbox" name="comment" value="{$vo.comment}" /></td>
+	</tr>
+	
+	<tr>
+		<td class="item_title"></td>
+		<td class="item_input">
+			<!--隐藏元素-->
+			<input type="hidden" name="id" value="{$vo.id}" />
+			<input type="hidden" name="{:conf("VAR_MODULE")}" value="AdminBonus" />
+			<input type="hidden" name="{:conf("VAR_ACTION")}" value="update" />
+			<!--隐藏元素-->
+			<input type="submit" class="button" value="{%EDIT}" />
+			<input type="reset" class="button" value="{%RESET}" />
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan=2 class="bottomTd"></td>
+	</tr>
+</table>	 
+</form>
+</div>
+<include file="Public:footer" />

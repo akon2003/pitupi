@@ -1,0 +1,138 @@
+<!--股票配资详情-->
+{include file="./inc/header.html"}
+
+<div class="clearfix b_white">
+	<div class="bor_0 p10 l_h40 clearfix	">
+    	<div class="f_l"><span class="f_979797">实盘单号</span>&nbsp;<span class="f_blue">{$data.vo.order_sn}</span></div>
+		<div class="f_r"><span class="f_979797">状态</span>&nbsp;<span class="f_red">{$data.vo.status_format2}</span></div>
+    </div>
+	<div class="blank10"></div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">订单类型</span></div>
+		<div class="f_l w-50"><span class="f_blue">{$data.vo.conf_type_name}</span> </div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">借款人</span></div>
+		<div class="f_l w-50"><span class="f_orange">{$data.vo.user_name}</span> </div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">配资总额</span></div>
+		<div class="f_l w-50"><span class="f_000">{$data.vo.total_money_format}</span> 元</div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">借款金额</span></div>
+		<div class="f_l w-50"><span class="f_000">{$data.vo.borrow_money_format}</span> 元</div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">保证金</span></div>
+		<div class="f_l w-50"><span class="f_000">{$data.vo.cost_money_format}</span> 元</div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">利息(日/月)</span></div>
+		<div class="f_l w-50"><span class="f_000">{$data.vo.rate_money_format}</span> 元</div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">期限</span></div>
+		<div class="f_l w-50"><span class="f_000">{$data.vo.time_limit_num_format}</span></div>
+	</div>
+	
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">结束时间</span></div>
+		<div class="f_l w-50"><span class="f_000">{$data.vo.end_date}</span></div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">警戒线</span></div>
+		<div class="f_l w-50"><span class="f_000">{$data.vo.warning_line_format}</span> 元</div>
+	</div>
+	<div class="clearfix  l_h40 p-l-r-10">
+		<div class="f_l w-50"><span class="f_b2b2b2">平仓线</span></div>
+		<div class="f_l w-50"><span class="f_000">{$data.vo.open_line_format}</span> 元</div>
+	</div>
+	
+	<div class="blank10"></div>
+</div>
+{if $data.vo.status eq 2}
+<div class="blank20"></div>
+<div class="new-but-block ">
+	<div class="but-block">
+		<button class="but_sure">投资</button> 
+	<!-- <button class="but_sure"><a href="{wap_url a="index" r="uc_bank"}">投资</a></button> -->
+	</div>
+</div>
+{/if}
+
+<div class="float_block Object_0" style="display:none;" ><!--这是密码域块-->
+	<div class="float_background"></div>
+	<div class="float_content">
+		<div class="set_pw_block">
+			<h5>请输入密码<div class="close_but"><i class="fa fa-close"></i></div></h5>
+			<div class="blank10"></div>
+			<div class="pw_block">
+				<input type="password" class="pw_text" id="bid_paypassword" name="bid_paypassword">
+			</div>
+			<p>还未设置？<a href="{wap_url a="index" r="reset_pay_pwd"}" >点这里</a></p>
+			<div class="detail_foot">
+				    <div class="lookdetail">
+				    	<input id="id" type="hidden" value="{$data.vo.id}" />
+            			<div id="submitt">
+				    	确认支付
+						</div>
+						</div>
+				    <div class="I_Investment"><a href="">取消支付</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div style=" height:78px;"></div>
+
+
+{include file="./inc/footer.html"}
+
+<script>
+
+	$(document).ready(function(){
+		var height=$("body").height();
+		
+		$(".integral_mall_nav").height(height);
+		$(".float_background").height(height);
+          
+        $(".fa-close").click(function(){
+        	$(this).parents(".float_block").hide();
+        });  
+
+          $(".but_sure").click(function(){
+          	$(".Object_0").show();
+          });
+                   
+
+	});
+</script>
+	
+<script type="text/javascript">
+
+$("#submitt").click(function(){
+		var ajaxurl = '{wap_url a="index" r="uc_trader_do_investment"}';
+		var id =  $.trim($("#id").val());
+		var bid_paypassword =  $.trim($("#bid_paypassword").val());
+		var query = new Object();
+		query.id = $.trim($("#id").val());
+		query.bid_paypassword = $.trim($("#bid_paypassword").val());
+		
+		query.post_type = "json";
+		$.ajax({
+			url:ajaxurl,
+			data:query,
+			type:"Post",
+			dataType:"json",
+			success:function(data){
+				alert(data.info);
+					window.location.href = '{wap_url a="index" r="uc_trader_investment"}';
+			}
+		
+		});
+		  
+		$(this).parents(".float_block").hide();
+	});
+</script>	
+

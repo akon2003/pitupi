@@ -1,0 +1,21 @@
+<div class="blank18"></div>
+<div class="wdAuto guide-question white" style="text-align:center">
+	<div class="accoutTitWrap pos-r c">
+		<div style="text-align:center;margin-bottom:32px;color:#FF880F;"><h2 style="font-style:32px;">联 系 我 们</h2></div><hr/>
+		<div class="blank18"></div>
+		<div><img src="app/Tpl/new/inc/help/images/contactus.png" style="margin:0 auto;"/></div>
+		<div>
+			<p style="font-size:24px;margin-top:20px;">公 司 地 址</p>
+			<p style="font-size:16px;margin-top:10px">COMPANY ADDRESS</p>
+		</div>
+		<div class="blank0"></div>
+	</div>
+	<div class="intr">
+	</div>
+</div>
+<div class="blank18"></div>
+
+<div id="main">
+</div>
+<div class="blank20"></div>
+</div>

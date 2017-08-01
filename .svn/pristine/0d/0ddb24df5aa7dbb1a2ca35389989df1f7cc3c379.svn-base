@@ -1,0 +1,44 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<load href='/app/Tpl/new/js/script.js' />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<load href='__TMPL__Common/js/user.js' />
+<div class="main main-size16">
+<div class="main_title">会员投标记录</div>
+<php>
+	function get_deal_url($name,$id){
+		return '<a href="'.__ROOT__.'/index.php?ctl=deal&id='.$id.'" target="_blank">'.$name.'</a>';
+	}
+	function get_repay_time($time,$type){
+		return $time.($type==0 ? '天' : '月');
+	}
+	function get_loantype($type){
+		$str=loantypename($type);
+		
+		return $str;
+	}
+	function is_auto_type($type){
+		return ($type==0 ? '手动投标' : '自动投标');
+	}
+	function is_repay_type($type){
+		return ($type==0 ? '成功' : '<span style="color:red">流标</span>');
+	}
+</php>
+<div class="blank5"></div>
+<html:list 
+	id="dataTable" 
+	style="dataTable" 
+	name="item" 
+	datasource="list" 
+	show="id:{%ID}|50px,user_id|get_user_name_iframe:会员ID,user_id|get_user_real_name:会员名,pid|get_user_real_name:推荐人,admin_id|get_admin_real_name:专属客服,money|number_format=2:投资金额,name|get_deal_url=$item['deal_id']:标题,cate_id|get_deal_cate_name:{%DEAL_CATE},rate:利率(%),repay_time|get_repay_time=$item['repay_time_type']:借款时间,loantype|get_loantype:还款方式,is_auto|is_auto_type:投标方式,is_repay|is_repay_type:状态,create_time|to_date:投标时间"  /> 
+
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

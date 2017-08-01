@@ -1,0 +1,413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>金融理财周边商城</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="wlbody">
+    	<div class="w1000">
+        	<div id="header">
+            	<div class="logotop">
+               	  <div class="logo flt">
+                    <img src="logo.jpg" />
+                  </div>
+               	  <div class="top-right frt">
+                  	<ul class="clearfix">
+                       <a href="#" class="guanyuwomenfontstyle">关于我们&nbsp;</a> &nbsp;|&nbsp;  
+                       <a href="#" class="guanyuwomenfontstyle">联系我们&nbsp;</a>
+                    </ul>
+                  </div>
+                  <div class="top-img frt">
+                  	<img src="phone.jpg" />
+                  </div>  
+                </div>
+            	<div class="header_top"><img src="hengfu.jpg" /></div>
+                <div class="search">  
+                  <div class="flt leftkeywords">
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>
+                                <input name="name[]" size="10" class="searchBar"  value/>
+                            </td>
+                            <td>
+                                <input type="submit"   class="search_btn" value="搜索"  onfocus="this.blur"/>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="frt rightkeywords">
+                        你好, 欢迎来到金融理财周边商城! 请先注册登录
+                    </div>
+                  </div> 
+                  <div class="zhucebody" >
+                  	   <div  class="toubiaofont">
+                   	     <div>
+                              <div class="touziliebiaostyle">
+                                           投资列表
+                              </div>
+                              <div>
+                              	<img src="hongxian.jpg"  width="980"/>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="huangbj">
+                          	  <div class="flt leftzhucebd baitbbj">
+                                  <table width="540" border="0" cellpadding="0" cellspacing="0">
+                                      <tr>
+                                        <td width="431" class="toubiaofont">惠投稳赢</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="toubiaofont">DXJR20160407十三期</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="toubiaoxiaofont">金融理财服务有限公司</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="rongbiaofont">融标金额</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="renmbfont">¥ 2,000,000</td>
+                                        <td width="169" class="toubiaofont">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可投资金额</td>
+                                      </tr>
+                                      <tr>
+                                        <td>&nbsp;</td>
+                                        <td class="ketouzifont">¥ 1910000</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="nililvfont">年利率</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="baifenbi">9.90%</td>
+                                      </tr>
+                                   
+                                  </table>
+    
+                              </div> 
+                              <div class=" rightdlbd frt jindutioabj" >
+                                  <table width="430" border="0" cellspacing="0" cellpadding="0">
+                                      <tr>
+                                        <td width="78">&nbsp;</td>
+                                        <td width="352">&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="bfbstyle">4.50%</td>
+                                        <td class="toubiaostyle">投标</td>
+                                      </tr>
+                                      <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                      </tr>
+                                      <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                      <tr>
+                                        <td class="shizhong"><img src="shizhong.png" /></td>
+                                        <td class="zhaomuqi">招募期</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="jine">起投金额</td>
+                                        <td class="jine">10000元</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="jine">理财期限</td>
+                                        <td class="jine">63天</td>
+                                      </tr>
+                                    </table>
+                                </div>
+                     	    </div>
+                            <div>
+                              	<img src="hongxian.jpg"  width="980"/>
+                              </div>
+                            <div class="huangbj">
+                          	  <div class="flt leftzhucebd baitbbj">
+                                  <table width="540" border="0" cellpadding="0" cellspacing="0">
+                                      <tr>
+                                        <td width="431" class="toubiaofont">惠投稳赢</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="toubiaofont">DXJR20160407十三期</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="toubiaoxiaofont">金融理财服务有限公司</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="rongbiaofont">融标金额</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="renmbfont">¥ 2,000,000</td>
+                                        <td width="169" class="toubiaofont">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可投资金额</td>
+                                      </tr>
+                                      <tr>
+                                        <td>&nbsp;</td>
+                                        <td class="ketouzifont">¥ 1910000</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="nililvfont">年利率</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="baifenbi">9.90%</td>
+                                      </tr>
+                                   
+                                  </table>
+    
+                              </div> 
+                              <div class=" rightdlbd frt jindutioabj" >
+                                  <table width="430" border="0" cellspacing="0" cellpadding="0">
+                                      <tr>
+                                        <td width="78">&nbsp;</td>
+                                        <td width="352">&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="bfbstyle">4.50%</td>
+                                        <td class="toubiaostyle">投标</td>
+                                      </tr>
+                                      <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                      </tr>
+                                      <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                      <tr>
+                                        <td class="shizhong"><img src="shizhong.png" /></td>
+                                        <td class="zhaomuqi">招募期</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="jine">起投金额</td>
+                                        <td class="jine">10000元</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="jine">理财期限</td>
+                                        <td class="jine">63天</td>
+                                      </tr>
+                                    </table>
+                                </div>
+                     	    </div>
+                            <div>
+                              	<img src="hongxian.jpg"  width="980"/>
+                              </div>
+                            <div class="huangbj">
+                          	  <div class="flt leftzhucebd baitbbj">
+                                  <table width="540" border="0" cellpadding="0" cellspacing="0">
+                                      <tr>
+                                        <td width="431" class="toubiaofont">惠投稳赢</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="toubiaofont">DXJR20160407十三期</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="toubiaoxiaofont">金融理财服务有限公司</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="rongbiaofont">融标金额</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="renmbfont">¥ 2,000,000</td>
+                                        <td width="169" class="toubiaofont">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可投资金额</td>
+                                      </tr>
+                                      <tr>
+                                        <td>&nbsp;</td>
+                                        <td class="ketouzifont">¥ 1910000</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="nililvfont">年利率</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="baifenbi">9.90%</td>
+                                      </tr>
+                                   
+                                  </table>
+    
+                              </div> 
+                              <div class=" rightdlbd frt jindutioabj" >
+                                  <table width="430" border="0" cellspacing="0" cellpadding="0">
+                                      <tr>
+                                        <td width="78">&nbsp;</td>
+                                        <td width="352">&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="bfbstyle">4.50%</td>
+                                        <td class="toubiaostyle">投标</td>
+                                      </tr>
+                                      <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                      </tr>
+                                      <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                      <tr>
+                                        <td class="shizhong"><img src="shizhong.png" /></td>
+                                        <td class="zhaomuqi">招募期</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="jine">起投金额</td>
+                                        <td class="jine">10000元</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="jine">理财期限</td>
+                                        <td class="jine">63天</td>
+                                      </tr>
+                                    </table>
+                                </div>
+                     	    </div>
+                            <div>
+                              	<img src="hongxian.jpg"  width="980"/>
+                              </div>
+                            <div class="huangbj">
+                          	  <div class="flt leftzhucebd baitbbj">
+                                  <table width="540" border="0" cellpadding="0" cellspacing="0">
+                                      <tr>
+                                        <td width="431" class="toubiaofont">惠投稳赢</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="toubiaofont">DXJR20160407十三期</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="toubiaoxiaofont">金融理财服务有限公司</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="rongbiaofont">融标金额</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="renmbfont">¥ 2,000,000</td>
+                                        <td width="169" class="toubiaofont">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可投资金额</td>
+                                      </tr>
+                                      <tr>
+                                        <td>&nbsp;</td>
+                                        <td class="ketouzifont">¥ 1910000</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="nililvfont">年利率</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="baifenbi">9.90%</td>
+                                      </tr>
+                                   
+                                  </table>
+    
+                              </div> 
+                              <div class=" rightdlbd frt jindutioabj" >
+                                  <table width="430" border="0" cellspacing="0" cellpadding="0">
+                                      <tr>
+                                        <td width="78">&nbsp;</td>
+                                        <td width="352">&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="bfbstyle">4.50%</td>
+                                        <td class="toubiaostyle">投标</td>
+                                      </tr>
+                                      <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                      </tr>
+                                      <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                      <tr>
+                                        <td class="shizhong"><img src="shizhong.png" /></td>
+                                        <td class="zhaomuqi">招募期</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="jine">起投金额</td>
+                                        <td class="jine">10000元</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="jine">理财期限</td>
+                                        <td class="jine">63天</td>
+                                      </tr>
+                                    </table>
+                                </div>
+                     	    </div>
+                       </div>           
+                 </div>
+            </div>    
+    </div>
+
+	<form id="form1" name="form1" method="post" action="">
+</form>
+    <div class="foot" align="center">
+    	<div class="footfontstyle">
+        	<p>
+        		www.com.cn&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;  www.com.cn &nbsp;&nbsp;&nbsp;   |  &nbsp;&nbsp;&nbsp;  法律政策&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;隐私政策 &nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;  网站地图&nbsp;&nbsp;&nbsp;  |&nbsp;&nbsp;&nbsp;  联系我们 	
+            </p>
+            <p class="duanluo">
+            	© 2016&nbsp;&nbsp;&nbsp;  金融理财（中国）&nbsp;&nbsp;&nbsp; 版权所有 
+            </p>
+            <p class="duanluo">
+            	滇ICP备12345678号 
+            </p>
+            <p class="duanluo">
+            	您正在访问的是金融理财周边商城
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

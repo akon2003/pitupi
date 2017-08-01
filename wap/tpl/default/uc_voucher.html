@@ -1,0 +1,49 @@
+{include file="./inc/header.html"}
+<?php
+	$this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/uc_voucher.css";	
+	$this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/public.css";	
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$pagecss"}" />
+<!--收货地址-->
+<div class="blank15"></div>
+<div class="doexchange_block">
+	<div class="add_address">
+		<a href="{wap_url a="index" r="uc_voucher_exchange"}">
+			<i class="fa fa-plus-square-o"></i>
+			<span>兑换红包</span>
+		</a>
+	</div>
+	
+</div>
+<div class="blank15"></div>
+{foreach from=$data.item item=ecv key=key}
+<div class="voucher_block ">
+	<ul>
+		<li class="f_l ecv_name">
+         	{$ecv.name} <span class="f_red">x{if $ecv.use_limit eq 0}无限{else}{$ecv.use_limit}{/if}</span> 	
+		</li>
+		<li class="exlimit">
+			<span class="name">使用期限:</span>
+            {$ecv.limit_time}
+		</li>
+		
+		<li class="price-box price-box-{$ecv.status} f_r ">
+			<span class="price">
+			{function name="format_price" value=$ecv.money}
+			</span>
+			<span>已使用:{$ecv.use_count}次</span>
+			<span class="status status_{$ecv.status}"></span>
+		</li>
+		
+	</ul>
+</div>
+
+<div class="blank15"></div>
+{/foreach}
+{include file="./inc/footer.html"}
+
+
+
+
+
+

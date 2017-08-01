@@ -1,0 +1,118 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<load href='/app/Tpl/new/js/script.js' />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<script type="text/javascript">
+	function show_detail(id)
+	{
+		window.location.href=ROOT+'?m=Deal&a=show_detail&id='+id;
+	}
+	function repay_plan(id)
+	{
+		window.location.href=ROOT+'?m=Deal&a=repay_plan&id='+id;
+	}
+</script>
+<php>
+	function a_get_buy_status($buy_status,$deal)
+	{
+		if($deal['is_effect'] == 0){
+			return l("IS_EFFECT_0");
+		}
+		if($buy_status==2){
+			return "<span style='color:red'>".l("DEAL_STATUS_".$buy_status)."</span>";
+		}
+		else{
+			if($deal['deal_status'] == 1 && ($deal['start_time'] + $deal['enddate'] *24*3600 - 1) < TIME_UTC){
+				return "已过期";
+			}
+			elseif($deal['deal_status'] == 1 && $deal['start_time'] > TIME_UTC)
+				return "<span style='color:red'>未开始</span>";
+			else
+				return l("DEAL_STATUS_".$buy_status);
+		}
+	}
+	function get_repay_plan($id,$deal){
+		if($deal['deal_status']>=4) {
+			return '<a href="javascript:repay_plan('.$id.');">还款计划</a>';
+		}
+	}
+	function show_detail($id,$deal){
+		if(((($deal['start_time'] + $deal['end_date'] *24*3600 - 1) > TIME_UTC) && $deal['deal_status'] == 1) || $deal['deal_status']==2 || ($deal['deal_status']==1 && $deal['buy_count'] > 0) || $deal['deal_status']>=4){
+			return '<a href="javascript:show_detail('.$id.');">投标详情和操作</a>';
+		}
+	}
+</php>
+<div class="main main-size16">
+<div class="main_title">{$main_title}</div>
+<div class="blank5"></div>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get">	
+		{%DEAL_NAME}：<input type="text" class="textbox" name="name" value="{:trim($_REQUEST['name'])}" />
+		借款客户：<input type="text" class="textbox" name="user_name" value="{:trim($_REQUEST['user_name'])}" size="10" />
+		借款期数：<select name="repay_time">
+			<option value="0" <if condition="intval($_REQUEST['repay_time']) eq 0">selected="selected"</if>>全部</option>
+			<option value="1" <if condition="intval($_REQUEST['repay_time']) eq 1">selected="selected"</if>>一个月</option>
+			<option value="3" <if condition="intval($_REQUEST['repay_time']) eq 3">selected="selected"</if>>三个月</option>
+			<option value="6" <if condition="intval($_REQUEST['repay_time']) eq 6">selected="selected"</if>>六个月</option>
+			<option value="12" <if condition="intval($_REQUEST['repay_time']) eq 12">selected="selected"</if>>十二个月</option>
+		</select>
+		用途：<select name="type_id">
+			<option value="0" <if condition="intval($_REQUEST['type_id']) eq 0">selected="selected"</if>>{%NO_SELECT_CATE}</option>
+			<foreach name="type_tree" item="type_item">
+				<option value="{$type_item.id}" <if condition="intval($_REQUEST['type_id']) eq $type_item['id']">selected="selected"</if>>{$type_item.title_show}</option>
+			</foreach>
+		</select>		
+		<if condition="ACTION_NAME eq 'index'">
+		借款状态：<select name="deal_status">
+			<option value="all" <if condition="$_REQUEST['deal_status'] eq 'all' || trim($_REQUEST['deal_status']) eq ''">selected="selected"</if>>所有状态</option>
+			<option value="0" <if condition="$_REQUEST['deal_status'] neq 'all' && trim($_REQUEST['deal_status']) neq '' && intval($_REQUEST['deal_status']) eq 0">selected="selected"</if>>{%DEAL_STATUS_0}</option>
+			<option value="1" <if condition="intval($_REQUEST['deal_status']) eq 1">selected="selected"</if>>{%DEAL_STATUS_1}</option>
+			<option value="2" <if condition="intval($_REQUEST['deal_status']) eq 2">selected="selected"</if>>{%DEAL_STATUS_2}</option>
+			<option value="6" <if condition="intval($_REQUEST['deal_status']) eq 6">selected="selected"</if>>已过期</option>
+			<option value="3" <if condition="intval($_REQUEST['deal_status']) eq 3">selected="selected"</if>>{%DEAL_STATUS_3}</option>
+			<option value="4" <if condition="intval($_REQUEST['deal_status']) eq 4">selected="selected"</if>>{%DEAL_STATUS_4}</option>
+			<option value="5" <if condition="intval($_REQUEST['deal_status']) eq 5">selected="selected"</if>>{%DEAL_STATUS_5}</option>
+		</select>	
+		</if>        
+		<input type="hidden" value="Deal" name="m" />
+		<input type="hidden" value="<php>echo ACTION_NAME;</php>" name="a" />
+		<input type="hidden" value="<php>echo ACTION_NAME;</php>" name="c" />
+		<input type="submit" class="button" value="{%SEARCH}" />
+    	<input type="button" class="button" value="{%EXPORT}" onclick="export_csv();" />
+	</form>
+</div>
+<div class="blank5"></div>
+
+<html:list 
+	id="dataTable" 
+	style="dataTable dataTableSelect dataTableSelectDblclick" 
+	name="deal" 
+	datasource="list" 
+	show="id|checkbox:选择|50px
+		,user_id|get_user_name_iframe:借款客户
+		,user_id|get_user_real_name:客户名称
+		,name:{%DEAL_NAME}:edit
+		,deal_sn:债权合同号
+		,borrow_amount|format_price:金额
+		,repay_time|get_time_type=$deal:期数
+		,rate:利率(%)
+		,loantype|loantypename=1:还款方式
+		,deal_status|a_get_buy_status=$deal:{%DEAL_STATUS}
+		,repay_start_time|to_date='Y-m-d':放款日
+		,id|get_deal_end_repay_time:到期日
+		,buy_count:投标数|60px
+		,is_effect|get_is_effect:{%IS_EFFECT} 
+		,id|get_repay_plan=$deal:还款计划
+		,id|show_detail=$deal:投标详情和操作" 
+	/> 
+
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

@@ -1,0 +1,22 @@
+<div class="bdd bddf article_box clearfix" style="padding:0 50px">
+	<div class="publish_time clearfix pr" style="min-height: 25px;">
+        <div class="f_r" style="right:0; top:5px ;">
+			<a href="javascript:window.history.back();">[返回]</a>{if $all_list}&nbsp;&nbsp;<a href="{$all_list}">[全部文章]</a>{/if}
+		</div>
+		<div class="blank0"></div>
+    </div>
+    <div class="blank0"></div>
+	<div class="article_info">
+	{if $article.title eq '新手指南'}
+		{include file="inc/help/guide.html"}
+	{elseif $article.title eq '联系我们'}
+		{include file="inc/help/contact.html"}
+	{elseif $article.title eq '管理团队'}
+		{include file="inc/help/team.html"}
+	{elseif $article.title eq '资费说明'}
+		{include file="inc/help/zifei.html"}
+	{else}
+		{$article.content}
+	{/if}
+	</div>
+</div>

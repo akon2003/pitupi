@@ -1,0 +1,101 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<load href='/app/Tpl/new/js/script.js' />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<php>
+	function get_group_name($group_id)
+	{
+		switch ($group_id) {
+			case 1:
+				return '基础配置';break;
+			case 2:
+				return '图片配置';break;
+			case 3:
+				return '站点配置';break;
+			case 4:
+				return '会员相关配置';break;
+			case 5:
+				return '邮件与短信';break;
+			case 6:
+				return '借款配置';break;
+			case 7:
+				return '会员奖励';break;
+			case 8:
+				return '扩展配置';break;
+			default:
+				return '';
+		}
+	}
+
+	function get_input_type($type_id)
+	{
+		switch ($group_id) {
+			case 0:
+				return '文本输入';break;
+			case 1:
+				return '下拉框输入';break;
+			case 2:
+				return '图片上传';break;
+			case 3:
+				return '编辑器';break;
+			case 4:
+				return '密码';break;
+			case 5:
+				return '文本域';break;
+			default:
+				return '';
+		}
+	}
+	function get_conf_name($name)
+	{
+		$conf_name = 'CONF_'.$name;
+		$lang_conf_name = l($conf_name);
+
+		if ($lang_conf_name == $conf_name) {
+			return l($name);
+		} else {
+			return $lang_conf_name;
+		}
+	}
+	function get_is_conf($is_conf)
+	{
+		if ($is_conf == 1) {
+			return '是';
+		} else {
+			return '否';
+		}
+	}
+	function get_container($value) {
+		return "<input style='float:left;width:98%;height:100%;margin-top:5px;border:none;background:transparent;' readonly value='".$value."'/>";
+	}
+</php>
+<div class="main main-size16">
+<div class="main_title">{$main_title}</div>
+<div class="blank5"></div>
+<div class="button_row">
+	<input type="button" class="button" value="新增配置" onclick="add();" />
+	<input type="button" class="button" value="编辑配置" onclick="_edit()" />
+</div>
+<div class="blank5"></div>
+<html:list 
+	id="dataTable" 
+	style="dataTable dataTableSelect dataTableSelectDblclick"
+	name="conf" 
+	datasource="list" 
+	show="id|checkbox:选择|50px
+		,name:配置名称|240px:edit
+		,name|get_conf_name:配置名称|240px
+		,group_id|get_group_name:配置分组|120px
+		,input_type|get_input_type:配置类型|120px
+		,is_effect|get_is_effect:是否有效|80px
+		,is_conf|get_is_conf:是否配置|80px
+		,value|get_container:配置设定值
+		,tip:提示文本|280px
+		,value_scope:设定值选项"
+	/> 
+
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

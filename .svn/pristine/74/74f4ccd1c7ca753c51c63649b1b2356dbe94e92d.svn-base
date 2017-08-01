@@ -1,0 +1,80 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<load href='/app/Tpl/new/js/script.js' />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<load href='__TMPL__Common/js/user.js' />
+<div class="main main-size16">
+<div class="main_title">会员投标记录</div>
+<div class="blank5"></div>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get">
+		{%USER_NAME}：<input type="text" class="textbox" name="user_name" value="{:trim($_REQUEST['user_name'])}" style="width:100px;" />
+		<label><input type="radio" name="is_user" value="1" <if condition="intval($_REQUEST['is_user']) eq 1 or intval($_REQUEST['is_user']) eq null">checked="checked"</if> />用户</label>
+		<label><input type="radio" name="is_user" value="2" <if condition="intval($_REQUEST['is_user']) eq 2">checked="checked"</if> />推荐人</label>
+		<label><input type="radio" name="is_user" value="3" <if condition="intval($_REQUEST['is_user']) eq 3">checked="checked"</if> />客服</label>&nbsp;
+		借款名称：<select name="deal_id">
+			<option value="0" <if condition="intval($_REQUEST['deal_id']) eq 0">selected="selected"</if>>{%NO_SELECT_CATE}</option>
+			<foreach name="deal_list" item="deal_item">
+				<option value="{$deal_item.id}" <if condition="intval($_REQUEST['deal_id']) eq $deal_item['id']">selected="selected"</if>>{$deal_item.name}</option>
+			</foreach>
+		</select>
+		{%LOG_TIME}：<input type="text" class="textbox" name="begin_time" id="begin_time" value="{:trim($_REQUEST['begin_time'])}" onfocus="return showCalendar('begin_time', '%Y-%m-%d', false, false, 'begin_time');" style="width:130px" />
+		-
+		<input type="text" class="textbox" name="end_time" id="end_time" value="{:trim($_REQUEST['end_time'])}" onfocus="return showCalendar('end_time', '%Y-%m-%d', false, false, 'end_time');" style="width:130px" />
+		<input type="hidden" value="Loads" name="m" />
+		<input type="hidden" value="<php>echo ACTION_NAME</php>" name="a" />
+		<input type="hidden" value="<php>echo ACTION_NAME</php>" name="c" />
+		<input type="submit" class="button" value="{%SEARCH}" />
+    	<input type="button" class="button" value="{%EXPORT}" onclick="export_csv();" />
+	</form>
+</div>
+<php>
+	function get_deal_url($name,$id){
+		return '<a href="'.__ROOT__.'/index.php?ctl=deal&id='.$id.'" target="_blank">'.$name.'</a>';
+	}
+	function get_repay_time($time,$type){
+		return $time.($type==0 ? '天' : '月');
+	}
+	function get_loantype($type){
+		$str=loantypename($type);
+		
+		return $str;
+	}
+	function is_auto_type($type){
+		return ($type==0 ? '手动投标' : '自动投标');
+	}
+	function is_repay_type($type){
+		return ($type==0 ? '成功' : '<span style="color:red">流标</span>');
+	}
+</php>
+<div class="blank5"></div>
+<html:list 
+	id="dataTable" 
+	style="dataTable" 
+	name="item" 
+	datasource="list" 
+	show="id:{%ID}|50px
+		,user_id|get_user_name_iframe:会员ID
+		,user_id|get_user_real_name:会员名
+		,pid|get_user_real_name:推荐人
+		,admin_id|get_admin_real_name:专属客服
+		,money|number_format=2:投资金额
+		,name:标题
+		,cate_id|get_deal_cate_name:{%DEAL_CATE}
+		,rate:利率(%)
+		,repay_time|get_repay_time=$item['repay_time_type']:借款时间
+		,loantype|get_loantype:还款方式
+		,is_repay|is_repay_type:状态
+		,create_time|to_date:投标时间"  
+	/> 
+
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

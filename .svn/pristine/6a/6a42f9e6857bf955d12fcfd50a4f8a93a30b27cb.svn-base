@@ -1,0 +1,84 @@
+a:link,a:visited{
+    text-decoration:none;  /*超链接无下划线*/
+}
+h5{line-height:50px;}
+/*body{background-color: #ccc;}*/
+.xiejun_radius_title{
+	-webkit-border-radius: 3px 3px 0 0;
+	-moz-border-radius: 3px 3px 0 0;
+	border-radius: 3px 3px 0 0;
+	background-color: #ff8800;
+	color: #fff;
+}
+.xiejun_border_top{
+	border-top:1px solid #ccc;
+}
+.xiejun_border_right{
+	border-right:1px solid #ccc;
+}
+.xiejun_border_left_bottom{
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+h1{margin: 0;font-size: 14px;}
+.h-5 {height:5px;width:100%;}
+.h10 {height:10px;width:100%;}
+.h20 {height:20px;width:100%;}
+.h30 {height:30px;width:100%;}
+.h36 {height:36px;width:100%;}
+.h40 {height:40px;width:100%;}
+.h50 {height:50px;width:100%;}
+.h60 {height:60px;width:100%;}
+.h70 {height:80px;width:100%;}
+.h80 {height:80px;width:100%;}
+.h90 {height:90px;width:100%;}
+.h100 {height:100px;width:100%;}
+.content_pic {
+    position: relative;
+    margin: 0 auto;
+    height: 53px;
+    width: 53px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #bfd9f1;
+    -webkit-box-shadow: 0px 0px 8px #97b5d1;
+    -moz-box-shadow: 0px 0px 8px #97b5d1;
+    box-shadow: 0px 0px 8px #97b5d1;
+}
+.content_pic .title {
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+    line-height: 53px;
+    text-align: center;
+    color: #fc8600;
+    overflow: hidden;
+}
+.content_pic_1 {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    bottom: 0px;
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+.btn{padding: 4px 8px;}
+th{text-align: center;}
+/*会员中心菜单图标*/
+.u-1{background-image: url('../images/uc_center/ic_charge@2x.png');background-repeat:no-repeat;background-size: 19px;}
+.u-2{background-image: url('../images/uc_center/ic_carray@2x.png');background-repeat:no-repeat;background-size: 19px;}
+.u-3{background-image: url('../images/uc_center/ic_bid_records@2x.png');background-repeat:no-repeat;background-size: 20px;}
+.u-4{background-image: url('../images/uc_center/ic_my_investment@2x.png');background-repeat:no-repeat;background-size: 20px;}
+.u-5{background-image: url('../images/uc_center/ic_bond_transfer@2x.png');background-repeat:no-repeat;background-size: 18px;}
+.u-6{background-image: url('../images/uc_center/accounts.png');background-repeat:no-repeat;background-size: 19px;}
+.u-7{background-image: url('../images/uc_center/voucher.png');background-repeat:no-repeat;background-size: 19px;}
+.u-8{background-image: url('../images/uc_center/exchange.png');background-repeat:no-repeat;background-size: 19px;}
+.u-9{background-image: url('../images/uc_center/ic_add@2x.png');background-repeat:no-repeat;background-size: 16px;}
+.u-10{background-image: url('../images/uc_center/ic_modify_password@2x.png');background-repeat:no-repeat;background-size: 16px;}
+.u-11{background-image: url('../images/uc_center/ic_pay_pwd@2x.png');background-repeat:no-repeat;background-size: 22px;}
+/*会员中心标题字体大小/位置*/
+.u-font{}

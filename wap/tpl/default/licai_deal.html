@@ -1,0 +1,426 @@
+{include file="./inc/header.html"}
+<!--引用插件-->
+<?php
+	$this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/deal.css";		
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/Plugin_unit/countUp.min.js";
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/Plugin_unit/zcUI.js";
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/Plugin_unit/jscharts_cr.js";
+?>
+
+<script type="text/javascript" src="{$TMPL}/js/Plugin_unit/countUp.min.js"></script>
+<script type="text/javascript" src="{$TMPL}/js/Plugin_unit/zcUI.js"></script>
+<script type="text/javascript" src="{$TMPL}/js/Plugin_unit/jscharts_cr.js"></script>
+<!--引用插件-->
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$pagecss"}" />
+<style type="text/css">
+	.sp_list ul li label {
+		width: 110px;
+	}
+.detail_list ul li{
+	position: relative;
+}
+.pa{
+position: absolute;
+right: 0px;
+top: 0px;
+height: 35px;
+  line-height: 35px;
+  z-index: 9;
+}
+.f_r{
+	float: right;
+}
+.spmr100{
+  margin-right: 100px;
+}
+.fblue{
+	color: #2474cf;
+}
+#data_table canvas{
+    margin: 0 auto;
+}
+</style>
+<!--投资借款简单详情-->
+
+<div class="detail">
+<div class="mainblok mainborder">
+            <div class="detail_tit">
+                <h3>{$data.licai.name}</h3>
+                <span>借款编号:{$data.licai.licai_sn}</span>
+            </div>
+            <div class="detail_list sp_list">
+                <ul>
+                    <li>
+                        <label>当前成交总额</label>
+                        <div class="list_con detail_Orange">{$data.licai.subscribing_amount_format_num}&nbsp; 元</div>
+                    </li> 
+                    <li>
+                        <label>预期到期收益率</label>
+                        <div class="list_con detail_Orange">
+                        {if $data.licai.scope}
+                        	{$data.licai.scope}
+						{else}
+							{if $data.licai.type eq 0}
+								{function name="number_format" v=$data.licai.average_income_rate f="2"}%
+							{else}
+								{function name="number_format" v=$data.min_interest_rate f=2}%起
+							{/if}
+						{/if}
+						</div>
+                    </li>
+					<li>
+                        <label>理财期限</label>
+                        <div class="list_con">
+                        	{if $data.licai.type > 0}
+                        		{if $data.licai.time_limit}{$data.licai.time_limit}个月{else}无限期{/if}
+                            {else}
+                            	{$data.licai.end_date}
+                            {/if}
+                        </div>
+                    </li>
+					<li>
+                        <label>最低投资额</label>
+                        <div class="list_con">{$data.licai.min_money_format_num}</div>
+                    </li>
+					<li>
+                        <label>产品规模</label>
+                        <div class="list_con detail_Orange">{$data.licai.product_size_format_num}</div>
+                    </li>
+                    <li>
+                        <label>到期时间</label>
+                        <div class="list_con">{if to_timespan($data.licai['end_date']) eq 0}永久有效{else}{$data.licai.end_date}{/if}</div>
+                    </li>
+                    <li>
+                        <label>获取收益方式</label>
+                        <div class="list_con">{function name='msubstr' v="$data.licai.profit_way" }</div>
+                    </li>
+                    <li>
+                        <label>剩余购买时间</label>
+                        <div class="list_con">
+                        	<span class="sp3" data="{function name='to_timespan' v="$data.licai.end_buy_date"}" id="left_time">
+							<em class="s day">--</em>
+							<em class="l">天</em>
+							<em class="s hour">--</em>
+							<em class="l">时</em>
+							<em class="s min">--</em>
+							<em class="l">分</em>
+							<em class="s sec">--</em>
+							<em class="l mr0">秒</em>
+							</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div><!--mainblok——end--> 
+		{if $data.licai.type == 0}
+        <div class="blank15"></div>
+        <div class="mainblok mainborder">
+        	<div class="detail_list sp_list">
+        	<ul><li style="border-bottom:none"><label>年化收益率表</label></li></ul>
+        	</div>
+        	<div class="deal_middle_bd">
+	            <div id='data_table'>
+	            </div>
+	        </div>
+        </div><!--mainblok——end--> 
+        {/if}
+		<div class="blank15"></div>
+       
+        <div class="mainblok mainborder">
+            <div class="detail_list">
+                <ul>
+                    <li>
+                        <label>可用余额</label>
+                        <div class="list_con">
+                        	<em class="detail_Orange">{function name="format_price" v=$data.user_info.money" f=2}</em> 元
+							{if $is_login eq 0}
+							<a href="{wap_url a="index" r="login"}" class="fblue f_r">我要充值</a>
+							{else}
+							<a href="{wap_url a="index" r="uc_incharge"}" class="fblue f_r">我要充值</a>
+							{/if}
+						</div>
+                    </li>
+					
+					 <li>
+                        <label>投标金额</label>
+						
+                        <div class="list_con spmr100" >
+                        	<input type="hidden" name="id" id="id" value="{$data.licai.id}" />
+							<input type="hidden" name="tc_money" id="tc_money" value="{$data.user_info.money}" />
+                        	<input type="text" name="money" id="money" value="" class="textbox ui_width" placeholder="输入金额" autocomplete="off" style=" height:28px;" />
+							<input type="hidden" name="min_money" id="min_money" value="{$data.licai.min_money}" />
+                            <input type="text" name="income_money" value="" class="textbox" readonly="readonly" />
+                            <input type="hidden" name="income_money_val" value="1.18" />
+                        </div>
+                        <div class="f_r pa">收益：<span class="J_u_money_sy f_red">0.00</span></div>
+                     </li>
+					
+					{if $data.ecv_list}
+					<li>
+                        <label>使用红包</label>
+                        <div class="list_con" style="height:75px">
+                        	<select name="ecv_id" id="ecv_id">
+                        		<option value="0">选择红包</option>
+								{foreach from="$data.ecv_list" item="ecv"}
+								<option value="{$ecv.id}">{$ecv.name}[抵{$ecv.money}元]</option>
+								{/foreach}
+                        	</select>
+							<br>
+							<span class="f_red">超出部分不返还</span>
+                        </div>
+						
+                     </li>
+					{/if}
+                   
+					<li class="reset_pay_pwd">
+                        <label>支付密码</label>
+                        <div class="list_con">
+                        <input id="pay_inmoney_password" class="ui-button_login ui_width" style=" height:28px;" type="password" placeholder="输入密码">
+						</div>
+                        {if $is_login eq 0}
+						<a href="{wap_url a="index" r="login"}" class="detail_Orange f_r pa">设置支付密码</a>
+						{else}
+						<a href="{wap_url a="index" r="reset_pay_pwd"}" class="detail_Orange f_r pa">设置支付密码</a>
+						{/if}
+					 </li>
+                </ul>
+            </div>
+			
+        </div><!--mainblok——end--> 
+   </div>
+<div class="detail_foot">
+    <div class="lookdetail"><a href="{wap_url a="index" r="licai_deal_detail" p="id=$data.licai.id"}">查看详情</a></div>
+	{if $is_login eq 1}
+	   <div id="pay_deal" class="I_Investment">我要投资</div>  
+	{else}
+	   <div id="pay_deal" class="I_Investment"><a href="{wap_url a="index" r="login"}">我要投资</a></div> 
+	{/if}
+    
+</div>
+   
+<script type='text/javascript'>
+
+    $(function(){
+        fun_money();
+        leftTimeAct("#left_time");
+    });
+
+    var system_time= <?php echo TIME_UTC;?>;
+    var licai_type =  {$data.licai.type};
+    var licai_interest_json = {$data.licai_interest_json};
+    var income_money_val = 0;
+    var before_day = {$data.licai.before_day};
+    var buy_day = {$data.licai.buy_day};
+    var before_money_val = 0;
+    var site_buy_fee_rate= 0;
+    var redemption_fee_rate = 0;
+    //yeb
+    var yeb_;
+	
+	function fun_money(){
+        // 预期一天收益
+        var $deal_top_r_bd=$("#deal_top_r_bd"),
+            $min_money=$deal_top_r_bd.find("input[name='min_money']"),
+            $money=$deal_top_r_bd.find("input[name='money']"),
+            $income_money=$deal_top_r_bd.find("input[name='income_money']"),
+            endTime = parseInt($("#left_time").attr("data"))+3600*24,
+            leftTime = endTime - system_time;
+            
+        if(!($money.val())){
+            $income_money.attr("value",0);
+        }
+		$("#money").keyup(function(){
+       
+            var money_val= $.trim($("#money").val());	
+            if(parseFloat($("#user_left_money").attr("data")) < parseFloat(money_val)){
+                $("#user_left_money_tip").show();
+            }
+            else{
+                $("#user_left_money_tip").hide();
+            }
+			
+            if(licai_type > 0){
+                if(parseInt(licai_interest_json[licai_interest_json.length - 1]['max_money']) <= money_val){
+                    income_money_val = parseFloat(licai_interest_json[licai_interest_json.length - 1]['interest_rate']);
+                    before_money_val = parseFloat(licai_interest_json[licai_interest_json.length - 1]['before_rate']);
+                    site_buy_fee_rate= parseFloat(licai_interest_json[licai_interest_json.length - 1]['site_buy_fee_rate']);
+                    redemption_fee_rate= parseFloat(licai_interest_json[licai_interest_json.length - 1]['redemption_fee_rate']);
+                }
+                else{
+                    $.each(licai_interest_json,function(i,v){
+                        if(parseInt(v['min_money']) <= money_val && parseInt(v['max_money']) > money_val){
+                            income_money_val = parseFloat(v['interest_rate']);
+                            before_money_val = parseFloat(v['before_rate']);
+                            site_buy_fee_rate= parseFloat(v['site_buy_fee_rate']);
+                            redemption_fee_rate= parseFloat(v['redemption_fee_rate']);
+                        }
+                    });
+                }
+            }
+            else{
+                income_money_val = licai_interest_json;
+            }
+
+            $("#verify_money").html(money_val);
+            if(money_val){
+				
+                if(licai_type > 0){
+                    var normal_rate=income_money_val/100;  // 正常利率
+                    var preheat_rate=before_money_val/100;  // 预热利率
+                    var procedures_rate=site_buy_fee_rate/100;  // 网站手续费率
+                    var redemption_rate=redemption_fee_rate/100;  // 赎回手续费率
+                    var new_money_val=money_val-money_val*procedures_rate;  // 扣除手续费后金额
+                    
+                    // 收益
+                    var income_money=(new_money_val*normal_rate*buy_day)/365 + (new_money_val*preheat_rate*before_day)/365;
+                    var redemption_money=((new_money_val)*redemption_rate*(buy_day+before_day))/365; // 赎回手续费
+                    var new_income_money=(income_money-redemption_money).toFixed(2);
+                    $income_money.attr("value",new_income_money);
+					$(".J_u_money_sy").html(new_income_money);
+                }
+                else
+                {
+                    var redemption_fee_rate = income_money_val['redemption_fee_rate'];
+                    var site_buy_fee_rate = income_money_val['site_buy_fee_rate'];
+                    var platform_rate = income_money_val['platform_rate'];
+                    var average_income_rate = income_money_val['average_income_rate']
+                    var procedures_rate=site_buy_fee_rate/100;  // 网站手续费率
+                    var redemption_rate=redemption_fee_rate/100;  // 赎回手续费率
+                    var preheat_rate = average_income_rate/100; //收益
+                    var new_money_val=money_val-money_val*procedures_rate;  // 扣除手续费后金额
+                    //收益
+                    var income_money= (new_money_val*preheat_rate*buy_day)/365;
+                    var redemption_money=(new_money_val)*redemption_rate*buy_day/365;  // 赎回手续费
+                    var new_income_money=(income_money-redemption_money).toFixed(2);
+                    $income_money.attr("value",new_income_money);
+					$(".J_u_money_sy").html(new_income_money);  
+                }
+            }
+        });
+        
+		
+        // 我要投资
+        buy();
+        function buy(){
+			
+           $("#pay_deal").click(function(){
+		   	  var id= $.trim($("#id").val());
+			  var money_val= $.trim($("#money").val());
+			  var min_money= $.trim($("#min_money").val());  
+			  var tc_money= $.trim($("#tc_money").val()); 
+			  
+                if(endTime!=0&&leftTime<=0){
+                    alert("项目已结束！");
+                    return false;
+                }
+                if($deal_top_r_bd.find("input[name='own_pro']").length){
+                    alert("不能购买自己发布的理财产品");
+                    return false;
+                }
+                if(parseFloat(tc_money) < parseFloat(money_val)){
+                    alert("您的账户余额不足！");
+                    return false;
+                }
+                if(!(money_val)){
+                    alert("请输入金额");
+                    return false;
+                }
+                else if(parseFloat(money_val) < parseFloat(min_money)){
+                    alert("最低金额不能低于"+ min_money +"元");
+                    return false;
+                }
+                else{
+                    var ajaxurl = '{wap_url a="index" r="licai_bid"}';
+			        var query = new Object();
+			        
+			        query.id = $.trim($("#id").val());
+			        query.money = $.trim($("#money").val());
+			        query.paypassword = $.trim($("#pay_inmoney_password").val());
+			        query.post_type = "json";
+			        $.ajax({
+			            url:ajaxurl,
+			            data:query,
+			            type:"Post",
+			            dataType:"json",
+			            success:function(data){
+		                    alert(data.show_err);
+		                    if(data.response_code == 1){
+		                        window.location.href = '{wap_url a="index" r="licai_deal"}&id='+id;
+		                    }
+			            }
+			        });
+                }
+            });
+            
+        }
+    }
+	
+   // 项目剩余时间倒计时
+    function leftTimeAct(left_time){
+        var leftTimeActInv = null;
+        clearTimeout(leftTimeActInv);
+        $(left_time).each(function(){
+			var endTime = parseInt($(this).attr("data"))+3600*24;
+            var leftTime = endTime - system_time ;
+            if(endTime){
+                if(leftTime > 0){
+                    var day  =  parseInt(leftTime / 24 /3600);
+                    var hour = parseInt((leftTime % (24 *3600)) / 3600);
+                    var min = parseInt((leftTime % 3600) / 60);
+                    var sec = parseInt((leftTime % 3600) % 60);
+                    $(this).find(".day").html((day<10?"0"+day:day));
+                    $(this).find(".hour").html((hour<10?"0"+hour:hour));
+                    $(this).find(".min").html((min<10?"0"+min:min));
+                    $(this).find(".sec").html((sec<10?"0"+sec:sec));
+                    system_time++;
+                    //$(this).attr("data",leftTime);
+                }
+                else{
+                    $(this).html("已结束");
+                }
+            }
+            else{
+                $(this).html("永久有效");
+            }
+        });
+        leftTimeActInv = setTimeout(function(){
+            leftTimeAct(left_time);
+        },1000);
+    }
+
+    if ({$data.licai.type} == 0){
+		
+		$(function(){
+
+	        var myData = new Array(
+	            {foreach from="$data.data_table" item=item name="dt"}
+	                ['{$item.history_date}',{$item.rate}]{if !$smarty.foreach.dt.last},{/if}
+	            {/foreach}
+	        );
+	        var myChart = new JSChart('data_table', 'line');
+	        myChart.setAxisNameX("");
+	        myChart.setAxisNameY("");
+	        myChart.setIntervalStartY(0);
+	        myChart.setAxisPaddingTop(10);
+	        myChart.setDataArray(myData);
+	        myChart.setTitle('');
+	        myChart.setSize(360, 200);
+	        myChart.setBarColor('#39a1ea');
+	        myChart.draw();
+	    });
+	
+	}
+	
+	
+	
+   
+
+
+</script>
+
+{include file="./inc/footer.html"}
+
+
+
+
+

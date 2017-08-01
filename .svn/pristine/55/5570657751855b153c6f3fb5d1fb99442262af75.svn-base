@@ -1,0 +1,36 @@
+{// 引入标签库 }
+
+<tagLib name="html" />
+<include file="Public:header" />
+<load href='/app/Tpl/new/js/script.js' />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/user.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main main-size09">
+<div class="main_title">{$main_title}</div>
+<div class="blank5"></div>
+<html:list 
+	id="dataTable" 
+	style="dataTable" 
+	name="user" 
+	datasource="list" 
+	show="id|checkbox:选择|50px
+		,user_id|get_user_name_iframe:会员ID
+		,real_name:会员名
+		,mobile:手机号码
+		,pid|get_user_real_name:推荐人
+		,admin_id|get_admin_real_name:专属客服
+		,bankcard:银行卡号
+		,name:所属银行
+		,is_rec:是否支持提现
+		,bankzone:开户行" 
+	/> 
+
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

@@ -1,0 +1,45 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main main-size16">
+<div class="main_title">{$main_title}</div>
+<div class="blank5"></div>
+<div class="button_row">
+	<input type="button" class="button" value="{%ADD}支持银行" onclick="add();" />
+	<input type="button" class="button" value="{%EDIT}支持银行" onclick="_edit();" />
+</div>
+<php>
+	function show_icon($icon) {
+		if ($icon == "") {
+			return "";
+		} else {
+			return "<img src='".$icon."' style='margin-bottom:-10px;' />";
+		}
+	}	
+</php>
+<div class="blank5"></div>
+<html:list 
+	id="dataTable" 
+	style="dataTable dataTableSelect" 
+	name="deal" 
+	datasource="list" 
+	show="id|checkbox:选择|50px
+		,name:名称:edit
+		,icon|show_icon:图标
+		,allinpay_code:银行代码(通联)
+		,ainchk1:对私批量代付
+		,ainval1:单笔限额
+		,ainchk2:对私实时代付
+		,ainval2:单笔限额
+		,ainchk3:对公代付
+		,ainval3:单笔限额
+		,ainchk4:实名转账终端
+		,ainval4:单笔限额
+		,ainvax4:次数
+		,is_rec|get_isrec=$deal['id']:是否推荐|100" 
+	/> 
+
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

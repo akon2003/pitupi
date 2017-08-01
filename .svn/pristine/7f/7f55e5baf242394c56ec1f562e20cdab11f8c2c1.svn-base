@@ -1,0 +1,38 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/user.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main main-size12">
+<div class="main_title">{:L(MODULE_NAME."_".ACTION_NAME)}</div>
+<div class="blank5"></div>
+<div class="button_row">
+	<input type="button" class="button" value="{%ADD}授权服务机构" onclick="agencies_register();" />
+	<input type="button" class="button" value="{%EDIT}授权服务机构" onclick="agencies_edit();" />
+</div>
+<div class="blank5"></div>
+<html:list 
+	id="dataTable" 
+	style="dataTable dataTableSelect" 
+	name="user" 
+	action="true" 
+	datasource="list" 
+	show="id|checkbox:选择|50px
+		,user_name:{%AUTHORIZED}
+		,email:邮箱
+		,mobile:{%USER_MOBILE}
+		,money|format_price:余额
+		,lock_money:{%USER_LOCK_MONEY}
+		,login_time|to_date:{%LOGIN_TIME}
+		,is_effect|get_is_effect=$user['id']:{%IS_EFFECT}" 
+	actionlist="agencies_edit:{%EDIT}, del:{%DEL},agencies_account_detail:{%USER_ACCOUNT_DETAIL_SHORT},bank_manage:银行卡管理"/> 
+
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

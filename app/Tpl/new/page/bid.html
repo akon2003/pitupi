@@ -1,0 +1,25 @@
+<div class="blank5"></div>
+<div class="field lh30">
+	<label>支付金额：</label>{function name="format_price" v=$bidmoney}
+</div>
+<div class="blank5"></div>
+<div class="field">
+	<label>支付密码：</label><input type="password" class="f-input ui-textbox w240" id="J_bid_password" />
+</div>
+<div class="blank5"></div>
+<div class="field">
+	<label>&nbsp;</label>
+	{if $user_info.paypassword eq ''}还未设置！{else}忘记了？{/if}
+	<a href="{url x="index" r="uc_account#security"}" target="_blank" class="f_blue">点这里</a>
+</div>
+<div class="blank5"></div>
+<div class="field">
+	<label>&nbsp;</label>
+	<input type="button" class="sub_btn btn_red" id="J_bindpassword_btn" value="确定">
+	&nbsp;&nbsp;
+	<input type="button" class="reset_btn"  id="J_bindpassword_rbtn" value="取消"></div>
+	<input type="hidden" name="bid_id" id="J_bid_id" value="{$id}" />
+	<input type="hidden" name="bid_money" id="J_bid_money" value="{$bidmoney}" />
+	<input type="hidden" name="dream_name" id="J_dream_name" value="{$dream_name}" />
+	<input type="hidden" name="dream_amount" id="J_dream_amount" value="{$dream_amount}" />
+</div>

@@ -1,0 +1,260 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<load href='__TMPL__Common/js/conf.js' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<load href='__TMPL__Common/js/deal.js' />
+<load href='__TMPL__Common/js/colorpicker.js' />
+<load href='__TMPL__Common/style/colorpicker.css' />
+<script type="text/javascript">
+	window.onload = function()
+	{
+		init_dealform();
+	}
+</script>
+<div class="main">
+<div class="main_title">{$vo.name}{%EDIT} <a href="{:u("ExtDealNewe/index")}" class="back_list">{%BACK_LIST}</a></div>
+<div class="blank5"></div>
+<form name="edit" action="__APP__" method="post" enctype="multipart/form-data">
+<table class="form conf_tab" cellpadding=0 cellspacing=0 rel="1">
+	<tr>
+		<td colspan=2 class="topTd"></td>
+	</tr>
+	<tr>
+		<td class="item_title">新手标编号:</td>
+		<td class="item_input">
+			<input type="text" name="deal_sn" class="textbox <if condition="$deal_sn eq ''"><if condition="$vo['deal_status'] egt 1">readonly</if></if>" value="<if condition="$deal_sn neq ''">{$deal_sn}<else />{$vo.deal_sn}</if>" <if condition="$deal_sn neq ''">style="color:red"<else /><if condition="$vo['deal_status'] egt 1">readonly="readonly"</if></if> />
+			<span class="tip_span">此处编号用于合同处，不得重复，<if condition="$deal_sn neq ''">红色表示未失效编号</if></span>
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">定向标密码:</td>
+		<td class="item_input">
+			<input type="text" name="mer_bill_no" class="textbox" <if condition="$vo['deal_status'] egt 1">readonly</if> value="{$vo.mer_bill_no}" />
+			<span class="tip_span">非空表示定向标，输入内容即为定向标密码</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">新手标名称::</td>
+		<td class="item_input">
+			<input type="text" class="textbox require" name="name" style="width:500px;" value="{$vo.name}" />
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">{%DEAL_SUB_NAME}:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="sub_name" value="{$vo.sub_name}" /> <span class='tip_span'>[{%DEAL_SUB_NAME_TIP}]</span></td>
+	</tr>
+	<tr>
+		<td class="item_title">会员:</td>
+		<td class="item_input">
+			{:get_user_name_only($vo['user_id'])} 
+			<input type="hidden" name="user_id" value="{$vo.user_id}"/>            
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">分类:</td>
+		<td class="item_input">
+		<select name="cate_id" class="w_textbox">
+			<foreach name="deal_cate_tree" item="cate_item">
+				<if condition="$vo['cate_id'] eq $cate_item['id']"><option value="{$cate_item.id}" selected="selected">{$cate_item.title_show}</option></if>
+			</foreach>
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">用途:</td>
+		<td class="item_input">
+		<select name="type_id" class="w_textbox">
+			<foreach name="deal_type_tree" item="type_item">
+				<if condition="$type_item['id'] eq $vo['type_id']"><option value="{$type_item.id}" selected="selected">{$type_item.name}</option></if>
+			</foreach>
+		</select>
+		</td>
+	</tr>	
+	<tr>
+		<td class="item_title">还款方式:</td>
+		<td class="item_input">
+			<select name="loantype" class="w_textbox">
+				<foreach name="loantype_list" item="loantype">
+				<if condition="$vo['loantype'] eq $loantype['key']"><option value="{$loantype.key}"  rel="{$loantype.repay_time_type_str}" selected="selected">{$loantype.sub_name}</option></if>
+				</foreach>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">合同范本:</td>
+		<td class="item_input">
+			<select name="contract_id" class="require w_textbox">
+				<foreach name="contract_list" item="contract">
+				<if condition="$vo['contract_id'] eq $contract['id']"><option value="{$contract.id}" selected="selected">{$contract.title}</option></if>
+				</foreach>
+			</select>
+		</td>
+	</tr>
+	<tr style="display:none">
+		<td class="item_title">转让合同范本:</td>
+		<td class="item_input">
+			<select name="tcontract_id" class="require w_textbox">
+				<foreach name="contract_list" item="contract">
+				<if condition="$vo['tcontract_id'] eq $contract['id']"><option value="{$contract.id}" selected="selected">{$contract.title}</option></if>
+				</foreach>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">发布金额:</td>
+		<td class="item_input">
+			<input type="text" class="textbox require <if condition="$vo['deal_status'] egt 1">readonly</if>"  <if condition="$vo['deal_status'] egt 1">readonly="readonly"</if> name="borrow_amount"  value="{$vo.borrow_amount}"  />
+		</td>
+	</tr>
+
+	<tr>
+		<td class="item_title">投标类型:</td>
+		<td class="item_input">
+			<select name="uloadtype" class="w_textbox">
+				<option value=0 <if condition="$vo['uloadtype'] eq 0">selected="selected"</if>>按金额</option>
+			</select>
+		</td>
+	</tr>
+	
+	<tr class="uloadtype_0" <if condition="$vo['uloadtype'] eq 1">style="display:none"</if>>
+		<td class="item_title">{%MIN_LOAN_MONEY}:</td>
+		<td class="item_input">
+			<input type="text" class="textbox require" name="min_loan_money"  value="{$vo.min_loan_money}" />
+		</td>
+	</tr>
+	
+	<tr class="uloadtype_0" <if condition="$vo['uloadtype'] eq 1">style="display:none"</if>>
+		<td class="item_title">{%MAX_LOAN_MONEY}:</td>
+		<td class="item_input">
+			<input type="text" class="textbox" name="max_loan_money"  value="{$vo.max_loan_money}" />
+			<span class="tip_span">0为不限制</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">期限:</td>
+		<td class="item_input">
+			<input type="text" id="repay_time" class="textbox require" <if condition="$vo['deal_status'] egt 1">readonly="readonly"</if> name="repay_time" value="{$vo.repay_time}" /> 月
+			<input type="hidden" name="repay_time_type" value="1" />
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">{%RATE}:</td>
+		<td class="item_input">
+			<input type="text" class="textbox require <if condition="$vo['deal_status'] egt 1">readonly</if>" <if condition="$vo['deal_status'] egt 1">readonly="readonly"</if>  SIZE="5" name="rate" value="{$vo.rate}" /> %
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">筹标期限:</td>
+		<td class="item_input">
+			<input type="text" class="textbox require" SIZE="5" name="enddate" value="{$vo.enddate}" /> 天
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">新手标状态:</td>
+		<td class="item_input">
+			<if condition="$vo['publish_wait'] eq 1">
+				<label>审核失败<input type="radio" name="is_delete" value="3" /></label>
+			</if>
+			<if condition="$vo['deal_status'] eq 1">
+				进行中	<a href="{:u("ExtDealNewe/show_detail",array("id"=>$vo['id']))}">投标详情和操作</a>
+			<elseif condition="$vo['deal_status'] eq 2"/>
+				已满标	<a href="{:u("ExtDealNewe/show_detail",array("id"=>$vo['id']))}">投标详情和操作</a>
+			<elseif condition="$vo['deal_status'] eq 3"/>
+				已流标	<a href="{:u("ExtDealNewe/show_detail",array("id"=>$vo['id']))}">投标详情和操作</a>
+				<div class="blank10"></div>
+				流标原因 :
+				<div class="blank10"></div>
+				{$vo.bad_msg}
+			<elseif condition="$vo['deal_status'] eq 4"/>
+				还款中	<a href="{:u("ExtDealNewe/show_detail",array("id"=>$vo['id']))}">投标详情和操作</a>
+				<div class="blank10"></div>
+				确定日期 :{$vo.repay_start_time|to_date="Y-m-d"}
+			<elseif condition="$vo['deal_status'] eq 5" />
+				已还清	<a href="{:u("ExtDealNewe/show_detail",array("id"=>$vo['id']))}">投标详情和操作</a>
+			<else/>
+				<label>初审<input type="radio" name="publish_wait" value="1" <if condition="$vo['publish_wait'] eq 1">checked="checked"</if>></label>
+			</if>
+		</td>
+	</tr>
+	<if condition="$vo['publish_wait'] eq 1">
+		<tr id="delele_msg_box" style="display:none">
+			<td class="item_title">失败原因:</td>
+			<td class="item_input">
+				<textarea name="delete_msg" rows="5" cols="80">{$vo.delete_msg}</textarea>
+			</td>
+		</tr>
+	</if>
+	<tr id="start_time_box" <if condition="$vo['deal_status'] neq 1">style="display:none"</if>>
+		<td class="item_title">开始时间:</td>
+		<td class="item_input">
+			<input type="text" class="textbox <if condition="$vo['deal_status'] eq 1">require</if>" name="start_time" value="{$vo.start_time}" id="start_time"  onfocus="this.blur(); return showCalendar('start_time', '%Y-%m-%d %H:%M:%S', false, false, 'btn_start_time');" />
+			<input type="button" class="button" id="btn_start_time" value="{%SELECT_TIME}" onclick="return showCalendar('start_time', '%Y-%m-%d %H:%M:%S', false, false, 'btn_start_time');" />
+			<input type="button" class="button" value="{%CLEAR_TIME}" onclick="$('#start_time').val('');" />		
+			如有同步：时间只能是当天或者前一天 
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">{%SORT}:</td>
+		<td class="item_input"><input type="text" class="textbox" name="sort" value="{$vo.sort}" /></td>
+	</tr>
+	<tr>
+		<td colspan=2 class="bottomTd"></td>
+	</tr>
+</table>
+<div class="blank5"></div>
+	<table class="form" cellpadding=0 cellspacing=0>
+		<tr>
+			<td colspan=2 class="topTd"></td>
+		</tr>
+		<tr>
+			<td class="item_title">操作密码:</td>
+			<td class="item_input">
+				<input type="password" class="textbox" name="operatepwd" value=""/>
+			</td>
+		</tr>
+		<tr>
+			<td class="item_title"></td>
+			<td class="item_input">
+			<!--隐藏元素-->
+			<input type="hidden" name="id" value="{$vo.id}" />
+			<input type="hidden" name="old_next_repay_time" value="{$vo.next_repay_time}" />
+			<input type="hidden" name="{:conf("VAR_MODULE")}" value="ExtDealNewe" />
+			<input type="hidden" name="{:conf("VAR_ACTION")}" value="update" />
+			<!--隐藏元素-->
+			<input type="submit" class="button" value="{%EDIT}" />
+			<input type="reset" class="button" value="{%RESET}" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 class="bottomTd"></td>
+		</tr>
+	</table> 	 
+</form>
+</div>
+<if condition="$vo['publish_wait'] eq 0 && $vo['deal_status'] eq 0 " >
+	<script type="text/javascript">
+		jQuery(function(){
+			$("input[name='publish_wait']").click(function(){
+				$("input[name='deal_status']").attr("checked",false);
+			});
+			$("input[name='deal_status']").click(function(){
+				$("input[name='publish_wait']").attr("checked",false);
+			});
+		});
+		bindKdedior(true,true,true);
+	</script>
+</if>
+<div style="display:none" id="J_tmp_ke_box">
+	<div class="f_l">名称：<input type="text" class="textbox" size="10" name="mortgage_%k_name_%s" id="mortgage_%k_name_%s" value="" />&nbsp;</div>
+	<div class="f_l">图片：</div>
+	<html:imgUpload name = 'mortgage_%k_img_%s' id='mortgage_%k_img_%s' />
+	<div class="blank5"></div>
+</div>
+<script type="text/javascript" defer="defer">
+var c_imgs= {$mortgage_contract_json}; load_img_items(c_imgs,"contract");
+var imgs= {$mortgage_infos_json}; load_img_items(imgs,"infos");
+</script>
+<include file="Public:footer" />

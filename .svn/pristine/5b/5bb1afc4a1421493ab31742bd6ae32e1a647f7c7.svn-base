@@ -1,0 +1,48 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main main-size12">
+<div class="main_title">{$main_title}</div>
+<div class="blank5"></div>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get">	
+		用户名：<input type="text" class="textbox" name="user_name" value="{:trim($_REQUEST['user_name'])}" />		
+		访问时间：<input type="text" class="textbox" name="begin_time" id="begin_time" value="{:trim($_REQUEST['begin_time'])}" onfocus="return showCalendar('begin_time', '%Y-%m-%d', false, false,'begin_time');" />
+		-
+		<input type="text" class="textbox" name="end_time" id="end_time" value="{:trim($_REQUEST['end_time'])}" onfocus="return showCalendar('end_time', '%Y-%m-%d', false, false, 'end_time');" />
+		<input type="hidden" value="<php> echo MODULE_NAME; </php>" name="m" />
+		<input type="hidden" value="<php> echo ACTION_NAME; </php>" name="a" />
+		<input type="submit" class="button" value="{%SEARCH}" />
+		<input type="reset" class="button" value="{%RESET}" />
+	</form>
+</div>
+<div class="blank5"></div>
+<html:list 
+	id="dataTable" 
+	style="dataTable" 
+	name="log" 
+	datasource="list" 
+	show="id:{%ID}|50px
+		,adm_name:用户ID
+		,real_name:用户姓名
+		,create_time|to_date:访问时间
+		,login_ip:访问IP
+		,module:访问模块
+		,action:访问函数
+		,memo:附加信息与请求参数" 
+	/> 
+
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />
+
+<script type="text/javascript">
+	$("form[name='search']").bind("reset", function() {
+		$(this).find("input:text").val("");
+		return false;
+	});
+</script>

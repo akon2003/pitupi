@@ -1,0 +1,29 @@
+<?php if ($this->_var['list']): ?>
+<div class="btds clearfix">
+	<ul class="article_list">
+	<?php $_from = $this->_var['list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'item');if (count($_from)):
+    foreach ($_from AS $this->_var['item']):
+?>
+	<li class="pl10 pr10">
+		<span class="f_l">
+			<a href="<?php echo $this->_var['item']['url']; ?>" title="<?php echo $this->_var['item']['title']; ?>"><?php echo $this->_var['item']['title']; ?></a>
+		</span>
+		<span class="f_r">
+			<?php 
+$k = array (
+  'name' => 'to_date',
+  'v' => $this->_var['item']['update_time'],
+  'f' => 'Y-m-d',
+);
+echo $k['name']($k['v'],$k['f']);
+?>
+		</span>
+	</li>
+	<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+	</ul>
+</div>
+<?php else: ?>
+<div class="p20 tc">
+<?php echo $this->_var['page_title']; ?><?php echo $this->_var['LANG']['NO_ARTICLE']; ?>
+</div>
+<?php endif; ?>

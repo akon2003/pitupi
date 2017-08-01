@@ -1,0 +1,67 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<PHP>
+	function get_is_reset($status)
+	{
+		if($status==1)
+		return l("YES");
+		else
+		return l("NO");
+	}
+</PHP>
+<script type="text/javascript">
+	function send_demo()
+	{		
+		$.ajax({ 
+			url: ROOT+"?"+VAR_MODULE+"="+MODULE_NAME+"&"+VAR_ACTION+"=send_demo&test_mail="+$.trim($("input[name='test_email']").val())+"&operatepwd="+$.trim($("input[name='operatepwd']").val()), 
+			data: "ajax=1",
+			dataType: "json",
+			success: function(obj){
+				if(obj.status==0)
+				{
+					alert(obj.info);
+				}
+				else
+				$("#info").html(obj.info);
+			}
+		});
+	}
+	$(document).ready(function(){
+		$("input[name='test_mail_btn']").bind("click",function(){
+			var mail = $.trim($("input[name='test_email']").val());	
+			if(mail!='')
+			send_demo();
+		});
+	});
+</script>
+<div class="main">
+<div class="main_title">{$main_title}
+	<input type="text" class="textbox" name="test_email" placeholder="邮件地址" size="10"/>
+	<input type="password" class="textbox" name="operatepwd" placeholder="操作密码" size="10"/>
+	<input type="button" class="button" name="test_mail_btn" value="{%TEST}" />
+</div>
+<div class="blank5"></div>
+<div class="button_row">
+	<input type="button" class="button" value="新增邮件服务器" onclick="add();" />
+	<input type="button" class="button" value="编辑邮件服务器" onclick="_edit()" />
+</div>
+<div class="blank5"></div>
+<html:list 
+	id="dataTable" 
+	style="dataTable" 
+	name="serveritem" 
+	datasource="list" 
+	show="id|checkbox:选择|50px
+		,smtp_server:{%SMTP_SERVER}
+		,smtp_name:{%SMTP_NAME}
+		,use_limit:{%USE_LIMIT}
+		,total_use:{%TOTAL_USE}
+		,is_reset|get_is_reset:{%IS_RESET}
+		,is_effect|get_is_effect=$serveritem['id']:{%IS_EFFECT}" 
+	/> 
+
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

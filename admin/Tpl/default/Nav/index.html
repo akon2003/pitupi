@@ -1,0 +1,49 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<php>
+	function get_is_blank($blank)
+	{
+		return l("BLANK_".$blank);
+	}
+	function get_is_shop($is_shop)
+	{
+		return l("IS_SHOP_".$is_shop);
+	}
+</php>
+<div class="main">
+<div class="main_title">{$main_title}</div>
+<div class="blank5"></div>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get">	
+		导航分类：<select name="pid">
+			<option value="-1" <if condition="intval($_REQUEST['pid']) eq -1">selected="selected"</if>>全部</option>
+			<foreach name="parent_nav_tree" item="nav_item">
+				<option value="{$nav_item.id}" <if condition="intval($_REQUEST['pid']) eq $nav_item['id']">selected="selected"</if>>{$nav_item.name}</option>
+			</foreach>
+		</select>
+		<input type="hidden" value="Nav" name="m" />
+		<input type="hidden" value="index" name="a" />
+		<input type="submit" class="button" value="{%SEARCH}" />
+		<input type="button" class="button" value="{%ADD}导航" onclick="add();" />
+		<input type="button" class="button" value="{%EDIT}导航" onclick="_edit();" />
+	</form>
+</div>
+<div class="blank5"></div>
+<html:tree_list 
+	id="dataTable" 
+	style="dataTable dataTableSelect dataTableSelectDblclick" 
+	name="nav" 
+	datasource="list" 
+	show="id|checkbox:选择|50px
+		,name:{%NAV_NAME}
+		,pid|get_nav_type:分类
+		,is_effect|get_is_effect:{%IS_EFFECT}
+		,sort|get_sort=$nav['id']:{%SORT}
+		,blank|get_is_blank:{%NAV_BLANK}" 
+	/> 
+
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

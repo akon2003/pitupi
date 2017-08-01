@@ -1,0 +1,263 @@
+{include file="./inc/header.html"}
+<?php
+	$this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/deals.css";	
+	$this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/uc_learn.css";
+	$this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/public.css";	
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$pagecss"}" />
+
+<div>
+	<div class="blank15"></div>
+	
+	<ul class="detail_list">
+		<li>
+		<div class="bor_1">
+			<div class="middle clearfix">
+			<table>
+				<tr>
+					<td>
+						<span class="c_ff8800">￥{function name="number_format" v=$data.learn_balance f=2}</span>
+						<span class="name">体验金金额</span>
+					</td>
+					<td>
+						<span class="c_ff8800">￥{function name="number_format" v=$data.has_lead_interest f=2}</span>
+						<span class="name">已领取收益</span>
+					</td>
+					<td>
+						<span class="c_ff8800">￥{function name="number_format" v=$data.no_lead_interest f=2}</span>
+						<span class="name" >待领取收益</span>
+					</td>
+					<td>
+					<br>
+	               	{if $data.no_lead_interest neq 0}
+						<button type="button" class="j_do_interest sub_btn" >领取收益</button>
+					{else}
+						<button type="button" class="sub_btn_gray" >领取收益</button>
+					{/if}
+					&nbsp;
+					</td>
+				</tr>
+			</table>
+			</div>
+		</div>
+		</li>
+	</ul>
+	<div class="uc_learn">
+	<table>
+		<tr>
+			<th>{$data.learn_info.name}</th>
+		</tr>
+	</table>
+	</div>
+	<div>
+	<ul class="detail_list">
+		<li>
+		<div class="bor_1">
+			<div class="middle clearfix">
+			<table>
+				<tr>
+					<td>
+						{if $data.learn_info}
+							<span class="c_ff8800">{$data.learn_info.rate}%</span>
+						{else}
+							<span class="c_ff8800">暂无数据</span>
+						{/if}
+						<span class="name">年化收益率</span>
+					</td>
+					<td>
+						{if $data.learn_info}
+							<span class="c_ff8800">{$data.learn_info.time_limit} 天</span>
+						{else}
+							<span class="c_ff8800">暂无数据</span>
+						{/if}
+						<span class="name">投资期限</span>
+					</td>
+					<td>
+						{if $data.learn_info}
+							<span class="c_ff8800">￥{function name="number_format" v=$data.learn_info.load_money f=2}</span>
+						{else}
+							<span class="c_ff8800">暂无数据</span>
+						{/if}
+						<span class="name" >融资规模</span>
+					</td>
+					<td>
+	                	<span class="c_ff8800" style="font-size:9px;">预计收益: {function name="number_format" v=$data.uc_interest f=2}</span>
+						<br>
+						{if $data.learn_balance neq 0}
+							<input type="hidden" name="learn_id" id="learn_id" value="{$data.learn_info.id}" />
+							<input type="hidden" name="money" id="money" value="{$data.learn_balance}" />
+							{if $data.learn_info.load_money gt $data.has_send_money }
+								<button type="button" class="J_do_invest sub_btn" >立即投资</button>
+							{else}
+								<button type="button" class="sub_btn_gray" >立即投资</button>
+							{/if}
+							
+						{else}
+							<button type="button" class="sub_btn_gray" >立即投资</button>
+						{/if}
+						&nbsp;
+				</td>
+				</tr>
+			</table>
+			</div>
+		</div>
+		</li>
+	</ul>
+	</div>
+
+	<div class="choose">
+		<table>
+			<tr>
+				<th {if $data.t eq ''}class="y"{/if}><a href="{url x="index" r="uc_learn#index"}">获取记录</a></th>
+				<th {if $data.t eq 'load'}class="y"{/if}><a href="{url x="index" r="uc_learn#index" p="t=load"}">投资记录</a></th>
+			</tr>
+		</table>
+	</div>
+	<div class="blank15"></div>
+	{if $data.t eq ''}
+	<div style="padding-left:14px;padding-right:13px;">
+	<div class="content detail_content">
+		<dl>
+			{foreach from="$data.learn_send_list" item="learn" }
+			<dd>
+				<div class="list_bor">
+					<div class="h clearfix">
+						<span class="Installments">第 {$learn.key} 条</span>
+						<div class="bor clearfix">
+							<span class="Repayment_date f_r tr">获取时间：{$learn.begin_date}</span>
+						</div>
+					</div>
+					<div class="p">
+						<div class="bor clearfix">
+								<div class="child">获取金额(¥)：{$learn.money}</div>
+								<div class="child">
+									获取来源：
+									{if $learn.type eq 0} 
+										注册赠送
+									{/if}
+									{if $learn.type eq 1} 
+										邀请赠送
+									{/if}
+									{if $learn.type eq 2} 
+										管理员发放
+									{/if}
+								</div>
+								
+								<div>
+									有效期：{$learn.begin_date} 至 
+									{$learn.end_date}
+								</div>
+								<div class="child">状态 &nbsp;：
+								{if $learn.is_use eq 0}未投资{else}已投资{/if}
+								</div>
+								
+					     </div>
+					</div>
+				</div>
+			</dd>
+			{/foreach}
+		</dl>
+	</div>	
+	</div>
+	</div>
+	{else}
+	<div style="padding-left:14px;padding-right:13px;">
+	<div class="content detail_content">
+		<dl>
+			{foreach from="$data.learn_load_list" item="learn" }
+			<dd>
+				<div class="list_bor">
+					<div class="h clearfix">
+						<span class="Installments">第 {$learn.key} 条</span>
+						<div class="bor clearfix">
+							<span class="Repayment_date f_r tr">投资时间：{$learn.create_date}</span>
+						</div>
+					</div>
+					<div class="p">
+						<div class="bor clearfix">
+							<div class="child">投资金额(¥)：{$learn.money}</div>
+							<div class="child">
+								产品名称：
+								{$learn.name}
+							</div>
+							
+							<div class="child">
+								期限：{$learn.time_limit} 天
+							</div>
+							<div class="child">年化收益率：
+							{$learn.rate} % 
+							</div>
+							<div class="child">预期收益(¥)：
+							{function name="number_format" v=$learn.interest f=2}
+							</div>
+							<div class="child">状态：
+							{$learn.state}
+							</div>
+								
+					     </div>
+					</div>
+				</div>
+			</dd>
+			{/foreach}
+		</dl>
+	</div>	
+	</div>
+	</div>
+	{/if}
+	<div class="blank15"></div>
+</div>
+<script type="text/javascript">
+	
+	jQuery(function(){
+			$(".j_do_interest").click(function(){
+				if(confirm("确定领取收益？"))
+				{
+				var ajaxurl = '{wap_url a="index" r="uc_learn_do_interest"}';
+				var query = new Object();
+				query.post_type = "json";
+				$.ajax({
+					url:ajaxurl,
+					data:query,
+					type:"Post",
+					dataType:"json",
+					success:function(data){
+						alert(data.show_err);
+						window.location.href = '{wap_url a="index" r="uc_learn"}';
+					}
+				
+					});
+				}	
+		});
+		
+		$(".J_do_invest").click(function(){
+			if(confirm("确定投资吗？"))
+			{
+				var ajaxurl = '{wap_url a="index" r="uc_learn_do_invest"}';
+				var learn_id =  $.trim($("#learn_id").val());
+				var money =  $.trim($("#money").val());
+				var query = new Object();
+				query.learn_id = $.trim($("#learn_id").val());
+				query.money = $.trim($("#money").val());
+				query.post_type = "json";
+				//alert(learn_id);
+				$.ajax({
+					url:ajaxurl,
+					data:query,
+					type:"Post",
+					dataType:"json",
+					success:function(data){
+						alert(data.show_err);
+						window.location.href = '{wap_url a="index" r="uc_learn&t=load"}';
+					}
+				
+				});
+			}	
+
+		});
+
+	});
+
+</script>
+
+{include file="./inc/footer.html"}
+

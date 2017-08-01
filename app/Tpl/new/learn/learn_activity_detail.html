@@ -1,0 +1,187 @@
+{include file="inc/header.html"}
+
+<div class="wrap">
+
+<?php
+	$this->_var['lpagecss'][] = $this->_var['TMPL_REAL']."/css/index.css";
+	$this->_var['lpagecss'][] = $this->_var['TMPL_REAL']."/css/learn/learn.css";
+	$this->_var['lpagecss'][] = $this->_var['TMPL_REAL']."/js/utils/adv.js";
+	$this->_var['clpagejs'][] = $this->_var['TMPL_REAL']."/js/utils/adv.js";
+?>
+
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$lpagecss"}" />
+<div class="cp_con_top main conTyjTop">
+    <h3>新手体验区</h3>
+    <ul>
+        <li><a class="current" href="{url x="index" r="learn_activity#index" }">体验首页</a></li>
+        {if $user_id}
+			<li><a class="" href="{url x="index" r="learn_activity#invite_link" }">体验账户</a></li>
+		{else}
+			<li><a class="" href="{url x="index" r="user#register" }">体验账户</a></li>
+		{/if}
+        <li><a class="" href="{url x="index" r="learn_activity#rule" }">活动规则</a></li>
+    </ul>
+</div>
+<style type="text/css">
+.logo_nav .r ul li a.current {
+	color: #ff9206;
+}
+</style>
+
+<div class="con_top main conTyj1">
+    <div class="con_top_main">
+    	{if $now_time > $learn_info.begin_time && $now_time < $learn_info.end_time && $learn_cmoney < $learn_info.load_money }
+        	<div class="con_t_m_l z1">
+        {else}
+		 	<div class="con_t_m_l z6">
+		{/if}
+            <div class="con_t_m_l_t">
+                <p>{$learn_info.name}</p>
+                <span>起售日期：{$learn_begin_date}</span>
+            </div>
+            <ul class="con_t_m_l_c">
+                <li class="one">
+                    <div class="li_main">
+                        <p>{$learn_info.rate}%</p>
+                        <span>年化收益率</span>
+                    </div>
+                </li>                
+                <li class="two">
+                    <div class="li_main">
+                        <p>{$learn_info.time_limit}<span> 天</span></p>
+                        <span>产品期限</span>
+                    </div>
+                </li>
+                <li class="two">
+                    <div class="li_main">
+                        <p>{$learn_info.load_money}</p>
+                        <span>体验产品融资规模</span>
+                    </div>
+                </li>
+				<li class="two">
+                    <div class="li_main">
+                        <p>{function name="number_format" v=$has_invest f=2}</p>
+                        <span>已融资金额</span>
+                    </div>
+                </li>
+            </ul>        
+            <div class="textMainTyj">
+                {$learn_info.description}
+            </div>
+        </div>
+        <div class="con_t_m_r con_t_m_r">
+            <div class="con_t_m_r_b">
+            	
+                <div class="wantTyj">我要购买<input type="text" value="{$learn_balance}" class="text" readonly="readonly" id="amount" />份</div>
+                <p class="wantmain">模拟产品<span class="span1">代付</span>金额为{function name="number_format" v=$learn_balance f=2}元</p>    
+                <div class="btn">
+                	<br/>
+					{if $user_id}
+						{if $learn_balance neq 0}
+						<input type="hidden" name="learn_id" id="learn_id" value="{$learn_info.id}" />
+						<input type="hidden" name="money" id="money" value="{$learn_balance}" />
+							{if $now_time > $learn_info.begin_time && $now_time < $learn_info.end_time && $learn_cmoney < $learn_info.load_money }
+	                			<input type="button" class="J_do_invest sub_btn f18 b f_white w240 lh38  bdr3" value="立即投资" />
+							{else}
+								<button type="button" class="sub_btn_gray f18 b f_white w240 lh38  bdr3" >立即投资</button>
+							{/if}
+						{else}
+							<button type="button" class="sub_btn_gray f18 b f_white w240 lh38  bdr3" >立即投资</button>
+						{/if}
+					{else}
+						<button type="button"  onclick="ajax_login();" class="sub_btn f18 b f_white w240 lh38  bdr3" >立即投资</button>
+						
+					{/if}
+					
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="con_bottom main conBTyj">
+        <div class="conBHTyj">
+            <ul class="con_bottom_header">
+                <li id="info_0" class="con_detail"><a href="{url x="index" r="learn_activity#detail" p="id=$id"  }" {if $type eq ''}class="current"{/if} >&nbsp;&nbsp;产品说明&nbsp;&nbsp;</a>&nbsp;&nbsp;</li>
+                <li id="info_1" class="con_detail"><a href="{url x="index" r="learn_activity#detail" p="id=$id&type=1"}" {if $type eq 1}class="current"{/if} >投资方式&nbsp;&nbsp;</a>&nbsp;&nbsp;</li>
+                <li id="info_2" class="con_detail"><a href="{url x="index" r="learn_activity#detail" p="id=$id&type=2"}" {if $type eq 2}class="current"{/if}>购买规则&nbsp;&nbsp;</a>&nbsp;&nbsp;</li>
+            </ul>
+         </div> 
+		 
+		<div class="con_b__m">
+        	<div id="info">
+		{if $type eq ''}
+			<div class="con_bottom_cpxq conBCRgzg same" style="border: none;color: #4b4b4b;">
+			<p>1、本活动中的【{$learn_info.name}】为虚拟产品。预期年化收益率为{$learn_info.rate}%，投资期限为{$learn_info.time_limit}天 ；</p>
+			<p>2、体验产品的募集期为&nbsp;{function name="to_date" v=$begin_time f="m月d日"} - {function name="to_date" v=$end_time f="m月d日"}；</p>
+			<p>3、募集期结束后进入运行期。本体验产品不支持现金充值购买；</p>
+			<p>4、投资起息日：募集期满后次日开始计息；</p>
+			<p>5、活动中获取的收益可用以项目投资。</p>
+			</div>
+		 {/if}
+		 {if $type eq 1}
+			<div class="con_bottom_cpxq conBCRgzg same" style="border: none;color: #4b4b4b;">
+				<p class="rggzText">在购买【{$learn_info.name}】并进入运行期后，用户需持有到期。</p>
+				<div class="ty">
+					<div class="ty1 ty0">
+						<div class="tyT">购买体验版<br>投资产品   </div>                        
+					</div>
+					<img src="{$TMPL}/images/learn/tyjt1.png" class="ty2 ty0">
+					<div class="ty3 ty0">
+						<div class="tyT">全额持有到期</div>
+						<div class="tyB">共计{$learn_info.time_limit}天</div>
+					</div>
+					<img src="{$TMPL}/images/learn/tyjt2.png" class="ty4 ty0">
+					<div class="ty5 ty0">
+						<div class="div1">获取持有到期的收益</div>
+						<div class="div2">计算公式＝预期年化收益率＊金额/365*产品期限 ＝{$learn_info.rate}%＊{$learn_balance}/365*{$learn_info.time_limit}天</div>
+					</div>
+				</div>
+			</div>
+		{/if} 
+		{if $type eq 2}
+			<div class="con_bottom_cpxq conBCRgzg same" style="border: none;color: #4b4b4b;">
+			<p>在认购【{$learn_info.name}】并进入运行期后，用户需持有到期。</p>
+			<p></p>
+			<p>&nbsp;&nbsp;1、体验产品的募集期限为 {$learn_limit} 天，募集期结束后进入产品运行期；</p>
+			<p>&nbsp;&nbsp;2、每期体验产品购买无需额外费用；</p>
+			<p>&nbsp;&nbsp;3、当期产品募集成功后，即视为份额生效，并于募集成功后次日开始计息。</p>
+			</div>
+		{/if} 	
+        </div>    
+    </div> 
+</div>
+</div>
+<script type="text/javascript">
+			
+		$(".J_do_invest").click(function(){
+			
+			if(confirm("确定投资吗？"))
+			{
+				var ajaxurl = '{url r="index" x="learn_activity#do_invest"}';
+				var learn_id =  $.trim($("#learn_id").val());
+				var money =  $.trim($("#money").val());
+				var query = new Object();
+				query.learn_id = $.trim($("#learn_id").val());
+				query.money = $.trim($("#money").val());
+				query.post_type = "json";
+				$.ajax({
+					url:ajaxurl,
+					data:query,
+					type:"Post",
+					dataType:"json",
+					success:function(result){
+						$.showSuccess("投资成功",function(){
+							location.reload();
+						});
+					},
+					error:function(){
+						$.showErr("请求数据失败");
+					}
+				
+				});
+			}	
+			
+		});
+
+</script>
+</div>
+{include file="inc/footer.html"}

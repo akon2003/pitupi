@@ -1,0 +1,44 @@
+	{include file="./inc/header.html"}
+	<?php
+		$this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/Log_recharge.css";	
+		$this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/public.css";	
+	?>
+	<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$pagecss"}" />
+	
+	<style>
+		
+	</style>
+	<div class="new_p-m">
+		<table class="Journal_table">
+			<tr>
+				<th>购买等级</th>
+				<th>购买时间</th>
+				<th>期限</th>
+				<th>价格</th>
+				<th>到期时间</th>
+			</tr>
+			{foreach from=$data.vip_buy_log_list item="item"}
+			<tr>
+				<td>{$item.vip_grade}</td>
+				<td>{function name="to_date" v=$item.vip_buytime f="Y-m-d"}</td>
+				<td>{$item.buy_limit} 年</td>
+				<td>{function name="number_format" v=$item.buy_fee f="2"} 元</td>
+				<td>{function name="to_date" v=$item.vip_end_time f="Y-m-d"}</td>
+			</tr>
+			{/foreach}
+			
+		</table>
+	</div>
+	<div class="new-but-block ">
+		<div class="but-block">
+		<a class="but_sure" href="{wap_url a="index" r="uc_vip_buy"}">VIP购买</a>
+		</div>
+	</div>
+	{include file="./inc/footer.html"}
+
+
+
+
+
+
+

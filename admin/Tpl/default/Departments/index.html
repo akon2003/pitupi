@@ -1,0 +1,41 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<php>
+	function get_referrals_count($count) {
+		return $count == 0? "" : $count;
+	}
+	function get_is_authority($is_authority) {
+		if ($is_authority) {
+			return '是';
+		} else {
+			return '否';
+		}
+	}
+</php>
+<div class="main">
+<div class="main_title">{$main_title}</div>
+<div class="blank5"></div>
+<div class="blank5"></div>
+<div class="button_row">
+	<input type="button" class="button" value="{%ADD}部门" onclick="add();" />
+	<input type="button" class="button" value="{%EDIT}部门" onclick="_edit();" />
+</div>
+<div class="blank5"></div>
+<html:list 
+	id="dataTable"
+	style="dataTable dataTableSelect dataTableSelectDblclick"
+	name="customer"
+	datasource="list"
+	show="id|checkbox:选择|50px
+		,adm_name:部门名称
+		,role_id_format:部门角色
+		,referrals_count|get_referrals_count:成员数
+		,is_effect|get_is_effect:{%IS_EFFECT}|120px
+		,is_authority|get_is_authority:是否授权中心"
+	/>
+
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

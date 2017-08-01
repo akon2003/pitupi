@@ -1,0 +1,71 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<load href='__TMPL__Common/style/jquery.autocomplete.css' />
+<load href='__TMPL__Common/js/jquery.autocomplete.min.js' />
+<div class="main">
+<div class="main_title">分配专属客服 <a href="{:u("ExtAdminManager/customer")}" class="back_list">{%BACK_LIST}</a></div>
+<div class="blank5"></div>
+<form name="edit" action="__APP__" method="post" enctype="multipart/form-data">
+<div class="blank5"></div>
+<table class="form conf_tab" cellpadding=0 cellspacing=0 rel="1">
+	<tr>
+		<td colspan=2 class="topTd"></td>
+	</tr>
+	<tr>
+		<td class="item_title">会员信息:</td>
+		<td class="item_input">
+			<table>
+			<tr><td> 会员ID [姓名] </td><td> 推荐人 / 客服</td></tr>
+			<foreach name="list" item="vo">
+				<tr><td> {$vo.user_name} [{$vo.real_name}] </td><td> {$vo.user_referer} / {$vo.admin_real_name}</td></tr>
+			</foreach>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">变更客服:</td>
+		<td class="item_input">        
+			<select name="admin_id" class="w_textbox">
+			<option value="0">专属客服</option>
+			<foreach name="admins" item="item">
+				<option value="{$item.id}">{$item.show_name}</option>
+			</foreach>
+			</select>
+        </td>
+	</tr>
+	<tr>
+		<td colspan=2 class="bottomTd"></td>
+	</tr>
+</table>
+<div class="blank5"></div>
+	<table class="form" cellpadding=0 cellspacing=0>
+		<tr>
+			<td colspan=2 class="topTd"></td>
+		</tr>
+		<tr>
+			<td class="item_title">操作密码:</td>
+			<td class="item_input">
+				<input type="password" class="textbox" name="operatepwd" value=""/>
+			</td>
+		</tr>
+		<tr>
+			<td class="item_title"></td>
+			<td class="item_input">
+			<!--隐藏元素-->
+			<input type="hidden" name="id" value="{$id}" />
+			<input type="hidden" value="<php>echo MODULE_NAME;</php>" name="m" />
+			<input type="hidden" value="<php>echo ACTION_NAME;</php>" name="a" />
+			<input type="hidden" name="confirm" value="1" />
+			<!--隐藏元素-->
+			<input type="submit" class="button" value="确定" />
+			<input type="reset" class="button" value="{%RESET}" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 class="bottomTd"></td>
+		</tr>
+	</table> 	 
+</form>
+</div>
+<include file="Public:footer" />

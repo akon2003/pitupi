@@ -1,0 +1,46 @@
+<div class="wrap" style="z-index:9; position:relative;">
+	<div class="login_block">
+		<div class="block">
+			<?php if (! $this->_var['user_info']): ?>
+			<div class="webtip">
+				<div>公司成立至今，</div>
+				<div><span style="font-size:16px;font-weight:bold;color:#0065B0;">100%</span>投资者按时获取收益。</div>
+			</div>
+			<div class="login">
+				<a href="javascript:void(0);" onclick="ajax_login();"><img src="<?php echo $this->_var['TMPL']; ?>/images/index/login.png"/></a>
+			</div>
+			<div class="register">
+				<a href="<?php
+echo parse_url_tag("u:index|user#register|"."".""); 
+?>"><img src="<?php echo $this->_var['TMPL']; ?>/images/index/register.png"/></a>
+			</div>
+			<div class="forgot">
+				<a href="<?php
+echo parse_url_tag("u:index|user#getpassword|"."".""); 
+?>">忘记密码?</a>
+			</div>
+			<?php else: ?>
+			<div class="webtip">
+				<div>欢迎</div>
+				<div><span style="font-size:16px;font-weight:bold;color:#0065B0;">用户：<?php echo $this->_var['user_info']['user_name']; ?></span></div>
+			</div>
+			<div class="uc_info">
+				<a href="<?php
+echo parse_url_tag("u:index|uc_center|"."".""); 
+?>"><img src="<?php echo $this->_var['TMPL']; ?>/images/index/uc_center.png"/></a>
+			</div>
+			<div class="uc_money" style="height:38px;">
+				<a href="<?php
+echo parse_url_tag("u:index|uc_money#incharge|"."".""); 
+?>"><img src="<?php echo $this->_var['TMPL']; ?>/images/index/recharge.png"/></a>
+				<a href="<?php
+echo parse_url_tag("u:index|uc_money#bank|"."".""); 
+?>"><img src="<?php echo $this->_var['TMPL']; ?>/images/index/carry.png"/></a>
+				<a href="<?php
+echo parse_url_tag("u:index|user#loginout|"."".""); 
+?>"><img src="<?php echo $this->_var['TMPL']; ?>/images/index/logout.png"/></a>
+			</div>
+			<?php endif; ?>
+		</div>
+	</div>	
+</div>

@@ -1,0 +1,52 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<php>
+	function getArticleType($type_id)
+	{
+		return l("ARTICLE_TYPE_".$type_id);
+	}
+</php>
+<div class="main main-size09">
+<div class="main_title">{$main_title}</div>
+<div class="blank5"></div>
+<if condition="$is_mymanager neq 1">
+<div class="blank5"></div>
+<form name="search" action="__APP__" method="get">	
+	<div class="search_row">
+		部门成员：<input type="text" class="textbox" name="adm_name"  value="{$_REQUEST['adm_name']}" />
+		所属部门：<select name="department_id" class="require">
+			<option value="-1" <if condition="intval($_REQUEST['department_id']) eq -1">selected="selected"</if>>所有部门</option>
+			<foreach name="department_list" item="department">
+				<option value="{$department.id}" <if condition="intval($_REQUEST['department_id']) eq $department['id']">selected="selected"</if>>{$department.adm_name}</option>
+			</foreach>
+		</select>
+		<input type="hidden" value="MyManager" name="m" />
+		<input type="hidden" value="index" name="a" />
+		<input type="submit" class="button" value="{%SEARCH}" />
+		<input type="button" class="button" value="{%ADD}用户" onclick="add();" />
+		<input type="button" class="button" value="{%EDIT}用户" onclick="_edit();" />
+	</div>
+</if>
+<div class="blank5"></div>
+<html:list 
+	id="dataTable"
+	style="dataTable dataTableSelect dataTableSelectDblclick"
+	name="customer"
+	datasource="list"
+	show="id|checkbox:选择|50px
+		,adm_name:用户ID
+		,real_name:姓名
+		,sex|get_sex:性别|48px;
+		,mobile:手机
+		,email:邮箱
+		,is_effect|get_is_effect:{%IS_EFFECT}|48px
+		,pid|get_admin_name:所属部门
+		,authority_id|get_authority:授权中心
+		,role_id|get_role_name:所属角色"
+	/>
+
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

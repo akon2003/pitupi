@@ -1,0 +1,332 @@
+{include file="inc/header.html"}
+	<div class="ur_here">
+		<span class="f_l">
+			<a href="{url x="index" r="index"}">首页</a> > <a href="{url x="index" r="newes"}">投资列表</a> > 详情
+		</span>
+	</div>
+	<div id="deal-default">
+		{include file="inc/newe/newe_info_company.html"} 
+		<div class="blank20"></div>
+		{include file="inc/newe/newe_user_view_infos.html"}
+		<div class="desc_inf ">
+	        <div class="tabbox bddfa" id="J_deal_tab_select">
+	            <ul>
+	                <li class="tab cur" rel="1">基本信息</li>
+	                <li class="tab" rel="2">加入记录</li>
+	                <li class="tab" rel='3'>相关问题</li>
+	            </ul>
+	        </div>
+			<div class="cont bdd bt0 bddf clearfix" id="J_deal_tab_box">
+				<div class="box_view box_view_1">
+					{if $u_info.user_type eq 1 && $company}
+					<!--{include file="inc/newe/financing_info.html"}-->
+					{/if}
+					{include file="inc/newe/deal_mortgage_info.html"}
+					<style type="text/css">
+                        .box-bd-table {padding: 5px 0;font-family:'微软雅黑' Arial;font-size:14px;width:100%;}
+                        .box-bd-table td {padding:16px 2px;text-align:left;}
+                        .box-bd-table td.li_title{color:#848EAF;font-size:16px;width:120px;text-align:right;padding-right:24px;}
+                        .box-bd-table tr.odd td {background:#F9FCFF;}
+                    </style>
+                    <div class="box-t f_blue f18"><i class="iconfont">&#xe627;</i>&nbsp;U计划描述</div>
+					<div class="box-bd">
+                        <table class="box-bd-table">
+                            <tr><td class="li_title">计划名称:</td><td>{$deal.name}</td></tr>
+                            <tr class="odd"><td class="li_title">计划描述:</td><td>新手专享U计划是平台为您提供的本金自动循环出借及到期自动转让退出的投标工具，并由系统为您实现分散投标，更好的满足您多样化的理财需求。该计划所对应的借款均100%适用于平台用户利益保障机制。您出借所获得的利息收益每月领取收益（到期领取本金），具体以您在加入时页面展示的相应预期收益率为准。</td></tr>
+
+                            <tr><td class="li_title">投标范围:</td><td>机构担保标、实地认证标</td></tr>
+                            <tr class="odd"><td class="li_title">预期收益:</td><td>{$deal.rate}%</td></tr>
+
+                            <tr><td class="li_title">锁定期限:</td><td>{if $deal.repay_time_type eq 1}{$deal.repay_time}个月{else}{$deal.repay_time}天{/if}</td></tr>
+                            <tr class="odd"><td class="li_title">加入条件:</td><td>加入金额{$deal.min_loan_money}元起，且为100元的整数倍递增</td></tr>
+
+                            <tr><td class="li_title">加入上限:</td><td>{if $deal.max_loan_money gt 0}{function name="format_price" v="$deal.max_loan_money"}{else}￥500,000{/if}元</td></tr>
+                            <tr class="odd"><td class="li_title">到期退出方式:</td><td>系统将通过债权转让自动完成退出，您所持债权出售完成的具体时间，视债权转让市场交易情况而定。</td></tr>
+
+                            <tr><td class="li_title">保障方式:</td><td>适用于具体投资项目的第三方担保机制</td></tr>
+                        </table>
+                    </div>
+					<div class="box-t f_blue f18"><i class="iconfont">&#xe627;</i>&nbsp;U计划进度</div>
+                    <div class="box-bd">
+                        <style type="text/css">
+                            .progress_table {width:1050px;margin:0 auto;}
+                            .progress_table td {width:150px;text-align:center;vertical-align:middle;}
+                            .progress_table .mtitle {font-size:16px;color:black;margin-top:24px;}
+                            .bgtop {width:80px;height:80px;margin:0 auto;}
+                            .progress_table .step_1 {background:url('/public/images/uplan/step_1.png') no-repeat;}
+                            .progress_table .step_2 {background:url('/public/images/uplan/step_2.png') no-repeat;}
+                            .progress_table .step_3 {background:url('/public/images/uplan/step_3.png') no-repeat;}
+                            .progress_table .step_4 {background:url('/public/images/uplan/step_4.png') no-repeat;}
+                            .progress_table .step {background:url('/public/images/uplan/step.png') no-repeat 32px 0;margin-top:6px;}
+                            .progress_table .gray .step_1 {background:url('/public/images/uplan/gray_step_1.png') no-repeat;}
+                            .progress_table .gray .step_2 {background:url('/public/images/uplan/gray_step_2.png') no-repeat;}
+                            .progress_table .gray .step_3 {background:url('/public/images/uplan/gray_step_3.png') no-repeat;}
+                            .progress_table .gray .step_4 {background:url('/public/images/uplan/gray_step_4.png') no-repeat;}
+                            .progress_table .gray .step {background:url('/public/images/uplan/gray_step.png') no-repeat 32px 0;}
+                        </style>
+                        <table class="progress_table"><tr>
+                            <td>
+                                <div class="bgtop step_1"></div>
+                                <div class="mtitle">U计划发布</div>
+                            </td>
+                            <td><div class="bgtop step"></div></td>
+                            <td>
+                                <div class="bgtop step_2"></div>
+                                <div class="mtitle">开始加入</div>
+                            </td>
+                            <td {if $deal.deal_status lt 4}class="gray"{/if}><div class="bgtop step"></div></td>
+                            <td {if $deal.deal_status lt 4}class="gray"{/if}>
+                                <div class="bgtop step_3"></div>
+                                <div class="mtitle">进入锁定期</div>
+                            </td>
+                            <td {if $deal.deal_status lt 5}class="gray"{/if}><div class="bgtop step"></div></td>
+                            <td {if $deal.deal_status lt 5}class="gray"{/if}>
+                                <div class="bgtop step_4"></div>
+                                <div class="mtitle">到期退出</div>
+                            </td>
+                        </tr></table>
+                    </div>
+				</div>
+				<div class="box_view box_view_2 hide">
+					<div class="bid-record">
+						<span class="gray f_r">合计&nbsp;:&nbsp;<em class="f_gr">{function name="format_price" v="$load_total_money"}</em>&nbsp;(元)</span>
+						<span class="gray f_r">加入人数&nbsp;:&nbsp;<em class="f_333">{function name="count" v="$load_list"}</em>&nbsp; &nbsp;|&nbsp;&nbsp; </span>
+					</div>
+					{include file="inc/newe/load_list.html"}
+				</div>
+				<div class="box_view box_view_3 hide">
+					<style type="text/css">
+
+                        p{padding: 5px 0;font-family:'微软雅黑' Arial;font-size:14px;}
+ 
+                        p.li_title{color:#848EAF;font-size:16px;}
+                        p.li_content {margin-bottom:16px;}
+                    </style>
+                    <div class="box-bd">
+                    <p class="li_title">1.&nbsp;U计划安全吗？</p>
+					<p class="li_content">U计划以严谨负责的态度对每笔借款进行严格筛选。同时，U计划所对应借款100%适用平台用户利益保障机制。</p>
+                    <p class="li_title">2.&nbsp;U计划发布时间？</p>
+					<p class="li_content">U计划发布机制改为每个工作日上午10:00发布，周末节假日上午11:00发布，并可能灵活调整限额，具体发布时间您可在官网首页查看。</p>
+                    <p class="li_title">3.&nbsp;U计划有哪些类别？</p>
+					<p class="li_content">U计划分为三种，U计划A锁定期3个月，U计划B锁定期6个月，U计划C锁定期12个月。</p>
+
+                    <p class="li_title">4.&nbsp;锁定期是什么？</p>
+					<p class="li_content">U计划具有收益期锁定限制，锁定期满后自动退出。</p>
+                    <p class="li_title">5.&nbsp;U计划到期后，我如何退出并实现收益?</p>
+					<p class="li_content">U计划到期当日，系统将自动通过债权转让为您收回出借本金，转让完成时间一般为1~3个工作日。</p>
+					<p>U计划仅为信息发布平台，未以任何明示或暗示的方式对出借人提供担保或承诺保本保息，出借人应根据自身的投资偏好和风险承受能力进行独立判断和作出决策，并自行承担资金出借的风险与责任。市场有风险，投资需谨慎。</p>
+	
+                    </div>
+                </div>
+				{if $deal.deal_status gte 4}
+				<div class="box_view box_view_3 hide">
+					{include file="inc/newe/loan_repay_list.html"}
+				</div>
+				<div class="box_view box_view_4 hide">
+				{include file="inc/newe/load_repay_list.html"}
+				</div>
+				{/if}
+			</div>
+		</div>
+		<!--<div class="blank20"></div>-->
+		
+	</div>
+<script type='text/javascript'>
+	function fav_result(o)
+	{
+		$(o).parent().html("已关注");
+	}
+	var is_submit_lock =false;
+	var bid_paypassword = "";
+	var bid_calculate = null;
+	jQuery(function(){
+		{if $deal.uloadtype eq 1}
+		$("a.c_number").click(function(){
+			var rel=$(this).attr("rel");
+			var obj = $(this);
+			var number = parseInt($("#J_BIDMONEY").val());
+			switch(rel){
+				case "-":
+					if(number-1 > 1){
+						$("#J_BIDMONEY").val(number-1);
+					}
+					else{
+						$("#J_BIDMONEY").val(1);
+					}
+					break;
+				case "+":
+					 var max_portion = {if $deal.max_portion gt 0}<?php echo $this->_var['deal']['max_portion'] - $this->_var['has_bid_portion'];  ?>{else}{$deal.need_portion}{/if};
+					if(number+1 <= max_portion){
+						$("#J_BIDMONEY").val(number+1);
+					}
+					else{
+						$("#J_BIDMONEY").val(max_portion);
+					}
+					break
+			}
+			loadSy();
+		});
+		{/if}
+		
+		
+		$("#tz_link").click(function(){
+			var direction = '{$deal.direction}';
+			var direction_pass = '{$deal.direction_pass}';
+			var query = {};
+
+			if ($("#agreement").attr("checked") != "checked") {
+				$.showErr("请同意 委托投资协议");
+				return false;
+			} else {
+				query.agreement = 1;
+			}
+
+			if (direction == 1) {				
+				var password = $("#direction_pass").val();
+				password = hex_md5(hex_md5(password));
+				if (password != direction_pass) {
+					$.showErr("密码输入错误，请重新输入");
+					return false;
+				} else {
+					query.password = $("#direction_pass").val();
+				}
+			}
+
+			query.id = '{$deal.id}';
+			query.bidmoney = $.trim($("#J_BIDMONEY").val());
+			$.ajax({
+				url:'{url x="index" r="newe#bid"}',
+				data:query,
+				type:"post",
+				dataType:"json",
+				success:function(result){
+					if(result.status==2){
+						$.showErr(result.info,function(){
+							ajax_login();
+						});
+					}
+					else if(result.status==1){
+						$.weeboxs.open(result.info,{boxid:"paypass-box",contentType:'text',showButton:false,title:"支付密码",width:480,height:240,type:'wee',onopen:function(){
+							setTimeout(function(){
+								init_ui_textbox();
+								init_ui_select();
+							},200);
+						}});
+						
+					}
+					else{
+						$.showErr(result.info,function(){
+							if(result.jump)
+							{
+								window.location.href = result.jump;
+							}
+						});
+					}
+				}
+			});
+		});
+		
+		$("#J_bindpassword_btn").live("click",function(){
+			if($.trim($("#J_bid_password").val())!=""){
+				bid_paypassword =$.trim($("#J_bid_password").val());
+				to_load();
+			}
+			else{
+				$.showErr("请输入支付密码",function(){
+					$("#J_bid_password").focus();
+				});
+			}
+		});
+		$("#J_bindpassword_rbtn").live("click",function(){
+			$.weeboxs.close("paypass-box");
+		});
+		
+		$("#J_BIDMONEY").keyup(function(){
+			loadSy();
+		});
+		
+		loadSy();
+		
+		{if $deal.ips_bill_no neq "" && $user_info.id gt 0}
+		checkIpsBalance(0,{$user_info.id},function(result){
+			if(result.pErrCode=="0000"){
+				$(".J_u_money_0").html(result.pBalance+"<span class='f_red '>[绑]</span>");
+			}
+		});
+		{/if}
+		
+	});
+	
+	function loadSy(){
+		var query = new Object();
+		query.uloantype = '{$deal.uloadtype}';
+		query.minmoney = '{$deal.min_loan_money}';
+		query.loantype = '{$deal.loantype}';
+		query.rate = '{$deal.rate}';
+		query.repay_time = '{$deal.repay_time}';
+		query.repay_time_type = '{$deal.repay_time_type}';
+		query.money = $.trim($("#J_BIDMONEY").val());
+		query.user_loan_manage_fee = '{$deal.user_loan_manage_fee}';
+		query.user_loan_interest_manage_fee = '{$deal.user_loan_interest_manage_fee}';
+		if(bid_calculate) bid_calculate.abort(); /*终止之前所有的未结束的ajax请求，然后重新开始新的请求  */
+		bid_calculate = $.ajax({
+			url:'{url x="index" r="ajax#bid_calculate"}',
+			data:query,
+			type:"post",
+			dataType:"text",
+			success:function(result){
+				$(".J_u_money_sy").html(result);
+			}
+		});
+	}
+	
+	function to_load(){
+		if(is_submit_lock)
+		{
+			return false;
+		}
+		is_submit_lock = true;
+		var query = new Object();
+		query.bid_money=$.trim($("#J_BIDMONEY").val())
+		query.id="{$deal.id}";
+		query.bid_paypassword = FW_Password(bid_paypassword);
+		query.ajax=1;
+		query.ecv_id=$.trim($("select[name='ecv_id']").val());
+		
+		$.ajax({
+			url:'{url x="index" r="newe#dobid"}',
+			data:query,
+			type:"POST",
+			dataType:"json",
+			success:function(result){
+				if(result.status==1){
+					is_submit_lock = false;
+					$.showSuccess(result.info,function(){
+						window.location.href=result.jump;
+					});
+				}
+				else if(result.status==2){
+					window.location.href=result.jump;
+				}
+				else if(result.status==4){
+					is_submit_lock = false;
+					$.showCfm(result.info, function() {
+						window.location.href=result.jump;
+					});					
+				}
+				else{
+					is_submit_lock = false;
+					$.showErr(result.info);
+				}
+			},
+			error:function(ajaxobj)
+			{
+			}
+		});
+	}
+</script>
+{include file="inc/footer.html"}
+
+
+
+								
