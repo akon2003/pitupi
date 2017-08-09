@@ -1,0 +1,469 @@
+<?php exit;?>a:3:{s:8:"template";a:8:{i:0;s:53:"/wwwroot/www_p2p_com/app/Tpl/new/page/help_index.html";i:1;s:48:"/wwwroot/www_p2p_com/app/Tpl/new/inc/header.html";i:2;s:60:"/wwwroot/www_p2p_com/app/Tpl/new/inc/common/load_css_js.html";i:3;s:57:"/wwwroot/www_p2p_com/app/Tpl/new/inc/common/load_top.html";i:4;s:61:"/wwwroot/www_p2p_com/app/Tpl/new/inc/relate_help_article.html";i:5;s:63:"/wwwroot/www_p2p_com/app/Tpl/new/inc/inc_article_help_info.html";i:6;s:48:"/wwwroot/www_p2p_com/app/Tpl/new/inc/footer.html";i:7;s:46:"/wwwroot/www_p2p_com/app/Tpl/new/inc/kefu.html";}s:7:"expires";i:1494364769;s:8:"maketime";i:1494361169;}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+<meta name="renderer" content="webkit">
+<meta name="Generator" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta property="wb:webmaster" content="d5200c3962dbc3f8" />
+<meta property="qc:admins" content="527130775767471226375" />
+<title>投资回报 - 金融理财</title>
+<link rel="icon" href="favicon.ico" type="/image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="/image/x-icon" />
+<meta name="keywords" content="投资回报,金融理财" />
+<meta name="description" content="投资回报,金融理财服务有限公司" />
+<link rel="stylesheet" type="text/css" href="http://p2p.ynyaoqi.com/public/runtime/statics/eef63dad343cf53e3fdd2e68978cd9c4.css" />
+<script type="text/javascript">
+var APP_ROOT = '';;
+var LOADER_IMG = 'http://p2p.ynyaoqi.com/app/Tpl/new/images/lazy_loading.gif';
+var ERROR_IMG = 'http://p2p.ynyaoqi.com/app/Tpl/new/images/image_err.gif';
+var TMPL = 'http://p2p.ynyaoqi.com/app/Tpl/new';
+var send_span = 2000;
+var to_send_msg = false;
+var __LOGIN_KEY = "554fcae493e564ee0dc75bdf2ebf94caget_login_key|YToxOntzOjQ6Im5hbWUiO3M6MTM6ImdldF9sb2dpbl9rZXkiO30=554fcae493e564ee0dc75bdf2ebf94ca";
+var __HASH_KEY__ = "554fcae493e564ee0dc75bdf2ebf94caget_hash_key|YToxOntzOjQ6Im5hbWUiO3M6MTI6ImdldF9oYXNoX2tleSI7fQ==554fcae493e564ee0dc75bdf2ebf94ca";
+</script>
+<script type="text/javascript" src="/public/runtime/app/lang.js"></script>
+<script type="text/javascript" src="http://p2p.ynyaoqi.com/public/runtime/statics/b09b0da24ba6be38493187d3ca091be8.js"></script>
+<!--[if lt IE 10]>
+<script type="text/javascript" src="http://p2p.ynyaoqi.com/app/Tpl/new/js/PIE.js"></script>
+<![endif]-->
+<script language="javascript">
+$(function() {
+    if (window.PIE) {
+        $('.bdr3,.bdr5,.user_info_d a,.main_adv_ctl li,.after_login .user_money A,.listbtn SPAN').each(function() {
+            PIE.attach(this);
+        });
+    }
+});
+</script></head>
+<body>
+<div class="header" id="header">
+    <!---->
+<div class="constr">
+	<div class="wrap" style>
+				<div class="f_r lh30">
+			
+		</div>	
+		<div class="f_r">
+			<ul class="right mt9">
+				<li class="hover_a top_li jcur">
+					<a href="wap/" style="padding:0;border:0;color:white">切换手机版</a>
+					<span style="color:white">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				</li>				
+				<li class="hover_a top_li jcur" id="J_APP_DOWN">
+					<a href="http://p2p.ynyaoqi.com/public/images/qrcode/c9/fc44d59a330fca2f469c73e26633de45.png" style="padding:0;border:0;color:white"><i class="iconfont">&#xe613;</i>手机理财</a>
+					<span style="color:white">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				</li>				
+				<li class="hover_a top_li jcur">
+					<a href="http://p2p.ynyaoqi.com/public/images/qrcode/c9/d09fe1599f6b1095030eb8f3d4ba46a3.png'" id="weixim" style="color:white"><i class="iconfont">&#xe614;</i>微信</a>
+					<span style="color:white">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				</li>				
+				<li class="top_li hover_a">
+					<a href="index.php?ctl=help&id=5" style="color:white">理财咨询</a>
+					<span style="color:white">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				</li>
+				<li class="top_li">
+					<a href="index.php?ctl=help" style="color:white">帮助中心</a>
+					<span style="color:white">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				</li>				
+				<li class="top_li">
+					554fcae493e564ee0dc75bdf2ebf94caload_user_tip|YToxOntzOjQ6Im5hbWUiO3M6MTM6ImxvYWRfdXNlcl90aXAiO30=554fcae493e564ee0dc75bdf2ebf94ca				</li>
+			</ul>
+		</div>	
+	</div>
+</div>
+<!---->	<div class="blank0"></div>
+	<div class="main_bars" style="background:#F7F8F8;">
+		<div class="main_bar wrap">	
+			<div class="logo mr15">
+				<a class="link f_l" href="/">
+										<span style='display:inline-block; width:190px; height:57px; background:url(http://p2p.ynyaoqi.com/public/attachment/201603/14/17/56e689e27df7c.png) no-repeat; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=http://p2p.ynyaoqi.com/public/attachment/201603/14/17/56e689e27df7c.png, sizingMethod=scale);_background-image:none;'></span>				</a>
+			</div>  
+			<script type="text/javascript">
+				$(document).ready(function() {
+					$(".main_nav li").each(function(){
+						//文本替换
+						var txt = $(this).find('a').text();
+						$(this).find('a').html('').append("<span>"+txt+"</span>");
+						$(this).mouseover(function(){
+							$(this).find('a span').css({'color':'white'});
+						}).mouseout(function(){
+							if (!$(this).hasClass('current')) {
+								$(this).find('a span').css({'color':'black'});
+							}
+						});
+					});
+				});
+			</script>
+			<!--加载菜单-->
+			<ul class="main_nav">
+									<li class="  pr" rel='1'><div class="cor">
+												<a href="/index.php" target="" >首页 </a>
+																	</div></li>
+									<li class="  pr" rel='2'><div class="cor">
+												<a href="/index.php?ctl=deals" target="" >我要投资 </a>
+																	</div></li>
+									<li class="  pr" rel='3'><div class="cor">
+												<a href="/index.php?ctl=borrow" target="" >我要借款 </a>
+																	</div></li>
+									<li class="  pr" rel='71'><div class="cor">
+												<a href="/index.php?ctl=uplans" target="" >U-计划 </a>
+																	</div></li>
+									<li class="  pr" rel='52'><div class="cor">
+												<a href="/member.php?ctl=uc_center" target="" >我的账户 </a>
+																	</div></li>
+									<li class="  pr" rel='59'><div class="cor">
+												<a href="/index.php?ctl=score" target="" >积分商城 </a>
+																	</div></li>
+							</ul>
+			<!--加载菜单END-->
+		</div>
+	</div>
+</div>
+<!---->
+<!---->
+<div style="width:100%;height:400px;background:url('/app/Tpl/new/images/index/adv/bzls.png');"></div>
+<!---->
+<div class="wrap"> 
+<div class="blank"></div>
+<div class="short f_l help_center">
+	<div class="tree-box clearfix">
+										<div class="tree">
+			<div class="hd">关于我们</div>
+						<div class="item "><a href="/index.php?ctl=help&id=87" >借款须知</a></div>
+						<div class="item act"><a href="/index.php?ctl=help&id=75" >投资回报</a></div>
+						<div class="item "><a href="/index.php?ctl=help&id=66" >管理团队</a></div>
+					</div>
+						</div>
+</div>
+<style type="text/css">
+	.help_center {width:1200px;float:left;text-align:left;margin-bottom:3px;}
+	.help_center .tree {width:100%;height:100%;}
+	.help_center .tree .hd {width:160px;height:40px;margin-top:0;float:left;}
+	.help_center .tree .item {border-bottom:0;width:120px;height:40px;margin-top:0;float:left;}
+	.help_center .tree .item a {background:none;border-left:0;border-bottom:0;margin-top:3px;}
+</style>
+<div class="long f_r" style="width:1200px;">
+	<div class="bdd bddf article_box clearfix" style="padding:0 50px">
+	<div class="publish_time clearfix pr" style="min-height: 25px;">
+        <div class="f_r" style="right:0; top:5px ;">
+			<a href="javascript:window.history.back();">[返回]</a>		</div>
+		<div class="blank0"></div>
+    </div>
+    <div class="blank0"></div>
+	<div class="article_info">
+			<div style="padding:10px;">
+	<div style="font-size:13px;">
+		<p>
+			<b>通过p2p信贷，您可以将手中的富余资金出借给信用良好但缺少资金的大学生、工薪阶层、微小企业主、农民，帮助他们实现教育培训、电脑或家电购买、	 装修、兼职创业、脱贫致富等理想，同时还能通过利息收入为您带来较高的稳定收益，	 实现精神和物质的双重回报。根据p2p信贷的历史经验数据，资金年收益始终保持在10%以上。</b> 
+		</p>
+	</div>
+</div>
+<div style="padding:10px;">
+	<div class="about_title2">
+		各类型投资产品收益及风险对比分析
+	</div>
+	<div style="margin:8px 0px;">
+	</div>
+	<div class="dunDetail" style="font-size:13px;">
+		<table width="480" border="0" cellspacing="1" style="text-align:center;background-color:#d3d4d8;" class="ke-zeroborder">
+			<tbody>
+				<tr>
+					<td>
+						产品
+					</td>
+					<td>
+						年收益
+					</td>
+					<td>
+						风险级别
+					</td>
+					<td>
+						流动性
+					</td>
+				</tr>
+				<tr>
+					<td>
+						一年期定存
+					</td>
+					<td>
+						2.6%
+					</td>
+					<td>
+						★
+					</td>
+					<td>
+						★
+					</td>
+				</tr>
+				<tr>
+					<td>
+						一年期国债
+					</td>
+					<td>
+						2.6%
+					</td>
+					<td>
+						★
+					</td>
+					<td>
+						★
+					</td>
+				</tr>
+				<tr>
+					<td>
+						银行理财产品
+					</td>
+					<td>
+						3%?6%
+					</td>
+					<td>
+						★★
+					</td>
+					<td>
+						★
+					</td>
+				</tr>
+				<tr>
+					<td>
+						开放式基金
+					</td>
+					<td>
+						不确定
+					</td>
+					<td>
+						★★★
+					</td>
+					<td>
+						★★★★★
+					</td>
+				</tr>
+				<tr>
+					<td>
+						股票
+					</td>
+					<td>
+						不确定
+					</td>
+					<td>
+						★★★★★
+					</td>
+					<td>
+						★★★★
+					</td>
+				</tr>
+				<tr>
+					<td>
+						p2p信贷
+					</td>
+					<td>
+						10%以上
+					</td>
+					<td>
+						★
+					</td>
+					<td>
+						★★
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<div style="padding:10px;">
+	<div class="about_title2">
+		一年期定期存款、国债
+	</div>
+	<div style="margin:8px 0px;">
+	</div>
+	<div style="font-size:13px;">
+		<p>
+			定期存款与国债的风险，在众多理财途径里面无疑最低的，然而锁定期长，2％左右的回报率，在通过膨胀日益高涨，CPI高于3％的今天，	 却让资金难以抗衡通胀，从长期来看购买力将越来越低。
+		</p>
+	</div>
+</div>
+<div style="padding:10px;">
+	<div class="about_title2">
+		银行理财产品
+	</div>
+	<div style="margin:8px 0px;">
+	</div>
+	<div style="font-size:13px;">
+		<p>
+			在银行里，锁定期1年以上的理财产品，年化回报率一般在在3－6％左右，但是动辄几百万的投资门槛，将很多理财者拒之门外。相比起来，	 通过p2p借贷系统借出，资金的回收情况则要灵活的多。此外，理财产品背后的还款来源则是政府的财政贷款，房地产信托等。这些对象的财务情况并非完全透明，	 对于普通用户来说，往往只能看到表面的情况，难以真正理解其中的风险。
+		</p>
+	</div>
+</div>
+<div style="padding:10px;">
+	<div class="about_title2">
+		股票、基金
+	</div>
+	<div style="margin:8px 0px;">
+	</div>
+	<div style="font-size:13px;">
+		<p>
+			随着中国金融行业的发展，股票和基金已经慢慢地成为了很多人投资理财的选择。然而，股票和激励里那些复杂的概念，创业版，物联网，	 有色板块，明星基金经理，内部消息等等词汇，我们已慢慢耳熟能详，我们也一次次地期望那个暴富的故事发生在我们身上，然而在现实生活中，	 却往往发现并不那么给力，我们面临的更多的总是长期套牢。相比起来，通过分散投资，通过借钱还款这样简单明了的赚钱模式，获得稳定的10%以上收益，	 也许更适合普通的投资者。
+		</p>
+	</div>
+</div>		</div>
+</div></div>
+<div class="blank"></div>
+</div>
+<div class="blank10"></div>
+<div id="ftw" style="background:#3D3D3E">	
+	<div id="ft">
+		    	<div class="wrap">
+    		<div class="blank20"></div>
+			<div style="padding-bottom:20px;">
+	            <ul class="cf f_l f_box">
+	            											<li class="col hp1">
+	                    <h3 style="color:#1A91ED;text-align:center;">帮助中心</h3>
+						<div class="blank0"></div>
+	                    <ul class="sub-list" style="border-left:1px solid #C9C9CA;text-align:center;">
+																					<li><a href="/index.php?ctl=help&id=74"  style="color:white;">新手指南</a></li>
+																												<li><a href="/index.php?ctl=help&id=73"  style="color:white;">常规问题</a></li>
+																												<li><a href="/index.php?ctl=help&id=2"  style="color:white;">资费说明</a></li>
+														  
+							<li class="blank0"></li>
+						</ul>
+						<div class="blank0"></div>
+	                </li>                     
+																				<li class="col hp2">
+	                    <h3 style="color:#1A91ED;text-align:center;">安全中心</h3>
+						<div class="blank0"></div>
+	                    <ul class="sub-list" style="border-left:1px solid #C9C9CA;text-align:center;">
+																					<li><a href="/index.php?ctl=help&id=103"  style="color:white;">法律政策</a></li>
+																												<li><a href="/index.php?ctl=help&id=35"  style="color:white;">隐私保护</a></li>
+																												<li><a href="/index.php?ctl=manageagency&act=login" target="_blank" style="color:white;">担保机构</a></li>
+														  
+							<li class="blank0"></li>
+						</ul>
+						<div class="blank0"></div>
+	                </li>                     
+																				<li class="col hp3">
+	                    <h3 style="color:#1A91ED;text-align:center;">关于我们</h3>
+						<div class="blank0"></div>
+	                    <ul class="sub-list" style="border-left:1px solid #C9C9CA;text-align:center;">
+																					<li><a href="/index.php?ctl=help&id=87"  style="color:white;">借款须知</a></li>
+																												<li><a href="/index.php?ctl=help&id=75"  style="color:white;">投资回报</a></li>
+																												<li><a href="/index.php?ctl=help&id=66"  style="color:white;">管理团队</a></li>
+														  
+							<li class="blank0"></li>
+						</ul>
+						<div class="blank0"></div>
+	                </li>                     
+																				<li class="col hp4 end">
+	                    <h3 style="color:#1A91ED;text-align:center;">了解更多</h3>
+						<div class="blank0"></div>
+	                    <ul class="sub-list" style="border-left:1px solid #C9C9CA;text-align:center;">
+																					<li><a href="/index.php?ctl=help&id=105"  style="color:white;">招贤纳士</a></li>
+																												<li><a href="/index.php?ctl=help&id=%E6%8E%88%E6%9D%83%E6%9C%8D%E5%8A%A1%E6%9C%BA%E6%9E%84%E7%99%BB%E5%BD%95"  style="color:white;">安全保障</a></li>
+																												<li><a href="/index.php?ctl=help&id=%E6%8B%85%E4%BF%9D%E6%9C%BA%E6%9E%84%E7%99%BB%E5%BD%95"  style="color:white;">合作机构</a></li>
+														  
+							<li class="blank0"></li>
+						</ul>
+						<div class="blank0"></div>
+	                </li>                     
+															<li class="f_l col" style="width:120px;">
+						<h3 class="f_l">&nbsp;</h3>
+						<div class="blank0"></div>
+						<ul class="sub-list" style="border-left:1px solid #C9C9CA">
+						<div style="width:110px;height:110px;background:white;margin-left:20px;">
+							<img src="/app/Tpl/new/images/index/mobile.png" width="110px" height="110px"/>
+						</div>
+						</ul>
+					</li>  
+	            </ul>
+				<div class="f_r customer" style="width:428px;padding-top:32px;">
+					<div class="f_l">
+						<i class="iconfont f_l mt1 f_white" style="font-size:117px;line-height:80px;">&#xe61f;</i>
+					</div>
+					<div class="f_r" style="width:300px;">
+						<div class="telephone">
+							<span class="telep" style="color:#1A91ED">0871-00000000</span><br/>							
+							<span class="time f16 f_white">周一至周日 9:00-18:00</span>
+						</div>
+						<div class="copy_right tr">
+							<div style="text-align:left;height:40px;color:white;">
+							<span style="color:#fff;font-family:微软雅黑, YaHei, tahoma, arial, 'Hiragino Sans GB', 宋体;font-size:14px;line-height:40px;">&copy; 2016&nbsp;金融理财 &nbsp; &nbsp; &nbsp; All rights reserved</span> 
+							<span class="f_l f_white">
+								<a href="https://credit.szfw.org/CX20151030012015830123.html" target="_blank" class="f_l f_white">
+									<span class="icp_code f_l">滇ICP10000000号</span>
+								</a>
+							</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+				</div>	
+	</div>
+		<!-- 右侧联系我们 -->
+<div style="right:-230px;" class="contactusdiyou">
+  <div class="hoverbtn">
+     <span>联</span><span>系</span><span>我</span><span>们</span>
+     <img class="hoverimg" src="http://p2p.ynyaoqi.com/app/Tpl/new/images/hoverbtnbg.gif" height="9" width="13">
+  </div>
+  
+  <div class="conter" >
+  <div class="con1"> 
+    <dl class="fn_cle">
+         <dt><img src="http://p2p.ynyaoqi.com/app/Tpl/new/images/tel.png" height="31" width="31"></dt>
+         <dd class="f1">财富热线：</dd>
+         <dd class="f2"><span class="ph_num">0871-00000000</span></dd>
+     </dl>
+  </div> 
+    <div class="blank0"></div>
+  <div class="qqcall"> 
+    <dl class="fn_cle">
+         <dt><img src="http://p2p.ynyaoqi.com/app/Tpl/new/images/zxkfqq.png" height="31" width="31"></dt>
+         <dd class="f1 f_s14">在线客服：</dd>
+                 <dd class="f2">
+          <span>客服一</span> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2197336329&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2197336329:51" alt="点击这里给我发消息" title="点击这里给我发消息" width="77" height="22" /></a> 
+        </dd>
+               <dd class="f2">
+          <span>客服二</span> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3343473403&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:3343473403:51" alt="点击这里给我发消息" title="点击这里给我发消息" width="77" height="22" /></a> 
+        </dd>
+               
+               </dl>
+    <div class="blank0"></div>           
+  </div> 
+  <div class="blank0"></div>
+  <div class="dytimer">
+     <span style="font-weight: bold;">服务时间：</span>
+     <span>周一至周日 9:00-18:00</span>
+  </div>
+  
+  </div>
+</div>
+<div class="diyoumask"></div>
+<!-- 右侧联系我们 -->
+		<div id="gotop"></div>
+		<div class="__footer__ f_white" style="background:#3D3D3E;">
+		<div class="blank10"></div>
+		<div class="remind" style="text-align:center">
+			<span style="text-decoration:line-through">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			&nbsp;市场有风险 投资需谨慎&nbsp;
+			<span style="text-decoration:line-through">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		</div>
+		<div class="navi">
+			<a href="http://webscan.360.cn/index/checkwebsite/url/www.wlgyjr.com"><img src='/public/images/footer/360.png' /></a>
+			<a href="https://credit.szfw.org/CX20151030012015830123.html"><img src='/public/images/footer/chengxin.png' /></a>
+			<a href="http://www.km588.com/"><img src='/public/images/footer/cftkj.png' /></a>
+			<a href="https://credit.szfw.org/CX20151030012015830123.html"><img src='/public/images/footer/shimingrenzheng.png' /></a>
+		</div>
+	</div>
+	<style type="text/css">
+		.__footer__ {background:#CCCCCC;padding-bottom:24px;}
+		.__footer__ hr {margin:0;padding:0}
+		.__footer__ .navi {width:100%;text-align:center;margin-top:12px;}
+		.__footer__ .navi a {margin:0 10px;}
+		.__footer__ .navi img {width:121px;height:44px;}
+	</style>
+	<script type="text/javascript" defer="defer">
+		resetWindowBox();
+	</script>
+</div>
+</body>
+</html>

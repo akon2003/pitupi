@@ -1,0 +1,17 @@
+<?php if ($this->_var['user_info']): ?>
+	<span class="li li_no" id="J_account">
+		<span class="f12">您好，</span><a href="<?php
+echo parse_url_tag("u:shop|uc_center|"."".""); 
+?>" style="color:white"><?php echo $this->_var['user_info']['user_name']; ?></a>
+		<!-- 注销以下列表显示后,显示退出按钮 -->
+		&nbsp;|&nbsp;&nbsp;<a class="rrd-dimgray" href="<?php
+echo parse_url_tag("u:shop|user#loginout|"."".""); 
+?>" style="color:white">退出</a>
+	</span>
+<?php else: ?>
+<a href="<?php
+echo parse_url_tag("u:index|user#register|"."".""); 
+?>" style="color:white"><?php echo $this->_var['LANG']['FREE_REGISTER']; ?></a>
+<span style="color:white">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+<a href="javascript:void(0);" onclick="ajax_login();" style="color:white">立即<?php echo $this->_var['LANG']['LOGIN']; ?></a>
+<?php endif; ?>

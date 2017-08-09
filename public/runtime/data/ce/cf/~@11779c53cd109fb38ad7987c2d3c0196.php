@@ -1,0 +1,3 @@
+<?php
+//000000086400a:16:{s:8:"kf_phone";s:12:"400-000-0000";s:8:"kf_email";s:14:"1000000@qq.com";s:9:"page_size";s:2:"10";s:10:"about_info";s:2:"66";s:13:"program_title";s:12:"金融理财";s:15:"android_version";s:10:"2015021001";s:16:"android_filename";s:1:"#";s:11:"ios_version";s:10:"2014082009";s:12:"ios_down_url";s:0:"";s:15:"android_upgrade";s:9:"修复bug";s:11:"ios_upgrade";s:0:"";s:15:"article_cate_id";s:2:"15";s:22:"android_forced_upgrade";s:1:"1";s:18:"ios_forced_upgrade";s:1:"1";s:8:"wx_appid";s:0:"";s:9:"wx_secrit";s:0:"";}
+?>

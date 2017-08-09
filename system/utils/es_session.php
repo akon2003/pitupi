@@ -79,6 +79,7 @@ class es_session
 	// 获取某个session值
 	static function get($name) {
 		self::start();
+		echo '<pre>';var_dump("p");die;
 		if(!isset($_SESSION[app_conf("AUTH_KEY").$name]))
 		  $value   = null;
 		else

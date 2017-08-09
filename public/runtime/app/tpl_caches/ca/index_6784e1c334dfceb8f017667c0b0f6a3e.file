@@ -1,0 +1,825 @@
+<?php exit;?>a:3:{s:8:"template";a:6:{i:0;s:38:"E:/www/p2p/app/Tpl/new/page/index.html";i:1;s:38:"E:/www/p2p/app/Tpl/new/inc/header.html";i:2;s:50:"E:/www/p2p/app/Tpl/new/inc/common/load_css_js.html";i:3;s:47:"E:/www/p2p/app/Tpl/new/inc/common/load_top.html";i:4;s:38:"E:/www/p2p/app/Tpl/new/inc/footer.html";i:5;s:36:"E:/www/p2p/app/Tpl/new/inc/kefu.html";}s:7:"expires";i:1502246857;s:8:"maketime";i:1502246677;}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+<meta name="renderer" content="webkit">
+<meta name="Generator" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta property="wb:webmaster" content="d5200c3962dbc3f8" />
+<meta property="qc:admins" content="527130775767471226375" />
+<title>金融理财官网 - 金融理财</title>
+<link rel="icon" href="favicon.ico" type="/image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="/image/x-icon" />
+<meta name="keywords" content="金融理财" />
+<meta name="description" content="金融理财服务有限公司" />
+<link rel="stylesheet" type="text/css" href="http://p2p/public/runtime/statics/94e6949b162346a25fa9f48797eaf775.css" />
+<script type="text/javascript">
+var APP_ROOT = '';;
+var LOADER_IMG = 'http://p2p/app/Tpl/new/images/lazy_loading.gif';
+var ERROR_IMG = 'http://p2p/app/Tpl/new/images/image_err.gif';
+var TMPL = 'http://p2p/app/Tpl/new';
+var send_span = 2000;
+var to_send_msg = false;
+var __LOGIN_KEY = "554fcae493e564ee0dc75bdf2ebf94caget_login_key|YToxOntzOjQ6Im5hbWUiO3M6MTM6ImdldF9sb2dpbl9rZXkiO30=554fcae493e564ee0dc75bdf2ebf94ca";
+var __HASH_KEY__ = "554fcae493e564ee0dc75bdf2ebf94caget_hash_key|YToxOntzOjQ6Im5hbWUiO3M6MTI6ImdldF9oYXNoX2tleSI7fQ==554fcae493e564ee0dc75bdf2ebf94ca";
+</script>
+<script type="text/javascript" src="/public/runtime/app/lang.js"></script>
+<script type="text/javascript" src="http://p2p/public/runtime/statics/872ab0dd1ad18905e4c87e1b0aff7d8a.js"></script>
+<!--[if lt IE 10]>
+<script type="text/javascript" src="http://p2p/app/Tpl/new/js/PIE.js"></script>
+<![endif]-->
+<script language="javascript">
+$(function() {
+    if (window.PIE) {
+        $('.bdr3,.bdr5,.user_info_d a,.main_adv_ctl li,.after_login .user_money A,.listbtn SPAN').each(function() {
+            PIE.attach(this);
+        });
+    }
+});
+</script></head>
+<body>
+<div class="header" id="header">
+    <!---->
+<div class="constr">
+	<div class="wrap" style>
+				<div class="f_r lh30">
+			
+		</div>	
+		<div class="f_r">
+			<ul class="right mt9">
+				<li class="hover_a top_li jcur">
+					<a href="wap/" style="padding:0;border:0;color:white">切换手机版</a>
+					<span style="color:white">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				</li>				
+				<li class="hover_a top_li jcur" id="J_APP_DOWN">
+					<a href="http://p2p/public/images/qrcode/c3/8e0a3bf5663463684dddff3a70ec9fce.png" style="padding:0;border:0;color:white"><i class="iconfont">&#xe613;</i>手机理财</a>
+					<span style="color:white">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				</li>				
+				<li class="hover_a top_li jcur">
+					<a href="http://p2p/public/images/qrcode/c6/9c151bcc3dde6ba913eb4f43b7fdf474.png'" id="weixim" style="color:white"><i class="iconfont">&#xe614;</i>微信</a>
+					<span style="color:white">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				</li>				
+				<li class="top_li hover_a">
+					<a href="index.php?ctl=help&id=5" style="color:white">理财咨询</a>
+					<span style="color:white">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				</li>
+				<li class="top_li">
+					<a href="index.php?ctl=help" style="color:white">帮助中心</a>
+					<span style="color:white">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				</li>				
+				<li class="top_li">
+					554fcae493e564ee0dc75bdf2ebf94caload_user_tip|YToxOntzOjQ6Im5hbWUiO3M6MTM6ImxvYWRfdXNlcl90aXAiO30=554fcae493e564ee0dc75bdf2ebf94ca				</li>
+			</ul>
+		</div>	
+	</div>
+</div>
+<!---->	<div class="blank0"></div>
+	<div class="main_bars" style="background:#F7F8F8;">
+		<div class="main_bar wrap">	
+			<div class="logo mr15">
+				<a class="link f_l" href="/">
+										<span style='display:inline-block; width:190px; height:57px; background:url(http://p2p/public/attachment/201603/14/17/56e689e27df7c.png) no-repeat; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=http://p2p/public/attachment/201603/14/17/56e689e27df7c.png, sizingMethod=scale);_background-image:none;'></span>				</a>
+			</div>  
+			<script type="text/javascript">
+				$(document).ready(function() {
+					$(".main_nav li").each(function(){
+						//文本替换
+						var txt = $(this).find('a').text();
+						$(this).find('a').html('').append("<span>"+txt+"</span>");
+						$(this).mouseover(function(){
+							$(this).find('a span').css({'color':'white'});
+						}).mouseout(function(){
+							if (!$(this).hasClass('current')) {
+								$(this).find('a span').css({'color':'black'});
+							}
+						});
+					});
+				});
+			</script>
+			<!--加载菜单-->
+			<ul class="main_nav">
+									<li class="current  pr" rel='1'><div class="cor">
+												<a href="/index.php" target="" >首页 </a>
+																	</div></li>
+									<li class="  pr" rel='2'><div class="cor">
+												<a href="/index.php?ctl=deals" target="" >我要投资 </a>
+																	</div></li>
+									<li class="  pr" rel='3'><div class="cor">
+												<a href="/index.php?ctl=borrow" target="" >我要借款 </a>
+																	</div></li>
+									<li class="  pr" rel='71'><div class="cor">
+												<a href="/index.php?ctl=uplans" target="" >U-计划 </a>
+																	</div></li>
+									<li class="  pr" rel='52'><div class="cor">
+												<a href="/member.php?ctl=uc_center" target="" >我的账户 </a>
+																	</div></li>
+									<li class="  pr" rel='59'><div class="cor">
+												<a href="/index.php?ctl=score" target="" >积分商城 </a>
+																	</div></li>
+							</ul>
+			<!--加载菜单END-->
+		</div>
+	</div>
+</div>
+<!---->
+554fcae493e564ee0dc75bdf2ebf94caload_user_tip_index|YToxOntzOjQ6Im5hbWUiO3M6MTk6ImxvYWRfdXNlcl90aXBfaW5kZXgiO30=554fcae493e564ee0dc75bdf2ebf94ca<div id="main_adv_box" class="main_adv_box f_l b_white">
+	<div id="main_adv_img" class="main_adv_img">
+		<span rel="1"><img src="http://p2p/public/attachment/201603/20/18/840f8de42b9b41021b7afb794f8f396a.jpg" alt="" /></span>
+		<span rel="2"><img src="http://p2p/public/attachment/201603/20/18/2f2c23e420da06fe8be68440526c5407.jpg" alt="" /></span>
+		<span rel="3"><img src="http://p2p/public/attachment/201603/20/18/840f8de42b9b41021b7afb794f8f396a.jpg" alt="" /></span>
+		<span rel="4"><img src="http://p2p/public/attachment/201603/20/18/2f2c23e420da06fe8be68440526c5407.jpg" alt="" /></span>
+		<span rel="5"></span>
+	</div>
+	<div id="main_adv_ctl" class="main_adv_ctl">
+		<ul>
+			<li rel="1">1</li>
+			<li rel="2">2</li>
+			<li rel="3">3</li>
+			<li rel="4">4</li>
+			<li rel="5">5</li>
+		</ul>
+	</div>
+</div>
+<!---->
+<!---->
+<div class="wrap"><div class="blank0"></div>
+</div>
+<!-- 平台项目优势 -->
+<div class="advance_block">
+	<div class="wrap">
+		<table class="gridUl">
+			<tr>
+				<td>
+					<a href="javascript:void(0);">
+						<div class="t1"><img src="/app/Tpl/new/images/index/grid_image0.png" /></div>
+						<div class="t2">
+						<h4>律所法务监控</h4>
+						<div class="t3" style="color:rgb(158,158,158)">律师事务所全程法务监控</div>
+						</div>
+					</a>
+				</td>
+				<td>
+					<a href="javascript:void(0);">
+						<span class="t1"><img src="/app/Tpl/new/images/index/grid_image1.png" /></span>
+						<div class="t2">
+						<h4>全额本息担保</h4>
+						<div class="t3 tac" style="color:rgb(158,158,158)">第三方担保机构本息担保</div>
+						</div>
+					</a>
+				</td>
+				<td>
+					<a href="javascript:void(0);">
+						<span class="t1"><img src="/app/Tpl/new/images/index/grid_image2.png" /></span>
+						<div class="t2">
+						<h4>大数据战略合作</h4>
+						<div class="t3 tac" style="color:rgb(158,158,158)">云南长方体大数据网络科技公司战略合作</div>
+						</div>
+					</a>
+				</td>
+				<td>
+					<a href="javascript:void(0);">
+						<span class="t1"><img src="/app/Tpl/new/images/index/grid_image3.png" /></span>
+						<div class="t2">
+						<h4>银行资金监管</h4>
+						<div class="t3" style="color:rgb(158,158,158)">中国光大银行资金全程监管</div>
+						</div>
+					</a>
+				</td>
+				<td>
+					<a href="javascript:void(0);">
+						<span class="t1"><img src="/app/Tpl/new/images/index/grid_image4.png" /></span>
+						<div class="t2">
+						<h4>保险保驾护航</h4>
+						<div class="t3 tar" style="color:rgb(158,158,158)">太平洋保险公司全程保驾护航</div>
+						</div>
+					</a>
+				</td>
+			</tr>			
+		</table>
+	</div>
+</div>
+<!-- 他们正在投资 -->
+<div class="licai_block">
+	<div class="wrap">
+		<div class="f_l notice"></div>
+		<div class="f_l">
+			<div class="article_block pr list_block" id="txtScroll-top">
+				<div class="bg_0 pr list_this ovhide bd3">
+					<ul class="licai_now">
+												<li class="show_li clearfix ">
+							<a href="/index.php?ctl=deal&id=9">
+								<p>
+									用户：<i class="f_red">l***n</i> &nbsp; 
+									投资：<i class="f_red">4000.00元</i>
+									年化收益：<i class="f_red">10.00%</i>
+								</p>
+							</a>
+						</li>
+												<li class="show_li clearfix ">
+							<a href="/index.php?ctl=deal&id=9">
+								<p>
+									用户：<i class="f_red">y***6</i> &nbsp; 
+									投资：<i class="f_red">5000.00元</i>
+									年化收益：<i class="f_red">10.00%</i>
+								</p>
+							</a>
+						</li>
+												<li class="show_li clearfix ">
+							<a href="/index.php?ctl=deal&id=9">
+								<p>
+									用户：<i class="f_red">c***2</i> &nbsp; 
+									投资：<i class="f_red">10000.00元</i>
+									年化收益：<i class="f_red">10.00%</i>
+								</p>
+							</a>
+						</li>
+												<li class="show_li clearfix ">
+							<a href="/index.php?ctl=deal&id=9">
+								<p>
+									用户：<i class="f_red">c***1</i> &nbsp; 
+									投资：<i class="f_red">20000.00元</i>
+									年化收益：<i class="f_red">10.00%</i>
+								</p>
+							</a>
+						</li>
+												<li class="show_li clearfix ">
+							<a href="/index.php?ctl=deal&id=8">
+								<p>
+									用户：<i class="f_red">l***n</i> &nbsp; 
+									投资：<i class="f_red">29000.00元</i>
+									年化收益：<i class="f_red">13.20%</i>
+								</p>
+							</a>
+						</li>
+												<li class="show_li clearfix ">
+							<a href="/index.php?ctl=deal&id=9">
+								<p>
+									用户：<i class="f_red">h***5</i> &nbsp; 
+									投资：<i class="f_red">10000.00元</i>
+									年化收益：<i class="f_red">10.00%</i>
+								</p>
+							</a>
+						</li>
+												<li class="show_li clearfix ">
+							<a href="/index.php?ctl=deal&id=9">
+								<p>
+									用户：<i class="f_red">y***6</i> &nbsp; 
+									投资：<i class="f_red">20000.00元</i>
+									年化收益：<i class="f_red">10.00%</i>
+								</p>
+							</a>
+						</li>
+												<li class="show_li clearfix ">
+							<a href="/index.php?ctl=deal&id=8">
+								<p>
+									用户：<i class="f_red">z***8</i> &nbsp; 
+									投资：<i class="f_red">10000.00元</i>
+									年化收益：<i class="f_red">13.20%</i>
+								</p>
+							</a>
+						</li>
+											</ul>
+				</div> 
+			</div>
+		</div>
+		<div class="f_r notice_m"></div>
+		<div class="f_r">
+			<div class="clearfix h_block b_f9f9f9" style="color:#2A75B7">
+				<div class="f_l">他们正在投资</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				jQuery("#txtScroll-top").slide({titCell:".hd ul",mainCell:".bd3 ul",autoPage:true,effect:"top",autoPlay:true,vis:4});
+			});
+		</script>
+	</div>
+</div>
+<!-- 统计数据展示 -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		setTimeout(function() {
+			var options = {useEasing:true,easingFn:null,useGrouping:true,separator:',',decimal:'.'};
+			var user_count = new CountUp("data_user_count", 0, 3505,0,2,options);
+			user_count.start();
+			var total_load = new CountUp("data_total_load", 0, 31351500,0,2,options);
+			total_load.start();
+			var total_repay_money = new CountUp("data_total_repay_money", 0, 1634283.34,0,2,options);
+			total_repay_money.start();
+			var total_interest_money = new CountUp("data_total_interest_money", 0, 34283.32,0,2,options);
+			total_interest_money.start();
+		}, 1000);
+	});
+</script>
+<div class="data_block">
+	<div class="wrap">
+		<table class="dataUI">
+			<tr class="value">
+				<td id="data_user_count">--</td>
+				<td id="data_total_load">--</td>
+				<td id="data_total_repay_money">--</td>
+				<td id="data_total_interest_money">--</td>
+			</tr>
+			<tr class="title">
+				<td>累计注册用户（人）</td>
+				<td>累计成交金额（元）</td>
+				<td>已还本息总额（元）</td>
+				<td>用户赚取利益（元）</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="blank12" style="background:#C1C1C1;width:100%;height:12px;"></div>
+<!-- 理财产品展示区 -->
+<script type='text/javascript' language='javascript' src='/app/Tpl/new/js/utils/jqDnR.js'></script>
+<script type="text/javascript">
+	var cal = new licaiCalWindow();
+	$(document).ready(function() {
+		$('.indicatorContainer').each(function() {
+			var args = {radius:33,barWidth:3,initValue:0,roundCorner:true,percentage:true};
+			var progress = $(this).find(".progress").text();
+			args.barColor = {0:'#EEEEEE',1:'#37AFF1',100:'#009365'};
+			
+			if (progress == 0) {
+				args.fontColor = '#CCCCCC';
+			} else if (progress == 100) {
+				args.fontColor = '#009365';
+			} else {
+				args.fontColor = '#37AFF1';
+			}
+			$(this).radialIndicator(args);
+			var obj = $(this).data('radialIndicator');
+			obj.animate(progress);
+		});
+		//理财收益计算
+		$(".compu").each(function() {
+			$(this).bind("click",function(e) {
+				var ev = window.event || e;
+				var rate = $(this).parents("tr").find(".rate").eq(0).text();
+				var time = $(this).parents("tr").find(".time").eq(0).text();
+				var remain = $(this).parents("tr").find(".remain").eq(0).val();
+				cal.show(rate,time,remain,ev);
+			});
+		});
+		//简单收益计算
+		$(".cal_input").bind("blur", function() {
+			var input = $(this).val();
+			if (input == isNaN || input == 0) {
+				$(this).val(10000);
+			}
+			$(this).trigger("update");
+		}).bind("keypress", function(e) {
+			var ev = window.event || e;
+			if (ev.keyCode > 47 && ev.keyCode < 58) {
+				return true;
+			} else {
+				return false;
+			}
+		}).bind("keyup", function(e) {
+			$(this).trigger("update");
+		}).bind("keydown", function(e) {
+			var ev = window.event || e;
+			if (ev.keyCode == 13) {
+				$(this).trigger("update");
+			}
+		}).bind("update", function() {
+			var rate = $(this).parents("tr").find(".rate").eq(0).text();
+			var time = $(this).parents("tr").find(".time").eq(0).text();
+			var remain = $(this).parents("tr").find(".remain").eq(0).val();
+			var val = remain<10000? remain : 10000;
+			var input = $(this).val();
+			input = parseInt(input);
+			if (input == isNaN || input == 0) {
+				input = 0;
+			}
+			var result = input * (rate / 100) / 12 * time;
+			result = result.toFixed(2);
+			$(this).parents("td").find(".cal_result").html(result);
+		}).trigger("update");
+	});
+</script>
+<div class="main_block">
+	<div class="wrap" style="height:64px;background:url('/app/Tpl/new/images/index/trzlczq.png') no-repeat;"></div>
+	<!-- 新手标/U计划 -->
+	<div class="wrap deal_list">
+		<div class="uplan">
+			<table>
+				<tr class="t_header">
+					<th class="t_name">项目名称</th><th class="t_rate">年化利率</th><th>&nbsp;</th><th class="t_interest">投资收益</th>
+					<th class="t_repay_time">投资期限</th><th class="t_borrow_amount">项目总额</th><th class="t_progress">投资进度</th><th></th>
+				</tr>
+				<tr class="t_splid"><td colspan="8"></td></tr>
+												<tr class="t_deal">
+					<td><a href="javascript:void(0)" title="新手专享">新手专享</a></td>
+					<td><span class="rate">8.0</span>%</td>
+					<td><div class="compu"><i class="iconfont" style="width:24px;height:24px;font-size:24px;color:#EC5310;cursor:pointer;">&#xe622;</i></div></td>
+					<td>
+						<div style="width:96px;height:20px;overflow:hidden;"><input type="text" value="10000" class="cal_input" size=3 style="border:1px solid #ddd;color:#ccc;text-align:center;"/></div>
+						<div style="width:96px;height:18px;overflow:hidden;font-size:10px;">￥<span class="cal_result">1000</span></div>
+						<input type="hidden" class="remain" value=""/>
+					</td>
+					<td><span class="time">1</span>个月</td>
+					<td>--</td>
+					<td>
+						<div class="prg-cont rad-prg indicatorContainer">
+							<span style="display:none" class="progress">0</span>
+						</div>
+					</td>
+					<td style="padding-left:20px;">
+													<a href="javascript:void(0);" class="deal_status deal_wait_7"><span></span></a>
+											</td>
+				</tr>
+																<tr class="t_deal">
+					<td><a href="javascript:void(0)" title="U计划A">U计划A</a></td>
+					<td><span class="rate">7.2</span>%</td>
+					<td><div class="compu"><i class="iconfont" style="width:24px;height:24px;font-size:24px;color:#EC5310;cursor:pointer;">&#xe622;</i></div></td>
+					<td>
+						<div style="width:96px;height:20px;overflow:hidden;"><input type="text" value="10000" class="cal_input" size=3 style="border:1px solid #ddd;color:#ccc;text-align:center;"/></div>
+						<div style="width:96px;height:18px;overflow:hidden;font-size:10px;">￥<span class="cal_result">1000</span></div>
+						<input type="hidden" class="remain" value=""/>
+					</td>
+					<td><span class="time">3</span>个月</td>
+					<td>--</td>
+					<td>
+						<div class="prg-cont rad-prg indicatorContainer">
+							<span style="display:none" class="progress">0</span>
+						</div>
+					</td>
+					<td style="padding-left:20px;">
+													<a href="javascript:void(0);" class="deal_status deal_wait_7"><span></span></a>
+											</td>
+				</tr>
+																<tr class="t_deal">
+					<td><a href="javascript:void(0)" title="U计划B">U计划B</a></td>
+					<td><span class="rate">9.0</span>%</td>
+					<td><div class="compu"><i class="iconfont" style="width:24px;height:24px;font-size:24px;color:#EC5310;cursor:pointer;">&#xe622;</i></div></td>
+					<td>
+						<div style="width:96px;height:20px;overflow:hidden;"><input type="text" value="10000" class="cal_input" size=3 style="border:1px solid #ddd;color:#ccc;text-align:center;"/></div>
+						<div style="width:96px;height:18px;overflow:hidden;font-size:10px;">￥<span class="cal_result">1000</span></div>
+						<input type="hidden" class="remain" value=""/>
+					</td>
+					<td><span class="time">6</span>个月</td>
+					<td>--</td>
+					<td>
+						<div class="prg-cont rad-prg indicatorContainer">
+							<span style="display:none" class="progress">0</span>
+						</div>
+					</td>
+					<td style="padding-left:20px;">
+													<a href="javascript:void(0);" class="deal_status deal_wait_7"><span></span></a>
+											</td>
+				</tr>
+																<tr class="t_deal">
+					<td><a href="javascript:void(0)" title="U计划C">U计划C</a></td>
+					<td><span class="rate">12</span>%</td>
+					<td><div class="compu"><i class="iconfont" style="width:24px;height:24px;font-size:24px;color:#EC5310;cursor:pointer;">&#xe622;</i></div></td>
+					<td>
+						<div style="width:96px;height:20px;overflow:hidden;"><input type="text" value="10000" class="cal_input" size=3 style="border:1px solid #ddd;color:#ccc;text-align:center;"/></div>
+						<div style="width:96px;height:18px;overflow:hidden;font-size:10px;">￥<span class="cal_result">1000</span></div>
+						<input type="hidden" class="remain" value=""/>
+					</td>
+					<td><span class="time">12</span>个月</td>
+					<td>--</td>
+					<td>
+						<div class="prg-cont rad-prg indicatorContainer">
+							<span style="display:none" class="progress">0</span>
+						</div>
+					</td>
+					<td style="padding-left:20px;">
+													<a href="javascript:void(0);" class="deal_status deal_wait_7"><span></span></a>
+											</td>
+				</tr>
+																			</table>			
+		</div>
+	</div>
+	<div class="blank18"></div>
+	<!-- 常规标的 -->
+		<div class="wrap deal_list">
+		<div class="deal">
+			<table>
+				<tr class="t_header">
+					<th class="t_name">项目名称</th><th class="t_rate">年化利率</th><th>&nbsp;</th><th class="t_interest">投资收益</th>
+					<th class="t_repay_time">投资期限</th><th class="t_borrow_amount">项目总额</th><th class="t_progress">投资进度</th><th></th>
+				</tr>
+				<tr class="t_splid"><td colspan="8"></td></tr>
+												<tr class="t_deal">
+					<td><a href="/index.php?ctl=deal&id=9" title="个人融资申请9">个人融资申请9</a></td>
+					<td><span class="rate">10.00</span>%</td>
+					<td><div class="compu"><i class="iconfont" style="width:24px;height:24px;font-size:24px;color:#EC5310;cursor:pointer;">&#xe622;</i></div></td>
+					<td>
+						<div style="width:96px;height:20px;overflow:hidden;"><input type="text" value="10000" class="cal_input" size=3 style="border:1px solid #ddd;color:#ccc;text-align:center;"/></div>
+						<div style="width:96px;height:18px;overflow:hidden;font-size:10px;">￥<span class="cal_result">1000</span></div>
+						<input type="hidden" class="remain" value=""/>
+					</td>
+					<td><span class="time">3</span>个月</td>
+					<td>100000</td>
+					<td>
+						<div class="prg-cont rad-prg indicatorContainer">
+							<span style="display:none" class="progress">100</span>
+						</div>
+					</td>
+					<td style="padding-left:20px;">
+													<a href="javascript:void(0);" class="deal_status deal_over"><span></span></a>
+											</td>
+				</tr>
+																<tr class="t_deal">
+					<td><a href="/index.php?ctl=deal&id=8" title="个人融资申请8">个人融资申请8</a></td>
+					<td><span class="rate">13.20</span>%</td>
+					<td><div class="compu"><i class="iconfont" style="width:24px;height:24px;font-size:24px;color:#EC5310;cursor:pointer;">&#xe622;</i></div></td>
+					<td>
+						<div style="width:96px;height:20px;overflow:hidden;"><input type="text" value="10000" class="cal_input" size=3 style="border:1px solid #ddd;color:#ccc;text-align:center;"/></div>
+						<div style="width:96px;height:18px;overflow:hidden;font-size:10px;">￥<span class="cal_result">1000</span></div>
+						<input type="hidden" class="remain" value=""/>
+					</td>
+					<td><span class="time">6</span>个月</td>
+					<td>200000</td>
+					<td>
+						<div class="prg-cont rad-prg indicatorContainer">
+							<span style="display:none" class="progress">100</span>
+						</div>
+					</td>
+					<td style="padding-left:20px;">
+													<a href="javascript:void(0);" class="deal_status deal_over"><span></span></a>
+											</td>
+				</tr>
+																<tr class="t_deal">
+					<td><a href="/index.php?ctl=deal&id=7" title="个人融资申请7">个人融资申请7</a></td>
+					<td><span class="rate">12.00</span>%</td>
+					<td><div class="compu"><i class="iconfont" style="width:24px;height:24px;font-size:24px;color:#EC5310;cursor:pointer;">&#xe622;</i></div></td>
+					<td>
+						<div style="width:96px;height:20px;overflow:hidden;"><input type="text" value="10000" class="cal_input" size=3 style="border:1px solid #ddd;color:#ccc;text-align:center;"/></div>
+						<div style="width:96px;height:18px;overflow:hidden;font-size:10px;">￥<span class="cal_result">1000</span></div>
+						<input type="hidden" class="remain" value=""/>
+					</td>
+					<td><span class="time">3</span>个月</td>
+					<td>300000</td>
+					<td>
+						<div class="prg-cont rad-prg indicatorContainer">
+							<span style="display:none" class="progress">100</span>
+						</div>
+					</td>
+					<td style="padding-left:20px;">
+													<a href="javascript:void(0);" class="deal_status deal_over"><span></span></a>
+											</td>
+				</tr>
+																<tr class="t_deal">
+					<td><a href="/index.php?ctl=deal&id=6" title="个人融资申请6">个人融资申请6</a></td>
+					<td><span class="rate">12.00</span>%</td>
+					<td><div class="compu"><i class="iconfont" style="width:24px;height:24px;font-size:24px;color:#EC5310;cursor:pointer;">&#xe622;</i></div></td>
+					<td>
+						<div style="width:96px;height:20px;overflow:hidden;"><input type="text" value="10000" class="cal_input" size=3 style="border:1px solid #ddd;color:#ccc;text-align:center;"/></div>
+						<div style="width:96px;height:18px;overflow:hidden;font-size:10px;">￥<span class="cal_result">1000</span></div>
+						<input type="hidden" class="remain" value=""/>
+					</td>
+					<td><span class="time">1</span>个月</td>
+					<td>100000</td>
+					<td>
+						<div class="prg-cont rad-prg indicatorContainer">
+							<span style="display:none" class="progress">100</span>
+						</div>
+					</td>
+					<td style="padding-left:20px;">
+													<a href="javascript:void(0);" class="deal_status deal_over"><span></span></a>
+											</td>
+				</tr>
+											</table>
+		</div>
+	</div>
+		<div class="blank5"></div>
+	<div class="wrap">
+		<div style="text-align:right">		
+			<a href="index.php?ctl=deals" style="border:0;margin-top:-12px;">更多投资项目 &gt;&gt;</a>
+		</div>
+	</div>
+	<div class="blank5"></div>
+<div>
+<!-- 关于我们 -->
+<div>
+	<a href="/about/index.html" target="_blank">
+		<div id="aboutus_link" style="height:260px;overflow:hidden;background:url('/app/Tpl/new/images/index/index_about_bg.png') no-repeat;"></div>
+		<div style="height:260px;overflow:hidden;margin-top:-260px;"></div>
+	</a>
+</div>
+<div class="blank0"></div>
+<!-- 新闻中心 -->
+<div>
+	<div class="wrap" style="height:64px;background:url('/app/Tpl/new/images/index/hyxwzx.png') no-repeat;"></div>
+	<div class="wrap news_block" style="height:270px;background:white;">		
+		<div class="f_l w320">
+			<!-- 新闻轮播图 -->
+			<div class="section_news_pic" style="margin-left:20px;margin-top:20px;">
+				<div class="comiis_wrapad" id="slideContainer" style="width:300px;">
+					<div id="frameHlicAe" class="frame cl">
+						<div class="temp"></div>
+						<div class="block">
+							<div class="cl">
+								<ul class="slideshow" id="slidesImgs"><li>
+									<a href="/index.php?ctl=article&id=111" target="_blank"><img src="http://picture.saferich.com/Imagestore/res01_attpic_brief_1611412910.jpg" width="300px" height="230px"/></a>
+									<span class="title" title="摒弃8个旧观念 走好理财之路">
+										<a href="/index.php?ctl=article&id=111" style="color:white;text-decoration:none;" target="_blank"><h3>摒弃8个旧观念 走好理财之路</h3></a>
+										<div class="desc"></div>
+									</span>
+								</li></ul>
+							</div>
+							<div class="slidebar" id="slideBar">
+								<ul>									<li class="on">1</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+					SlideShow(1800,'slideContainer','slidesImgs','slideBar');
+				</script>
+			</div>
+		</div>
+		<div class="f_r" style="width:880px;">
+			<div class="article_block b_white pr list_block">
+				<ul class="hyxw_news"><!-- 行业新闻 -->
+									<li>[2016-05-10]&nbsp;&nbsp;<a href="javascript:void(0);" onclick="window.open('/index.php?ctl=article&id=114','_blank');return false;">全新升级！会员交易资金由光大银行监管</a></li>
+									<li>[2016-05-10]&nbsp;&nbsp;<a href="javascript:void(0);" onclick="window.open('/index.php?ctl=article&id=113','_blank');return false;">互联网金融是怎样砸碎了银行的“金饭碗”</a></li>
+									<li>[2016-05-10]&nbsp;&nbsp;<a href="javascript:void(0);" onclick="window.open('/index.php?ctl=article&id=112','_blank');return false;">部分P2P暂停自动投标 业内称一刀切不合理</a></li>
+									<li>[2016-12-03]&nbsp;&nbsp;<a href="javascript:void(0);" onclick="window.open('/index.php?ctl=article&id=111','_blank');return false;">摒弃8个旧观念 走好理财之路</a></li>
+									<li>[2016-05-10]&nbsp;&nbsp;<a href="javascript:void(0);" onclick="window.open('/index.php?ctl=article&id=110','_blank');return false;">互联网金融投资收益率整体下降</a></li>
+									<li>[2016-05-10]&nbsp;&nbsp;<a href="javascript:void(0);" onclick="window.open('/index.php?ctl=article&id=109','_blank');return false;">互联网金融三大风口</a></li>
+									<li>[2016-05-10]&nbsp;&nbsp;<a href="javascript:void(0);" onclick="window.open('/index.php?ctl=article&id=108','_blank');return false;">108款银行理财产品收益低于3% 双降P2P受益</a></li>
+									<li>[2016-03-15]&nbsp;&nbsp;<a href="javascript:void(0);" onclick="window.open('/index.php?ctl=article&id=82','_blank');return false;">test</a></li>
+									<li>[2016-03-15]&nbsp;&nbsp;<a href="javascript:void(0);" onclick="window.open('/index.php?ctl=article&id=80','_blank');return false;">测试呀</a></li>
+								</ul>
+			</div>
+		</div>
+	</div>
+	<div class="blank5"></div>
+	<!-- 合作伙伴 -->
+	<div class="wrap" style="height:64px;background:url('/app/Tpl/new/images/index/hzhb.png') no-repeat;"></div>
+	<div class="wrap">
+		<div class="link">
+			<ul>
+									<li><a href="javascript:void(0);" onclick="window.open('http://www.ecpic.com.cn/','_blank');return false;"><img src="http://p2p/app/Tpl/new/images/index/link_tpy.png" /></a></li>
+									<li><a href="javascript:void(0);" onclick="window.open('http://www.szfw.org/','_blank');return false;"><img src="http://p2p/app/Tpl/new/images/index/link_dzsw.png" /></a></li>
+									<li><a href="javascript:void(0);" onclick="window.open('http://www.allinpay.com/','_blank');return false;"><img src="http://p2p/app/Tpl/new/images/index/link_tlzf.png" /></a></li>
+									<li><a href="javascript:void(0);" onclick="window.open('http://www.km588.com','_blank');return false;"><img src="http://p2p/app/Tpl/new/images/index/link_cft.png" /></a></li>
+							</ul>
+		</div>
+	</div>
+	<div class="blank30"></div>
+</div>
+<div>
+</div>
+<div class="blank10"></div>
+<div id="ftw" style="background:#3D3D3E">	
+	<div id="ft">
+		    	<div class="wrap">
+    		<div class="blank20"></div>
+			<div style="padding-bottom:20px;">
+	            <ul class="cf f_l f_box">
+	            											<li class="col hp1">
+	                    <h3 style="color:#1A91ED;text-align:center;">帮助中心</h3>
+						<div class="blank0"></div>
+	                    <ul class="sub-list" style="border-left:1px solid #C9C9CA;text-align:center;">
+																					<li><a href="/index.php?ctl=help&id=74"  style="color:white;">新手指南</a></li>
+																												<li><a href="/index.php?ctl=help&id=73"  style="color:white;">常规问题</a></li>
+																												<li><a href="/index.php?ctl=help&id=2"  style="color:white;">资费说明</a></li>
+														  
+							<li class="blank0"></li>
+						</ul>
+						<div class="blank0"></div>
+	                </li>                     
+																				<li class="col hp2">
+	                    <h3 style="color:#1A91ED;text-align:center;">安全中心</h3>
+						<div class="blank0"></div>
+	                    <ul class="sub-list" style="border-left:1px solid #C9C9CA;text-align:center;">
+																					<li><a href="/index.php?ctl=help&id=103"  style="color:white;">法律政策</a></li>
+																												<li><a href="/index.php?ctl=help&id=35"  style="color:white;">隐私保护</a></li>
+																												<li><a href="/index.php?ctl=manageagency&act=login" target="_blank" style="color:white;">担保机构</a></li>
+														  
+							<li class="blank0"></li>
+						</ul>
+						<div class="blank0"></div>
+	                </li>                     
+																				<li class="col hp3">
+	                    <h3 style="color:#1A91ED;text-align:center;">关于我们</h3>
+						<div class="blank0"></div>
+	                    <ul class="sub-list" style="border-left:1px solid #C9C9CA;text-align:center;">
+																					<li><a href="/index.php?ctl=help&id=87"  style="color:white;">借款须知</a></li>
+																												<li><a href="/index.php?ctl=help&id=75"  style="color:white;">投资回报</a></li>
+																												<li><a href="/index.php?ctl=help&id=66"  style="color:white;">管理团队</a></li>
+														  
+							<li class="blank0"></li>
+						</ul>
+						<div class="blank0"></div>
+	                </li>                     
+																				<li class="col hp4 end">
+	                    <h3 style="color:#1A91ED;text-align:center;">了解更多</h3>
+						<div class="blank0"></div>
+	                    <ul class="sub-list" style="border-left:1px solid #C9C9CA;text-align:center;">
+																					<li><a href="/index.php?ctl=help&id=105"  style="color:white;">招贤纳士</a></li>
+																												<li><a href="/index.php?ctl=help&id=%E6%8E%88%E6%9D%83%E6%9C%8D%E5%8A%A1%E6%9C%BA%E6%9E%84%E7%99%BB%E5%BD%95"  style="color:white;">安全保障</a></li>
+																												<li><a href="/index.php?ctl=help&id=%E6%8B%85%E4%BF%9D%E6%9C%BA%E6%9E%84%E7%99%BB%E5%BD%95"  style="color:white;">合作机构</a></li>
+														  
+							<li class="blank0"></li>
+						</ul>
+						<div class="blank0"></div>
+	                </li>                     
+															<li class="f_l col" style="width:120px;">
+						<h3 class="f_l">&nbsp;</h3>
+						<div class="blank0"></div>
+						<ul class="sub-list" style="border-left:1px solid #C9C9CA">
+						<div style="width:110px;height:110px;background:white;margin-left:20px;">
+							<img src="/app/Tpl/new/images/index/mobile.png" width="110px" height="110px"/>
+						</div>
+						</ul>
+					</li>  
+	            </ul>
+				<div class="f_r customer" style="width:428px;padding-top:32px;">
+					<div class="f_l">
+						<i class="iconfont f_l mt1 f_white" style="font-size:117px;line-height:80px;">&#xe61f;</i>
+					</div>
+					<div class="f_r" style="width:300px;">
+						<div class="telephone">
+							<span class="telep" style="color:#1A91ED">0871-00000000</span><br/>							
+							<span class="time f16 f_white">周一至周日 9:00-18:00</span>
+						</div>
+						<div class="copy_right tr">
+							<div style="text-align:left;height:40px;color:white;">
+							<span style="color:#fff;font-family:微软雅黑, YaHei, tahoma, arial, 'Hiragino Sans GB', 宋体;font-size:14px;line-height:40px;">&copy; 2016&nbsp;金融理财 &nbsp; &nbsp; &nbsp; All rights reserved</span> 
+							<span class="f_l f_white">
+								<a href="https://credit.szfw.org/CX20151030012015830123.html" target="_blank" class="f_l f_white">
+									<span class="icp_code f_l">滇ICP10000000号</span>
+								</a>
+							</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+				</div>	
+	</div>
+		<!-- 右侧联系我们 -->
+<div style="right:-230px;" class="contactusdiyou">
+  <div class="hoverbtn">
+     <span>联</span><span>系</span><span>我</span><span>们</span>
+     <img class="hoverimg" src="http://p2p/app/Tpl/new/images/hoverbtnbg.gif" height="9" width="13">
+  </div>
+  
+  <div class="conter" >
+  <div class="con1"> 
+    <dl class="fn_cle">
+         <dt><img src="http://p2p/app/Tpl/new/images/tel.png" height="31" width="31"></dt>
+         <dd class="f1">财富热线：</dd>
+         <dd class="f2"><span class="ph_num">0871-00000000</span></dd>
+     </dl>
+  </div> 
+    <div class="blank0"></div>
+  <div class="qqcall"> 
+    <dl class="fn_cle">
+         <dt><img src="http://p2p/app/Tpl/new/images/zxkfqq.png" height="31" width="31"></dt>
+         <dd class="f1 f_s14">在线客服：</dd>
+                 <dd class="f2">
+          <span>客服一</span> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2197336329&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2197336329:51" alt="点击这里给我发消息" title="点击这里给我发消息" width="77" height="22" /></a> 
+        </dd>
+               <dd class="f2">
+          <span>客服二</span> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3343473403&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:3343473403:51" alt="点击这里给我发消息" title="点击这里给我发消息" width="77" height="22" /></a> 
+        </dd>
+               
+               </dl>
+    <div class="blank0"></div>           
+  </div> 
+  <div class="blank0"></div>
+  <div class="dytimer">
+     <span style="font-weight: bold;">服务时间：</span>
+     <span>周一至周日 9:00-18:00</span>
+  </div>
+  
+  </div>
+</div>
+<div class="diyoumask"></div>
+<!-- 右侧联系我们 -->
+		<div id="gotop"></div>
+		<div class="__footer__ f_white" style="background:#3D3D3E;">
+		<div class="blank10"></div>
+		<div class="remind" style="text-align:center">
+			<span style="text-decoration:line-through">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			&nbsp;市场有风险 投资需谨慎&nbsp;
+			<span style="text-decoration:line-through">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		</div>
+		<div class="navi">
+			<a href="http://webscan.360.cn/index/checkwebsite/url/www.wlgyjr.com"><img src='/public/images/footer/360.png' /></a>
+			<a href="https://credit.szfw.org/CX20151030012015830123.html"><img src='/public/images/footer/chengxin.png' /></a>
+			<a href="http://www.km588.com/"><img src='/public/images/footer/cftkj.png' /></a>
+			<a href="https://credit.szfw.org/CX20151030012015830123.html"><img src='/public/images/footer/shimingrenzheng.png' /></a>
+		</div>
+	</div>
+	<style type="text/css">
+		.__footer__ {background:#CCCCCC;padding-bottom:24px;}
+		.__footer__ hr {margin:0;padding:0}
+		.__footer__ .navi {width:100%;text-align:center;margin-top:12px;}
+		.__footer__ .navi a {margin:0 10px;}
+		.__footer__ .navi img {width:121px;height:44px;}
+	</style>
+	<script type="text/javascript" defer="defer">
+		resetWindowBox();
+	</script>
+</div>
+</body>
+</html>

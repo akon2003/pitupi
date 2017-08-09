@@ -1,0 +1,6 @@
+<?php if ($this->_var['agency_info']['id'] > 0): ?>
+<?php echo $this->_var['agency_info']['user_name']; ?>!&nbsp;
+<a href="<?php
+echo parse_url_tag("u:index|manageagency#loginout|"."".""); 
+?>" class="f_blue">退出</a>
+<?php endif; ?>
