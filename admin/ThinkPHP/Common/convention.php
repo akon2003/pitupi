@@ -59,7 +59,7 @@ return  array(
 	'DB_HOST'               => 'localhost', // 服务器地址
 	'DB_NAME'               => 'p2p',          // 数据库名
 	'DB_USER'               => 'root',      // 用户名
-	'DB_PWD'                => '2qaz2wsx!',          // 密码
+	'DB_PWD'                => '123456',          // 密码
 	'DB_PORT'               => 3306,        // 端口
 	'DB_PREFIX'             => 'p2p_',    // 数据库表前缀
 	'DB_SUFFIX'             => '',          // 数据库表后缀
@@ -68,7 +68,7 @@ return  array(
     'DB_CHARSET'            => 'utf8',      // 数据库编码默认采用utf8
     'DB_DEPLOY_TYPE'        => 0, // 数据库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
     'DB_RW_SEPARATE'        => false,       // 数据库读写是否分离 主从式有效
-sdffasfsd
+
     /* 数据缓存设置 */
     'DATA_CACHE_TIME'		=> -1,      // 数据缓存有效期
     'DATA_CACHE_COMPRESS'   => false,   // 数据缓存是否压缩缓存

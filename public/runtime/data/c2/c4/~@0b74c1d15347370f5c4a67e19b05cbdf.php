@@ -1,3 +1,0 @@
-<?php
-//000000086400a:18:{s:10:"total_load";d:31351500;s:10:"load_count";s:2:"55";s:17:"total_load_format";s:22:"31,351,500<em>.00</em>";s:16:"deal_total_count";s:1:"9";s:20:"total_interest_money";d:34283.32;s:27:"total_interest_money_format";s:18:"34,283<em>.32</em>";s:10:"total_rate";d:1028645.13;s:17:"total_rate_format";s:21:"1,028,645<em>.13</em>";s:9:"total_bzh";N;s:16:"total_bzh_format";s:13:"0<em>.00</em>";s:11:"total_repay";s:10:"1380145.19";s:18:"total_repay_format";s:21:"1,380,145<em>.19</em>";s:15:"total_usermoney";N;s:22:"total_usermoney_format";s:13:"0<em>.00</em>";s:10:"total_user";s:3:"266";s:10:"user_count";i:3505;s:17:"total_repay_money";s:10:"1634283.34";s:24:"total_repay_money_format";s:21:"1,634,283<em>.34</em>";}
-?>

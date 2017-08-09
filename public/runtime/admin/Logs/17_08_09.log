@@ -1,4 +1,0 @@
-[ 2017-08-09T10:36:10+08:00 ] ERR: (ThinkException) Access denied for user 'root'@'localhost' (using password: YES)
-[ 2017-08-09T10:38:17+08:00 ] ERR: (ThinkException) Access denied for user 'root'@'localhost' (using password: YES)
-[ 2017-08-09T10:44:50+08:00 ] ERR: (ThinkException) Access denied for user 'root'@'localhost' (using password: YES)
-[ 2017-08-09T11:06:18+08:00 ] ERR: (ThinkException) Access denied for user 'root'@'localhost' (using password: YES)
