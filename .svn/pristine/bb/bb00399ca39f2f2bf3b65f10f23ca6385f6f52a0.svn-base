@@ -1,4 +1,0 @@
-{if $authorized_info.id gt 0}
-{$authorized_info.user_name}!&nbsp;
-<a href="{url x="index" r="authorized#loginout"}" class="f_blue">退出</a>
-{/if}

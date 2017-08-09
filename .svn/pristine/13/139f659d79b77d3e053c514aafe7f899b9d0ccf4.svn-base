@@ -1,3 +1,0 @@
-{foreach from="$creditschool_list" item="item"}
-<li><i class="iconfont f20" style="color:#1A91ED">&#xe621;</i>&nbsp;<a href="{$item.url}" target=_blank title="{$item.title}">{function name="msubstr" v=$item.title s=0 e=8}</a></li>
-{/foreach}

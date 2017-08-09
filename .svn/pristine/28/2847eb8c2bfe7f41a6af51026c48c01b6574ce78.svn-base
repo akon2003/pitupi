@@ -1,6 +1,0 @@
-<?php 
-return array(
-	'APP_NAME'	=>	'好站长p2p系统  haoid.cn ',
-	'APP_SUB_VER'	=>	7795,
-);
-?>
